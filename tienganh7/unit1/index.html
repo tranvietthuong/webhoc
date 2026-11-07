@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Unit 1: Hobbies - Học Từ Vựng Tiếng Anh Lớp 7</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Quicksand', sans-serif; 
+            -webkit-tap-highlight-color: transparent; 
+            touch-action: manipulation;
+        }
+
+        /* HIỆU ỨNG CHỮ SINH ĐỘNG KHI CHUYỂN THẺ */
+        @keyframes popIn {
+            0% { transform: scale(0.92); opacity: 0; }
+            70% { transform: scale(1.03); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-pop {
+            animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        /* TỐI ƯU TOÀN MÀN HÌNH CHO FLASHCARD TRÊN DESKTOP & MOBILE */
+        #flashcardWrapper:fullscreen,
+        #flashcardWrapper:-webkit-full-screen {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            background: #ffffff !important;
+            padding: env(safe-area-inset-top, 20px) 20px env(safe-area-inset-bottom, 20px) 20px !important;
+            width: 100vw !important;
+            height: 100dvh !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            overflow: hidden !important;
+        }
+
+        #flashcardWrapper:fullscreen #cardMainArea,
+        #flashcardWrapper:-webkit-full-screen #cardMainArea {
+            flex: 1 1 auto !important;
+            width: 100% !important;
+            max-width: 900px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            margin: auto 0 !important;
+        }
+
+        #flashcardWrapper:fullscreen #fcWord,
+        #flashcardWrapper:-webkit-full-screen #fcWord {
+            font-size: clamp(3.5rem, 10vw, 6rem) !important;
+        }
+
+        #flashcardWrapper:fullscreen #fcMeaning,
+        #flashcardWrapper:-webkit-full-screen #fcMeaning {
+            font-size: clamp(2.2rem, 6vw, 4rem) !important;
+        }
+
+        #flashcardWrapper:fullscreen #fcPhonetic,
+        #flashcardWrapper:-webkit-full-screen #fcPhonetic {
+            font-size: clamp(1.4rem, 3.5vw, 2.5rem) !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col justify-between p-2 sm:p-4">
+
+    <div class="max-w-2xl mx-auto w-full space-y-4">
+        
+        <!-- Header điều hướng & Nút nạp từ vựng Google Sheets -->
+        <header class="bg-white border border-slate-200 rounded-2xl p-3 sm:p-4 shadow-sm flex items-center justify-between">
+            <a href="../index.html" class="inline-flex items-center gap-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl transition active:scale-95 shadow-sm">
+                <i class="fa-solid fa-arrow-left"></i> Về danh sách Unit
+            </a>
+            
+            <div class="flex items-center gap-2">
+                <!-- Nút nạp thêm từ vựng (Google Sheets) yêu cầu pass '1' -->
+                <button onclick="openSheetWithPassword()" class="bg-amber-500 hover:bg-amber-600 active:scale-95 text-white px-3 py-2 rounded-xl shadow text-xs font-bold flex items-center gap-1.5 transition" title="Nạp thêm từ vựng vào Google Sheet">
+                    <i class="fa-solid fa-file-excel"></i> Nạp từ
+                </button>
+                <div class="text-right hidden sm:block">
+                    <span class="text-[10px] font-black text-indigo-600 bg-indigo-50 border border-indigo-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Tiếng Anh 7</span>
+                    <h1 class="text-sm font-black text-slate-800">Unit 1: Hobbies</h1>
+                </div>
+            </div>
+        </header>
+
+        <!-- THANH TIẾN ĐỘ HỌC TẬP -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm">
+            <div class="flex items-center justify-between text-[11px] font-bold text-slate-500 mb-2">
+                <span>Tiến trình học tập:</span>
+                <span id="stepProgressText" class="text-indigo-600 font-black">Phần 1: Học từ vựng truyền thống</span>
+            </div>
+            <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                <div id="progressBar" class="bg-gradient-to-r from-indigo-500 to-purple-600 h-full transition-all duration-300 w-1/3"></div>
+            </div>
+        </div>
+
+        <!-- ======================================================== -->
+        <!-- PHẦN 1: HỌC TRUYỀN THỐNG                                 -->
+        <!-- ======================================================== -->
+        <section id="sectionStep1" class="bg-white border border-slate-200 rounded-3xl p-4 sm:p-5 shadow-sm space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div class="flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-black text-sm">1</span>
+                    <div>
+                        <h2 class="text-xs sm:text-sm font-black text-slate-900 uppercase">1. Học Từ Vựng Truyền Thống</h2>
+                        <p class="text-[11px] text-slate-500 font-medium">Từ vựng • Phiên âm • Nghĩa tiếng Việt • Nghe giọng đọc</p>
+                    </div>
+                </div>
+                <span id="vocabCountBadge" class="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">Đang tải...</span>
+            </div>
+
+            <!-- Danh sách các từ vựng -->
+            <div class="flex flex-col gap-2" id="traditionalVocabList">
+                <div class="text-center py-6 text-slate-400 text-xs">Đang đồng bộ dữ liệu từ Google Sheets...</div>
+            </div>
+
+            <!-- Nút bấm tiếp theo sang Phần 2 -->
+            <div id="btnAreaStep1" class="pt-3 text-center border-t border-slate-100">
+                <button onclick="goToStep(2)" class="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-extrabold text-xs sm:text-sm px-6 py-3 rounded-2xl shadow-md transition active:scale-95 inline-flex items-center justify-center gap-2 cursor-pointer">
+                    <span>Học tiếp: 2. Luyện Flashcard Toàn Màn Hình</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- PHẦN 2: HỌC FLASHCARD                                     -->
+        <!-- ======================================================== -->
+        <section id="sectionStep2" class="hidden space-y-4">
+            
+            <div id="flashcardWrapper" class="bg-white border-2 border-emerald-200 rounded-3xl p-4 sm:p-6 shadow-md flex flex-col justify-between space-y-4">
+                
+                <!-- Thanh công cụ điều khiển Flashcard dạng Icon gọn gàng -->
+                <div class="w-full flex flex-col gap-2.5 border-b border-slate-100 pb-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-sm">2</span>
+                            <div>
+                                <h2 class="text-xs sm:text-sm font-black text-emerald-950 uppercase">2. Luyện Phản Xạ Flashcard</h2>
+                                <p class="text-[10px] text-emerald-700 font-semibold">Tự động lật thẻ & kiểm tra trí nhớ</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span id="fcCounter" class="text-xs font-black text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-xl border border-emerald-200">1 / 13</span>
+                            <button onclick="toggleFullscreen()" id="btnFullscreen" class="h-8 px-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs transition flex items-center gap-1 shadow-sm active:scale-95" title="Toàn Màn Hình">
+                                <i class="fa-solid fa-expand" id="fsIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- HÀNG CÁC NÚT ICON GỌN GÀNG (Thứ tự, Hiệu ứng, Icon, Phiên âm, Nghĩa, Đọc, Play/Pause, Tốc độ) -->
+                    <div class="grid grid-cols-4 sm:grid-cols-8 gap-1.5 text-xs font-bold">
+                        <!-- Nút Lần lượt / Ngẫu nhiên -->
+                        <button onclick="toggleOrderMode()" id="btnOrderMode" class="py-2 px-2 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition" title="Chế độ hiển thị (Thứ tự / Ngẫu nhiên)">
+                            <i class="fa-solid fa-list-ol" id="orderIcon"></i>
+                        </button>
+
+                        <!-- Tắt/Bật Hiệu ứng chữ -->
+                        <button onclick="toggleAnimationEffect()" id="btnToggleAnim" class="py-2 px-2 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition" title="Bật/Tắt Hiệu ứng chữ">
+                            <i class="fa-solid fa-wand-magic-sparkles" id="animIcon"></i>
+                        </button>
+
+                        <!-- Tắt/Bật Icon -->
+                        <button onclick="toggleEmoji()" id="btnToggleEmoji" class="py-2 px-2 bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition" title="Bật/Tắt Icon minh họa">
+                            <i class="fa-solid fa-icons" id="emojiIcon"></i>
+                        </button>
+
+                        <!-- Phiên âm -->
+                        <button onclick="togglePhonetic()" id="btnTogglePhonetic" class="py-2 px-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition" title="Bật/Tắt Phiên âm">
+                            <i class="fa-solid fa-font"></i>
+                        </button>
+
+                        <!-- Nghĩa -->
+                        <button onclick="toggleMeaning()" id="btnToggleMeaning" class="py-2 px-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition" title="Bật/Tắt Nghĩa tiếng Việt">
+                            <i class="fa-solid fa-language"></i>
+                        </button>
+
+                        <!-- Giọng đọc -->
+                        <button onclick="toggleAudio()" id="btnToggleAudio" class="py-2 px-2 bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition" title="Bật/Tắt Giọng đọc">
+                            <i class="fa-solid fa-volume-high" id="audioIcon"></i>
+                        </button>
+
+                        <!-- Nút Play / Tạm dừng trực quan -->
+                        <button onclick="togglePlayPause()" id="btnPlayPause" class="py-2 px-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl flex items-center justify-center gap-1 shadow-sm active:scale-95 transition" title="Chạy tự động / Tạm dừng">
+                            <i class="fa-solid fa-play" id="playPauseIcon"></i>
+                        </button>
+
+                        <!-- Chọn Tốc độ tự động (1s, 3s, 5s, 7s) -->
+                        <select id="speedSelect" onchange="changeSpeed()" class="py-2 px-1 bg-slate-800 text-white rounded-xl text-center font-bold text-[11px] focus:outline-none shadow-sm cursor-pointer" title="Chọn tốc độ chuyển thẻ">
+                            <option value="0">⏱️ Thủ công</option>
+                            <option value="1000">⏱️ 1s</option>
+                            <option value="3000" selected>⏱️ 3s</option>
+                            <option value="5000">⏱️ 5s</option>
+                            <option value="7000">⏱️ 7s</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- KHU VỰC THẺ CHÍNH -->
+                <div id="cardMainArea" class="bg-gradient-to-b from-slate-50 to-emerald-50/20 border-2 border-emerald-100/80 rounded-3xl p-6 sm:p-10 text-center relative flex flex-col items-center justify-center min-h-[340px] sm:min-h-[400px] shadow-inner transition-all w-full">
+                    
+                    <button onclick="speakCurrentCard()" class="absolute top-4 right-4 text-emerald-600 hover:text-emerald-800 bg-white p-3 rounded-full shadow-md active:scale-95 transition" title="Nghe phát âm">
+                        <i class="fa-solid fa-volume-high text-xl"></i>
+                    </button>
+
+                    <!-- Khung chứa nội dung thẻ (có gắn class động để bật/tắt hiệu ứng chữ) -->
+                    <div id="cardContentBox" class="w-full flex flex-col items-center justify-center animate-pop">
+                        <div id="fcEmoji" class="text-2xl sm:text-3xl mb-2 select-none bg-white px-3 py-1.5 rounded-xl shadow-sm border border-emerald-100">🎨</div>
+                        <h3 id="fcWord" class="text-4xl sm:text-6xl font-black text-indigo-950 mb-3 tracking-tight w-full px-2 leading-tight">horse riding</h3>
+                        <p id="fcPhonetic" class="text-lg sm:text-2xl text-slate-500 italic mb-4 font-serif">/hɔːs ˈraɪ.dɪŋ/</p>
+                        <div id="fcMeaningBox" class="pt-3 border-t border-slate-200/80 w-full max-w-md">
+                            <p id="fcMeaning" class="text-2xl sm:text-4xl font-black text-emerald-600">cưỡi ngựa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THANH ĐIỀU HƯỚNG DƯỚI FLASHCARD -->
+                <div class="w-full flex items-center justify-between gap-3 pt-2">
+                    <button onclick="prevCard()" class="flex-1 bg-slate-200 hover:bg-slate-300 active:scale-95 text-slate-700 py-3.5 rounded-2xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-arrow-left"></i> <span>Từ trước</span>
+                    </button>
+                    <button onclick="speakCurrentCard()" class="bg-emerald-100 hover:bg-emerald-200 active:scale-95 text-emerald-800 px-5 py-3.5 rounded-2xl font-bold text-xs sm:text-sm transition flex items-center gap-1.5 shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-volume-high"></i> <span>Đọc lại</span>
+                    </button>
+                    <button onclick="nextCard()" class="flex-1 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white py-3.5 rounded-2xl font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-md cursor-pointer">
+                        <span>Từ sau</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Nút bấm tiếp theo sang Phần 3 -->
+            <div id="btnAreaStep2" class="pt-2 text-center">
+                <button onclick="goToStep(3)" class="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-extrabold text-xs sm:text-sm px-7 py-3 rounded-2xl shadow-md transition active:scale-95 inline-flex items-center justify-center gap-2 cursor-pointer">
+                    <span>Học tiếp: 3. Phương Pháp Siêu Trí Nhớ & Tranh 3D</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- PHẦN 3: HỌC SIÊU TRÍ NHỚ & BỨC TRANH 3D                   -->
+        <!-- ======================================================== -->
+        <section id="sectionStep3" class="hidden bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-3xl p-4 sm:p-5 shadow-md space-y-5">
+            <div class="flex items-center justify-between border-b border-amber-200/80 pb-3">
+                <div class="flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center font-black text-sm">3</span>
+                    <div>
+                        <h2 class="text-xs sm:text-sm font-black text-amber-950 uppercase">3. Phương Pháp Siêu Trí Nhớ</h2>
+                        <p class="text-[11px] text-amber-800 font-medium">Hành trình 4 điểm neo • Câu chuyện liên tưởng • Tranh 3D</p>
+                    </div>
+                </div>
+                <span class="text-xs font-bold text-amber-900 bg-amber-100 px-2.5 py-1 rounded-full border border-amber-200">Đỉnh cao trí nhớ</span>
+            </div>
+
+            <!-- BẢNG 4 ĐIỂM NEO HÀNH TRÌNH -->
+            <div class="space-y-2">
+                <div class="text-xs font-black text-amber-900 uppercase flex items-center gap-1.5">
+                    <i class="fa-solid fa-map-location-dot text-amber-600"></i> A. Bảng 4 Điểm Neo Hành Trình:
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                    <div class="bg-white p-3 rounded-2xl border border-amber-100 shadow-sm space-y-1">
+                        <div class="font-extrabold text-amber-900 flex items-center justify-between">
+                            <span>🏇 Điểm neo 1: Bãi cỏ bên trái</span>
+                            <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold">3 từ</span>
+                        </div>
+                        <div class="text-slate-700 space-y-0.5 pl-2 border-l-2 border-amber-400">
+                            <p onclick="speak('horse riding')" class="cursor-pointer hover:text-indigo-600">• <b>Horse riding</b>: Cưỡi ngựa 🔊</p>
+                            <p onclick="speak('patient')" class="cursor-pointer hover:text-indigo-600">• <b>Patient</b>: Kiên nhẫn 🔊</p>
+                            <p onclick="speak('gardening')" class="cursor-pointer hover:text-indigo-600">• <b>Gardening</b>: Làm vườn 🔊</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-3 rounded-2xl border border-amber-100 shadow-sm space-y-1">
+                        <div class="font-extrabold text-amber-900 flex items-center justify-between">
+                            <span>📦 Điểm neo 2: Sân chơi giữa trái</span>
+                            <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold">4 từ</span>
+                        </div>
+                        <div class="text-slate-700 space-y-0.5 pl-2 border-l-2 border-amber-400">
+                            <p onclick="speak('making models')" class="cursor-pointer hover:text-indigo-600">• <b>Making models</b>: Làm mô hình 🔊</p>
+                            <p onclick="speak('carving eggshells')" class="cursor-pointer hover:text-indigo-600">• <b>Carving eggshells</b>: Khắc vỏ trứng 🔊</p>
+                            <p onclick="speak('dollhouse')" class="cursor-pointer hover:text-indigo-600">• <b>Dollhouse</b>: Nhà búp bê 🔊</p>
+                            <p onclick="speak('cardboard')" class="cursor-pointer hover:text-indigo-600">• <b>Cardboard</b>: Giấy các-tông 🔊</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-3 rounded-2xl border border-amber-100 shadow-sm space-y-1">
+                        <div class="font-extrabold text-amber-900 flex items-center justify-between">
+                            <span>🐘 Điểm neo 3: Góc nghệ thuật giữa phải</span>
+                            <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold">3 từ</span>
+                        </div>
+                        <div class="text-slate-700 space-y-0.5 pl-2 border-l-2 border-amber-400">
+                            <p onclick="speak('origami')" class="cursor-pointer hover:text-indigo-600">• <b>Origami</b>: Gấp giấy 🔊</p>
+                            <p onclick="speak('creativity')" class="cursor-pointer hover:text-indigo-600">• <b>Creativity</b>: Sức sáng tạo 🔊</p>
+                            <p onclick="speak('valuable')" class="cursor-pointer hover:text-indigo-600">• <b>Valuable</b>: Giá trị, quý báu 🔊</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-3 rounded-2xl border border-amber-100 shadow-sm space-y-1">
+                        <div class="font-extrabold text-amber-900 flex items-center justify-between">
+                            <span>🎪 Điểm neo 4: Bìa rừng bên phải</span>
+                            <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold">3 từ</span>
+                        </div>
+                        <div class="text-slate-700 space-y-0.5 pl-2 border-l-2 border-amber-400">
+                            <p onclick="speak('belong to')" class="cursor-pointer hover:text-indigo-600">• <b>Belong to</b>: Thuộc về 🔊</p>
+                            <p onclick="speak('benefit')" class="cursor-pointer hover:text-indigo-600">• <b>Benefit</b>: Lợi ích 🔊</p>
+                            <p onclick="speak('hobbyist')" class="cursor-pointer hover:text-indigo-600">• <b>Hobbyist</b>: Người có sở thích 🔊</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CÂU CHUYỆN HÀNH TRÌNH TƯƠNG TÁC -->
+            <div class="space-y-2">
+                <div class="text-xs font-black text-amber-900 uppercase flex items-center gap-1.5">
+                    <i class="fa-solid fa-clapperboard text-amber-600"></i> B. Câu Chuyện: "Chuyện Kỳ Lạ Ở Hội Đam Mê"
+                </div>
+                <div class="bg-white/95 border border-amber-200/90 rounded-2xl p-4 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2.5 font-medium shadow-sm">
+                    <p>
+                        Tại <span class="text-amber-800 font-bold bg-amber-100 px-1.5 py-0.5 rounded">[Bãi cỏ bên trái]</span>, một anh chàng đang hăng say tập cưỡi ngựa (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('horse riding')">horse riding 🔊</b>), ngặt một nỗi chú ngựa của anh ta không phải ngựa thật mà là... một chú ngựa đồ chơi béo ú nhún nhảy bằng lò xo! Anh ta phải cực kỳ kiên nhẫn (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('patient')">patient 🔊</b>) ngồi dỗ dành mãi chú ngựa cứng đầu này chịu di chuyển. Ngay sát bên cạnh, bác nông dân đang cặm cụi làm vườn (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('gardening')">gardening 🔊</b>), nhưng thay vì trồng rau thì bác lại đi trồng... toàn những cây bắp cải khổng lồ to hơn cả cái đầu người khiến ai đi qua cũng phải há hốc mồm!
+                    </p>
+                    <p>
+                        Bước sang <span class="text-amber-800 font-bold bg-amber-100 px-1.5 py-0.5 rounded">[Sân chơi giữa trái]</span> náo nhiệt: Cậu bé hàng xóm đang bận rộn làm mô hình (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('making models')">making models 🔊</b>) phi cơ chiến đấu, nhưng vì lóng ngóng thế nào lại dán nhầm bánh xe ô tô lên... nóc máy bay! Cô bạn thân đứng cạnh đó thì đang tỉ mỉ khắc vỏ trứng (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('carving eggshells')">carving eggshells 🔊</b>) siêu mỏng thành hình mấy chú mèo thần tài cực kỳ công phu. Cả hai cùng hợp sức để trang trí cho một ngôi nhà búp bê (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('dollhouse')">dollhouse 🔊</b>) hoành tráng... được chắp vá tạm bợ từ mấy tấm giấy các-tông (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('cardboard')">cardboard 🔊</b>) đựng thùng mì tôm cũ rích!
+                    </p>
+                    <p>
+                        Tiến sâu hơn vào <span class="text-amber-800 font-bold bg-amber-100 px-1.5 py-0.5 rounded">[Góc nghệ thuật giữa phải]</span>: Một hội nhóm đang biểu diễn nghệ thuật gấp giấy Origami (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('origami')">origami 🔊</b>) với một chú voi giấy khổng lồ cao chạm nóc nhà. Ai nhìn vào cũng phải trầm trồ thán phục trước sức sáng tạo (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('creativity')">creativity 🔊</b>) vô bờ bến của nhóm tác giả khi tận dụng cả giấy báo cũ để tạo nên tác phẩm để đời. Đứng giữa trung tâm, họ đang nâng niu một chú rồng vàng nhỏ xíu gấp bằng giấy lấp lánh, được bảo vệ cẩn mật như một bảo vật vô cùng giá trị, quý báu (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('valuable')">valuable 🔊</b>) sắp đem đi đấu giá!
+                    </p>
+                    <p>
+                        Điểm dừng chân cuối cùng tại <span class="text-amber-800 font-bold bg-amber-100 px-1.5 py-0.5 rounded">[Bìa rừng bên phải]</span>: Cả đám đông đang reo hò chỉ tay vào một chiếc rương báu cổ xưa đầy ắp đồ chơi độc lạ, lớn tiếng khẳng định chiếc rương này thuộc về (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('belong to')">belong to 🔊</b>) chung của hội nhóm họ chứ không phải của ai khác. Quả thật, việc tham gia các câu lạc bộ này mang lại rất nhiều lợi ích (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('benefit')">benefit 🔊</b>) thiết thực cho tinh thần, giúp giải tỏa căng thẳng sau giờ học. Nhìn nụ cười rạng rỡ của mọi người, ai cũng công nhận họ chính thức là những người có sở thích (<b class="text-indigo-600 cursor-pointer hover:underline" onclick="speak('hobbyist')">hobbyist 🔊</b>) sành sỏi và chính hiệu nhất vùng!
+                    </p>
+                </div>
+            </div>
+
+            <!-- BỨC TRANH 3D MINH HỌA -->
+            <div class="space-y-2">
+                <div class="text-xs font-black text-amber-900 uppercase flex items-center justify-between">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-image text-amber-600"></i> C. Bức Tranh 3D Minh Họa Toàn Cảnh:</span>
+                    <span class="text-[10px] text-slate-500 font-semibold italic">unit1.png</span>
+                </div>
+                
+                <div class="rounded-2xl overflow-hidden border border-amber-200 bg-white p-2 shadow-inner flex flex-col items-center">
+                    <img id="unitImage" src="unit1.png" alt="Tranh 3D Siêu Trí Nhớ Unit 1" class="w-full max-h-[500px] object-contain rounded-xl shadow-md" onerror="if(!this.src.endsWith('.jfif')){this.src='unit1.jfif';}else if(!this.src.endsWith('.jpg')){this.src='unit1.jpg';}">
+                    <p class="text-[11px] text-slate-500 italic mt-2.5 text-center font-medium">
+                        💡 Bí kíp ghi nhớ: Đọc nhẩm câu chuyện kết hợp nhìn lướt qua bức tranh 3D từ trái qua phải để neo từ vựng vào não bộ phản xạ siêu tốc!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Nút hoàn thành bài học -->
+            <div class="pt-3 text-center border-t border-amber-200">
+                <a href="../index.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-extrabold text-xs sm:text-sm px-8 py-3.5 rounded-2xl shadow-lg transition active:scale-95">
+                    <i class="fa-solid fa-circle-check"></i> Hoàn thành Unit 1 - Trở về Menu chính
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JavaScript Xử Lý Toàn Bộ Logic & Đồng Bộ Google Sheets -->
+    <script>
+        const SPREADSHEET_ID = '1CJRoOqup0piegWnWEfhoAhbYTWN4tPwv7AY6wJsIlK8';
+        const CSV_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/export?format=csv`;
+        const EDIT_SHEET_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/edit`;
+
+        // Dữ liệu từ vựng dự phòng mặc định (dành cho Unit 1)
+        let unit1Vocab = [
+            { word: "horse riding", phonetic: "/hɔːs ˈraɪ.dɪŋ/", meaning: "cưỡi ngựa", emoji: "🐎" },
+            { word: "patient", phonetic: "/ˈpeɪ.ʃənt/", meaning: "kiên nhẫn", emoji: "⏳" },
+            { word: "gardening", phonetic: "/ˈɡɑː.dən.ɪŋ/", meaning: "làm vườn", emoji: "🌱" },
+            { word: "making models", phonetic: "/ˈmeɪ.kɪŋ ˈmɒd.əlz/", meaning: "làm mô hình", emoji: "🎨" },
+            { word: "carving eggshells", phonetic: "/ˈkɑː.vɪŋ ˈeɡ.ʃelz/", meaning: "khắc vỏ trứng", emoji: "🥚" },
+            { word: "dollhouse", phonetic: "/ˈdɒl.haʊs/", meaning: "nhà búp bê", emoji: "🏡" },
+            { word: "cardboard", phonetic: "/ˈkɑːd.bɔːd/", meaning: "giấy các-tông", emoji: "📦" },
+            { word: "origami", phonetic: "/ˌɒr.ɪˈɡɑː.mi/", meaning: "nghệ thuật gấp giấy", emoji: "📄" },
+            { word: "creativity", phonetic: "/ˌkriː.eɪˈtɪv.ə.ti/", meaning: "sức sáng tạo", emoji: "✨" },
+            { word: "valuable", phonetic: "/ˈvæl.ju.ə.bəl/", meaning: "giá trị, quý báu", emoji: "💎" },
+            { word: "belong to", phonetic: "/bɪˈlɒŋ tuː/", meaning: "thuộc về", emoji: "🤝" },
+            { word: "benefit", phonetic: "/ˈben.ɪ.fɪt/", meaning: "lợi ích", emoji: "🎁" },
+            { word: "hobbyist", phonetic: "/ˈhɒb.i.ɪst/", meaning: "người có sở thích", emoji: "🎯" }
+        ];
+
+        let currentCardIdx = 0;
+        let isEmojiVisible = true;
+        let isPhoneticVisible = true;
+        let isMeaningVisible = true;
+        let isAudioEnabled = true;
+        let isRandomMode = false;
+        let isAnimEnabled = true;
+        let isPlaying = false;
+        let playInterval = null;
+
+        // Mở Google Sheet với mật khẩu '1'
+        function openSheetWithPassword() {
+            let pass = prompt("Vui lòng nhập mật khẩu (nhập số 1) để truy cập Google Sheet:");
+            if (pass === "1") {
+                window.open(EDIT_SHEET_URL, '_blank');
+            } else if (pass !== null) {
+                alert("Mật khẩu không đúng! Vui lòng nhập số 1.");
+            }
+        }
+
+        // Đọc từ vựng tiếng Anh bằng SpeechSynthesis
+        function speak(text) {
+            if (!('speechSynthesis' in window) || !text) return;
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Tải và đồng bộ dữ liệu trực tiếp từ Google Sheets (CSV)
+        async function fetchSheetData() {
+            try {
+                const response = await fetch(CSV_URL);
+                if (!response.ok) throw new Error('Không thể tải dữ liệu từ Google Sheets.');
+                const csvText = await response.text();
+                parseCSVAndFilterUnit1(csvText);
+            } catch (error) {
+                console.warn("Lỗi kết nối Sheet, sử dụng dữ liệu mặc định:", error);
+                renderTraditionalList();
+            }
+        }
+
+        // Xử lý dữ liệu CSV trả về từ Google Sheets
+        function parseCSV(text) {
+            const lines = text.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+            let result = [];
+            for (let i = 1; i < lines.length; i++) {
+                const cols = parseCSVLine(lines[i]);
+                const bai = cols[0] ? cols[0].trim().toLowerCase() : '';
+                const rawTuVung = cols[1] ? cols[1].trim() : '';
+                if (bai && rawTuVung) {
+                    const words = rawTuVung.split(',').map(w => w.trim()).filter(w => w.length > 0);
+                    words.forEach(w => {
+                        result.push({ bai, word: w });
+                    });
+                }
+            }
+            return result;
+        }
+
+        function parseCSVLine(text) {
+            let result = [];
+            let current = '';
+            let inQuotes = false;
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current.trim().replace(/^"|"$/g, ''));
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current.trim().replace(/^"|"$/g, ''));
+            return result;
+        }
+
+        // Lọc dữ liệu ĐỘC QUYỀN CHÍNH XÁC của dòng Unit 1 (tránh nhầm unit 10, 11, 12)
+        function parseCSVAndFilterUnit1(csvText) {
+            const rows = parseCSV(csvText);
+            const filtered = rows.filter(r => {
+                const b = r.bai;
+                return b === 'unit 1: hobbies' || b === 'unit 1' || (b.startsWith('unit 1') && !b.startsWith('unit 10') && !b.startsWith('unit 11') && !b.startsWith('unit 12'));
+            });
+
+            if (filtered.length > 0) {
+                unit1Vocab = filtered.map(item => {
+                    const key = item.word.toLowerCase();
+                    const defaultObj = unit1Vocab.find(d => d.word.toLowerCase() === key) || {};
+                    return {
+                        word: item.word,
+                        phonetic: defaultObj.phonetic || `/${key}/`,
+                        meaning: defaultObj.meaning || "(Ý nghĩa)",
+                        emoji: defaultObj.emoji || "💡"
+                    };
+                });
+            }
+            renderTraditionalList();
+        }
+
+        // Hiển thị danh sách phần 1
+        function renderTraditionalList() {
+            const container = document.getElementById('traditionalVocabList');
+            const badge = document.getElementById('vocabCountBadge');
+            if (!container) return;
+            container.innerHTML = '';
+            if (badge) badge.innerText = `${unit1Vocab.length} từ vựng[cite: 4, 6]`;
+
+            unit1Vocab.forEach((item, index) => {
+                const row = document.createElement('div');
+                row.className = "bg-slate-50 hover:bg-indigo-50/50 px-3 py-2.5 rounded-xl border border-slate-200/80 flex items-center justify-between gap-2 transition";
+                row.innerHTML = `
+                    <div class="flex items-center gap-2.5 flex-1 min-w-0 overflow-hidden">
+                        <span class="text-xs shrink-0">${item.emoji || '💡'}</span>
+                        <span class="text-[10px] font-bold text-slate-400 w-4 text-center shrink-0">#${index + 1}</span>
+                        <span class="font-bold text-indigo-900 text-xs sm:text-sm shrink-0">${item.word}</span>
+                        <span class="text-slate-400 text-xs shrink-0">-</span>
+                        <span class="text-slate-500 italic text-xs shrink-0">${item.phonetic}</span>
+                        <span class="text-slate-300 text-xs shrink-0">|</span>
+                        <span class="text-emerald-700 font-medium text-xs truncate">${item.meaning}</span>
+                    </div>
+                    <button onclick="speak('${item.word}')" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-600 p-2 rounded-lg transition shrink-0 active:scale-95 shadow-sm" title="Nghe đọc">
+                        <i class="fa-solid fa-volume-high text-xs"></i>
+                    </button>
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        // Cập nhật thẻ Flashcard kèm hiệu ứng chữ sinh động
+        function updateCardView() {
+            const item = unit1Vocab[currentCardIdx];
+            document.getElementById('fcEmoji').innerText = item.emoji || '💡';
+            document.getElementById('fcWord').innerText = item.word;
+            document.getElementById('fcPhonetic').innerText = item.phonetic;
+            document.getElementById('fcMeaning').innerText = item.meaning;
+            document.getElementById('fcCounter').innerText = `${currentCardIdx + 1} / ${unit1Vocab.length}[cite: 4, 6]`;
+
+            const contentBox = document.getElementById('cardContentBox');
+            if (isAnimEnabled) {
+                contentBox.classList.remove('animate-pop');
+                void contentBox.offsetWidth;
+                contentBox.classList.add('animate-pop');
+            } else {
+                contentBox.classList.remove('animate-pop');
+            }
+
+            if (isAudioEnabled) {
+                speak(item.word);
+            }
+        }
+
+        function speakCurrentCard() {
+            speak(unit1Vocab[currentCardIdx].word);
+        }
+
+        function nextCard() {
+            if (isRandomMode) {
+                currentCardIdx = Math.floor(Math.random() * unit1Vocab.length);
+            } else {
+                currentCardIdx = (currentCardIdx + 1) % unit1Vocab.length;
+            }
+            updateCardView();
+        }
+
+        function prevCard() {
+            currentCardIdx = (currentCardIdx - 1 + unit1Vocab.length) % unit1Vocab.length;
+            updateCardView();
+        }
+
+        // Chế độ Lần lượt / Ngẫu nhiên
+        function toggleOrderMode() {
+            isRandomMode = !isRandomMode;
+            const btn = document.getElementById('btnOrderMode');
+            const icon = document.getElementById('orderIcon');
+
+            if (isRandomMode) {
+                icon.className = "fa-solid fa-shuffle";
+                btn.className = "py-2 px-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-900 border border-indigo-300 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition font-black";
+                btn.title = "Đang ở chế độ: Ngẫu nhiên";
+            } else {
+                icon.className = "fa-solid fa-list-ol";
+                btn.className = "py-2 px-2 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition font-bold";
+                btn.title = "Đang ở chế độ: Thứ tự lần lượt";
+            }
+        }
+
+        // Tắt/Bật hiệu ứng chữ
+        function toggleAnimationEffect() {
+            isAnimEnabled = !isAnimEnabled;
+            const btn = document.getElementById('btnToggleAnim');
+            if (isAnimEnabled) {
+                btn.className = "py-2 px-2 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition";
+                btn.title = "Hiệu ứng chữ: BẬT";
+            } else {
+                btn.className = "py-2 px-2 bg-white hover:bg-slate-50 text-slate-400 border border-slate-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition";
+                btn.title = "Hiệu ứng chữ: TẮT";
+            }
+        }
+
+        // Nút Play / Tạm dừng tự động lật thẻ
+        function togglePlayPause() {
+            isPlaying = !isPlaying;
+            const btn = document.getElementById('btnPlayPause');
+            const icon = document.getElementById('playPauseIcon');
+            const speed = parseInt(document.getElementById('speedSelect').value) || 3000;
+
+            if (isPlaying) {
+                icon.className = "fa-solid fa-pause";
+                btn.className = "py-2 px-2 bg-amber-500 hover:bg-amber-600 text-white rounded-xl flex items-center justify-center gap-1 shadow-sm active:scale-95 transition";
+                btn.title = "Tạm dừng tự động";
+                playInterval = setInterval(() => {
+                    nextCard();
+                }, speed);
+            } else {
+                icon.className = "fa-solid fa-play";
+                btn.className = "py-2 px-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl flex items-center justify-center gap-1 shadow-sm active:scale-95 transition";
+                btn.title = "Chạy tự động";
+                if (playInterval) {
+                    clearInterval(playInterval);
+                    playInterval = null;
+                }
+            }
+        }
+
+        // Thay đổi tốc độ
+        function changeSpeed() {
+            if (isPlaying) {
+                if (playInterval) clearInterval(playInterval);
+                const speed = parseInt(document.getElementById('speedSelect').value) || 3000;
+                if (speed > 0) {
+                    playInterval = setInterval(() => {
+                        nextCard();
+                    }, speed);
+                }
+            }
+        }
+
+        // Bật/Tắt Icon minh họa
+        function toggleEmoji() {
+            isEmojiVisible = !isEmojiVisible;
+            const el = document.getElementById('fcEmoji');
+            const btn = document.getElementById('btnToggleEmoji');
+            if (isEmojiVisible) {
+                el.style.display = 'block';
+                btn.className = "py-2 px-2 bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition";
+                btn.title = "Icon: BẬT";
+            } else {
+                el.style.display = 'none';
+                btn.className = "py-2 px-2 bg-white hover:bg-slate-50 text-slate-400 border border-slate-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition";
+                btn.title = "Icon: TẮT";
+            }
+        }
+
+        function togglePhonetic() {
+            isPhoneticVisible = !isPhoneticVisible;
+            const el = document.getElementById('fcPhonetic');
+            const btn = document.getElementById('btnTogglePhonetic');
+            if (isPhoneticVisible) {
+                el.style.display = 'block';
+                btn.className = "py-2 px-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition";
+                btn.title = "Phiên âm: BẬT";
+            } else {
+                el.style.display = 'none';
+                btn.className = "py-2 px-2 bg-white hover:bg-slate-50 text-slate-400 border border-slate-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition";
+                btn.title = "Phiên âm: TẮT";
+            }
+        }
+
+        function toggleMeaning() {
+            isMeaningVisible = !isMeaningVisible;
+            const el = document.getElementById('fcMeaningBox');
+            const btn = document.getElementById('btnToggleMeaning');
+            if (isMeaningVisible) {
+                el.style.display = 'block';
+                btn.className = "py-2 px-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition";
+                btn.title = "Nghĩa: BẬT";
+            } else {
+                el.style.display = 'none';
+                btn.className = "py-2 px-2 bg-white hover:bg-slate-50 text-slate-400 border border-slate-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition";
+                btn.title = "Nghĩa: TẮT";
+            }
+        }
+
+        function toggleAudio() {
+            isAudioEnabled = !isAudioEnabled;
+            const btn = document.getElementById('btnToggleAudio');
+            if (isAudioEnabled) {
+                btn.className = "py-2 px-2 bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition";
+                btn.title = "Giọng đọc: BẬT";
+                speakCurrentCard();
+            } else {
+                window.speechSynthesis.cancel();
+                btn.className = "py-2 px-2 bg-white hover:bg-slate-50 text-slate-400 border border-slate-200 rounded-xl flex items-center justify-center gap-1 active:scale-95 transition";
+                btn.title = "Giọng đọc: TẮT";
+            }
+        }
+
+        function toggleFullscreen() {
+            const elem = document.getElementById('flashcardWrapper');
+            const fsIcon = document.getElementById('fsIcon');
+
+            if (!document.fullscreenElement) {
+                if (elem.requestFullscreen) elem.requestFullscreen();
+                else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
+                fsIcon.className = "fa-solid fa-compress";
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+                fsIcon.className = "fa-solid fa-expand";
+            }
+        }
+
+        function goToStep(step) {
+            if (step === 2) {
+                document.getElementById('sectionStep2').classList.remove('hidden');
+                document.getElementById('btnAreaStep1').classList.add('hidden');
+                document.getElementById('progressBar').style.width = "66%";
+                document.getElementById('stepProgressText').innerText = "Phần 2: Luyện phản xạ Flashcard";
+                updateCardView();
+                document.getElementById('sectionStep2').scrollIntoView({ behavior: 'smooth' });
+            } else if (step === 3) {
+                if (isPlaying) togglePlayPause();
+                document.getElementById('sectionStep3').classList.remove('hidden');
+                document.getElementById('btnAreaStep2').classList.add('hidden');
+                document.getElementById('progressBar').style.width = "100%";
+                document.getElementById('stepProgressText').innerText = "Phần 3: Đỉnh cao Siêu Trí Nhớ & Bức Tranh 3D";
+                document.getElementById('sectionStep3').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        window.onload = () => {
+            fetchSheetData();
+        };
+    </script>
+</body>
+</html>
