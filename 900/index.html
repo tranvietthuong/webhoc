@@ -239,17 +239,17 @@
     
     <!-- 1. BANNER TRANG HỌC TẬP -->
     <div class="study-header-banner">
-      <a href="#">
+      <a href="../index.html">
         <i class="fa-solid fa-graduation-cap text-emerald-600"></i> TRANG HỌC TẬP 900 CÂU
       </a>
     </div>
 
     <!-- 2. BỘ 3 NÚT ĐIỀU HƯỚNG -->
     <div class="study-actions-row">
-      <a href="#" class="study-action-btn btn-villa">
+      <a href="../index.html" class="study-action-btn btn-villa">
         <i class="fa-solid fa-hotel"></i> <span>Trang Chủ</span>
       </a>
-      <a href="#" class="study-action-btn btn-study">
+      <a href="../index.html" class="study-action-btn btn-study">
         <i class="fa-solid fa-book"></i> <span>Tiếng Anh</span>
       </a>
       <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="study-action-btn btn-group" title="Tham gia Group Học Tập">
@@ -524,9 +524,9 @@
         }).join('');
       }
 
-      // XỬ LÝ LỖI ĐƯỜNG DẪN ẢNH TRIỆT ĐỂ:
-      // Các file ảnh trong Windows Explorer của bạn được liệt kê là "1", "2" nhưng phần Type of file là "JPEG File (.jpeg)" [ảnh 169].
-      // Vì vậy đường dẫn gốc phải là .jpeg hoặc .jpg.
+      // XỬ LÝ LỖI ĐƯỜNG DẪN ẢNH KHI TRÊN CLOUDFLARE PAGES:
+      // Các host tĩnh (như Cloudflare) rất nhạy cảm với việc đường dẫn ảnh không có extension (.jpg).
+      // Để triệt để: Gọi thẻ img không ghi đè src nếu nó fail, mà tự động thay đổi src thông qua hàm onerror.
       
       currentCardContainer.innerHTML = `
         <div class="border border-emerald-200 bg-emerald-50/30 rounded-2xl p-2 shadow-sm flex flex-col justify-between h-full">
@@ -537,9 +537,9 @@
           </div>
 
           <div class="w-full bg-white rounded-xl p-1 border border-emerald-100 flex items-center justify-center overflow-hidden my-1 flex-1 min-h-[130px] shadow-inner">
-            <img src="./image/${item.id}.jpg" alt="Minh họa bài ${item.id}" 
+            <img id="lesson-image-${item.id}" src="./image/${item.id}.jpg" alt="Minh họa bài ${item.id}" 
                  class="max-w-full max-h-full object-contain scale-105 char-animation drop-shadow-sm" 
-                 onerror="this.onerror=null; this.src='./image/${item.id}.jpeg'; setTimeout(()=>{if(this.naturalWidth===0) this.src='./image/${item.id}.png'}, 50);">
+                 onerror="this.onerror=null; this.src='./image/${item.id}'; setTimeout(() => { if (this.naturalWidth === 0) this.src = './image/${item.id}.jpeg'; }, 50);">
           </div>
 
           <div class="space-y-1.5 shrink-0">
