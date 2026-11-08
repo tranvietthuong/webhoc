@@ -496,7 +496,7 @@
       currentLessonIdx = startIdx;
     }
 
-    // HÀM ĐỒNG BỘ DROPDOWN THEO BÀI HIỆN TẠI
+    // ĐỒNG BỘ DROPDOWN THEO BÀI HIỆN TẠI
     function syncDropdownsToCurrent(idx) {
         startSelect.value = idx;
         endSelect.value = idx;
@@ -504,20 +504,22 @@
         endIdx = idx;
     }
 
-    // HÀM XỬ LÝ ẢNH RỚT (THAY THẾ CHO ONERROR NỘI TUYẾN ĐỂ MƯỢT HƠN)
-    window.handleImageFallback = function(imgElement, baseId) {
-        // Lấy số lần đã thử (nếu chưa có thì là 0)
-        let attempt = parseInt(imgElement.dataset.attempt || "0");
+    // XỬ LÝ LỖI TRỄ ẢNH: Khai báo trước các biến cố img loading để render mượt hơn
+    window.handleImageError = function(imgElement, baseId) {
+        // Tắt bộ xử lý lỗi để tránh lặp vô hạn
+        imgElement.onerror = null;
+        // Bắt đầu chuỗi fallback nếu cần
+        let attempt = parseInt(imgElement.getAttribute('data-attempt') || '0');
         
         if (attempt === 0) {
-            imgElement.dataset.attempt = "1";
-            imgElement.src = `./image/${baseId}.jpeg`; // Thử .jpeg
+            imgElement.setAttribute('data-attempt', '1');
+            imgElement.src = `./image/${baseId}.jpeg`;
         } else if (attempt === 1) {
-            imgElement.dataset.attempt = "2";
-            imgElement.src = `./image/${baseId}`; // Thử không đuôi
+            imgElement.setAttribute('data-attempt', '2');
+            imgElement.src = `./image/${baseId}`;
         } else if (attempt === 2) {
-            imgElement.dataset.attempt = "3";
-            imgElement.src = `./image/${baseId}.png`; // Thử .png
+            imgElement.setAttribute('data-attempt', '3');
+            imgElement.src = `./image/${baseId}.png`;
         }
     };
 
@@ -528,9 +530,10 @@
       }
       
       const item = LESSONS_DATA[idx];
-
       let sentencesHtml = '';
-      // GIỮ ĐÚNG 3 CÂU
+      
+      // XỬ LÝ SỰ CỐ BÀI 3 BỊ ĐỌC 4 CÂU:
+      // Trong hàm render, ép cứng chỉ bóc ra 3 câu từ mảng (0, 1, 2)
       const displaySentences = item.sentences ? item.sentences.slice(0, 3) : [];
       
       if (displaySentences.length) {
@@ -553,8 +556,9 @@
         }).join('');
       }
       
+      // TỐI ƯU ẢNH CHẬM (LỖI Ở 187, 188): Đẩy timestamp rỗng để trình duyệt bỏ qua cache lỗi trước đó
       currentCardContainer.innerHTML = `
-        <div class="border border-emerald-200 bg-emerald-50/30 rounded-2xl p-2 shadow-sm flex flex-col justify-between h-full">
+        <div class="border border-emerald-200 bg-emerald-50/30 rounded-2xl p-2 shadow-sm flex flex-col justify-between h-full fade-in-section">
           
           <div class="flex items-center justify-between pb-1 border-b border-emerald-100 shrink-0">
             <span class="text-[10.5px] font-black uppercase text-emerald-800 tracking-wider">Tình huống thực tế</span>
@@ -562,9 +566,10 @@
           </div>
 
           <div class="w-full bg-white rounded-xl p-1 border border-emerald-100 flex items-center justify-center overflow-hidden my-1 flex-1 min-h-[130px] shadow-inner">
-            <img src="./image/${item.id}.jpg" alt="Minh họa bài ${item.id}" 
+            <img src="./image/${item.id}.jpg?v=1" alt="Minh họa bài ${item.id}" 
                  class="max-w-full max-h-full object-contain scale-105 char-animation drop-shadow-sm" 
-                 onerror="handleImageFallback(this, '${item.id}')">
+                 data-attempt="0"
+                 onerror="window.handleImageError(this, '${item.id}')">
           </div>
 
           <div class="space-y-1.5 shrink-0">
@@ -640,6 +645,8 @@
     startSelect.addEventListener('change', (e) => {
       stopPlayback();
       startIdx = parseInt(e.target.value);
+      
+      // Nếu người dùng chọn bài bắt đầu lớn hơn bài kết thúc, tự động nới bài kết thúc ra
       if (endIdx < startIdx) {
         endIdx = startIdx;
         endSelect.value = endIdx;
@@ -652,11 +659,13 @@
     endSelect.addEventListener('change', (e) => {
       stopPlayback();
       endIdx = parseInt(e.target.value);
+      
+      // Nếu bài kết thúc nhỏ hơn bài bắt đầu, tự động kéo lùi bài bắt đầu
       if (endIdx < startIdx) {
         startIdx = endIdx;
         startSelect.value = startIdx;
       }
-      currentLessonIdx = startIdx;
+      currentLessonIdx = startIdx; // Reset về điểm đầu của dải mới chọn
       renderLesson(currentLessonIdx);
       playlistLoopCount = 0;
     });
@@ -711,9 +720,8 @@
       if (currentLessonIdx < endIdx) {
         currentLessonIdx++;
         
-        // ĐỒNG BỘ: Cập nhật thẻ Select khi auto-play nhảy bài
-        // (chỉ cập nhật hiển thị dòng 'Bài hiện tại' nếu muốn, hoặc giữ nguyên dải start-end)
-        // Ở đây giữ nguyên dải người dùng chọn.
+        // ĐỒNG BỘ LIỀN TỤC TRÊN GIAO DIỆN KHI AUTO-PLAY QUA BÀI MỚI
+        syncDropdownsToCurrent(currentLessonIdx);
 
         renderLesson(currentLessonIdx);
         setTimeout(() => { if (isPlaying) playCurrentLesson(); }, 500);
@@ -722,6 +730,7 @@
 
         if (currentRepeatLimit === 999 || playlistLoopCount < currentRepeatLimit) {
           currentLessonIdx = startIdx;
+          syncDropdownsToCurrent(currentLessonIdx); // Đồng bộ lại khi quay về bài đầu
           renderLesson(currentLessonIdx);
           setTimeout(() => { if (isPlaying) playCurrentLesson(); }, 700);
         } else {
@@ -748,6 +757,7 @@
       audioPlayer.playbackRate = currentSpeed;
       
       audioPlayer.play().catch(() => {
+        // Fallback sang AI nếu không tìm thấy file mp3
         currentMode = 'ai';
         voiceBtn.className = "h-9 rounded-lg font-bold text-xs bg-teal-600 hover:bg-teal-700 text-white transition flex items-center justify-center gap-1 shadow-sm px-1";
         document.getElementById('voiceIcon').className = "fa-solid fa-robot text-[12px]";
@@ -764,6 +774,7 @@
       if (!synth || !isPlaying) return;
       const item = LESSONS_DATA[currentLessonIdx];
 
+      // ĐẢM BẢO CHỈ ĐỌC ĐÚNG 3 CÂU (0, 1, 2)
       if (!item.sentences || sIdx >= item.sentences.length || sIdx >= 3) {
         handleLessonFinished();
         return;
@@ -821,11 +832,12 @@
         stopPlayback();
         currentLessonIdx--;
         
+        // Đồng bộ Dropdown Chọn bài
         syncDropdownsToCurrent(currentLessonIdx);
         renderLesson(currentLessonIdx);
         playlistLoopCount = 0;
         
-        // ĐỒNG BỘ: Auto-play ngay khi bấm lùi
+        // Auto-play ngay khi bấm lùi
         isPlaying = true;
         document.getElementById('playIcon').className = "fa-solid fa-pause text-sm";
         playCurrentLesson();
@@ -837,18 +849,19 @@
         stopPlayback();
         currentLessonIdx++;
         
+        // Đồng bộ Dropdown Chọn bài
         syncDropdownsToCurrent(currentLessonIdx);
         renderLesson(currentLessonIdx);
         playlistLoopCount = 0;
 
-        // ĐỒNG BỘ: Auto-play ngay khi bấm tiến
+        // Auto-play ngay khi bấm tiến
         isPlaying = true;
         document.getElementById('playIcon').className = "fa-solid fa-pause text-sm";
         playCurrentLesson();
       }
     });
 
-    // Khởi chạy hệ thống sau khi load file data.js
+    // Khởi chạy hệ thống sau khi load file
     setTimeout(() => {
         initLessonSelectors();
         renderLesson(startIdx);
