@@ -411,7 +411,8 @@
 
   </div>
 
-  <script src="js/data.js"></script>
+  <script src="./js/data.js"></script>
+  
   <script>
     function openShopeeModal() {
       document.getElementById('shopeeModal').style.display = 'flex';
@@ -425,13 +426,6 @@
         closeShopeeModal();
       }
     });
-
-    if (typeof LESSONS_DATA !== 'undefined' && Array.isArray(LESSONS_DATA)) {
-      LESSONS_DATA.forEach(item => {
-        item.image = `image/${item.id}.png`;
-        item.mp3Url = `mp3/lesson_${item.id}.mp3`;
-      });
-    }
 
     let synth = window.speechSynthesis;
     let currentUtterance = null;
@@ -502,7 +496,11 @@
     }
 
     function renderLesson(idx) {
-      if (typeof LESSONS_DATA === 'undefined' || !LESSONS_DATA[idx]) return;
+      if (typeof LESSONS_DATA === 'undefined' || !LESSONS_DATA[idx]) {
+          currentCardContainer.innerHTML = '<div class="text-center p-4 text-red-500 font-bold">Lỗi: Không tải được dữ liệu (LESSONS_DATA). Vui lòng kiểm tra file data.js</div>';
+          return;
+      }
+      
       const item = LESSONS_DATA[idx];
 
       let sentencesHtml = '';
@@ -512,7 +510,7 @@
           const ipaText = s.ipa || '';
 
           return `
-            <div id="sent-${sIdx}" class="sentence-row px-2.5 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-emerald-50/50 cursor-pointer transition flex flex-col justify-center shadow-sm" onclick="playSingleSentence('${s.en.replace(/'/g, "\\'")}', ${sIdx})">
+            <div id="sent-${sIdx}" class="sentence-row px-2.5 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-emerald-50/50 cursor-pointer transition flex flex-col justify-center shadow-sm" onclick="playSingleSentence('${s.en.replace(/'/g, "\'")}', ${sIdx})">
               <div class="flex items-center justify-between">
                 <span class="font-bold text-slate-800 text-[13px] leading-tight">• ${s.en}</span>
                 <i class="fa-solid fa-volume-high text-[11px] text-emerald-600 opacity-80 ml-1.5"></i>
@@ -526,6 +524,10 @@
         }).join('');
       }
 
+      // XỬ LÝ LỖI ĐƯỜNG DẪN ẢNH TRIỆT ĐỂ:
+      // Các file ảnh trong Windows Explorer của bạn được liệt kê là "1", "2" nhưng phần Type of file là "JPEG File (.jpeg)" [ảnh 169].
+      // Vì vậy đường dẫn gốc phải là .jpeg hoặc .jpg.
+      
       currentCardContainer.innerHTML = `
         <div class="border border-emerald-200 bg-emerald-50/30 rounded-2xl p-2 shadow-sm flex flex-col justify-between h-full">
           
@@ -535,9 +537,9 @@
           </div>
 
           <div class="w-full bg-white rounded-xl p-1 border border-emerald-100 flex items-center justify-center overflow-hidden my-1 flex-1 min-h-[130px] shadow-inner">
-            <img src="${item.image}" alt="Minh họa bài ${item.id}" 
+            <img src="./image/${item.id}.jpg" alt="Minh họa bài ${item.id}" 
                  class="max-w-full max-h-full object-contain scale-105 char-animation drop-shadow-sm" 
-                 onerror="this.onerror=null; this.src='image/${item.id}.jpg';">
+                 onerror="this.onerror=null; this.src='./image/${item.id}.jpeg'; setTimeout(()=>{if(this.naturalWidth===0) this.src='./image/${item.id}.png'}, 50);">
           </div>
 
           <div class="space-y-1.5 shrink-0">
@@ -709,7 +711,8 @@
 
     function playMp3() {
       const item = LESSONS_DATA[currentLessonIdx];
-      const mp3Path = item.mp3Url || `mp3/lesson_${item.id}.mp3`;
+      
+      const mp3Path = item.mp3Url || `./mp3/lesson_${item.id}.mp3`;
       
       audioPlayer.src = mp3Path;
       audioPlayer.playbackRate = currentSpeed;
@@ -801,9 +804,13 @@
       }
     });
 
-    initLessonSelectors();
-    renderLesson(startIdx);
-    updateRepeatDisplay();
+    // Hàm setTimeout để chờ file data.js load xong trước khi chạy hàm khởi tạo
+    setTimeout(() => {
+        initLessonSelectors();
+        renderLesson(startIdx);
+        updateRepeatDisplay();
+    }, 100);
+
   </script>
 </body>
 </html>
