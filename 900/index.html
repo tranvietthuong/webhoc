@@ -488,13 +488,38 @@
         endSelect.appendChild(opt2);
       });
 
-      // YÊU CẦU: Mặc định chọn nghe bài 1 đến bài 1
+      // Mặc định chọn nghe bài 1 đến bài 1
       startIdx = 0;
       endIdx = 0;
       startSelect.value = startIdx;
       endSelect.value = endIdx;
       currentLessonIdx = startIdx;
     }
+
+    // HÀM ĐỒNG BỘ DROPDOWN THEO BÀI HIỆN TẠI
+    function syncDropdownsToCurrent(idx) {
+        startSelect.value = idx;
+        endSelect.value = idx;
+        startIdx = idx;
+        endIdx = idx;
+    }
+
+    // HÀM XỬ LÝ ẢNH RỚT (THAY THẾ CHO ONERROR NỘI TUYẾN ĐỂ MƯỢT HƠN)
+    window.handleImageFallback = function(imgElement, baseId) {
+        // Lấy số lần đã thử (nếu chưa có thì là 0)
+        let attempt = parseInt(imgElement.dataset.attempt || "0");
+        
+        if (attempt === 0) {
+            imgElement.dataset.attempt = "1";
+            imgElement.src = `./image/${baseId}.jpeg`; // Thử .jpeg
+        } else if (attempt === 1) {
+            imgElement.dataset.attempt = "2";
+            imgElement.src = `./image/${baseId}`; // Thử không đuôi
+        } else if (attempt === 2) {
+            imgElement.dataset.attempt = "3";
+            imgElement.src = `./image/${baseId}.png`; // Thử .png
+        }
+    };
 
     function renderLesson(idx) {
       if (typeof LESSONS_DATA === 'undefined' || !LESSONS_DATA[idx]) {
@@ -505,7 +530,7 @@
       const item = LESSONS_DATA[idx];
 
       let sentencesHtml = '';
-      // YÊU CẦU: Chỉ render và đọc ĐÚNG 3 CÂU đầu tiên
+      // GIỮ ĐÚNG 3 CÂU
       const displaySentences = item.sentences ? item.sentences.slice(0, 3) : [];
       
       if (displaySentences.length) {
@@ -527,7 +552,7 @@
           `;
         }).join('');
       }
-
+      
       currentCardContainer.innerHTML = `
         <div class="border border-emerald-200 bg-emerald-50/30 rounded-2xl p-2 shadow-sm flex flex-col justify-between h-full">
           
@@ -539,7 +564,7 @@
           <div class="w-full bg-white rounded-xl p-1 border border-emerald-100 flex items-center justify-center overflow-hidden my-1 flex-1 min-h-[130px] shadow-inner">
             <img src="./image/${item.id}.jpg" alt="Minh họa bài ${item.id}" 
                  class="max-w-full max-h-full object-contain scale-105 char-animation drop-shadow-sm" 
-                 onerror="this.onerror=null; this.src='./image/${item.id}.jpeg'; setTimeout(()=>{if(this.naturalWidth===0) this.src='./image/${item.id}.png'}, 50);">
+                 onerror="handleImageFallback(this, '${item.id}')">
           </div>
 
           <div class="space-y-1.5 shrink-0">
@@ -685,6 +710,11 @@
 
       if (currentLessonIdx < endIdx) {
         currentLessonIdx++;
+        
+        // ĐỒNG BỘ: Cập nhật thẻ Select khi auto-play nhảy bài
+        // (chỉ cập nhật hiển thị dòng 'Bài hiện tại' nếu muốn, hoặc giữ nguyên dải start-end)
+        // Ở đây giữ nguyên dải người dùng chọn.
+
         renderLesson(currentLessonIdx);
         setTimeout(() => { if (isPlaying) playCurrentLesson(); }, 500);
       } else {
@@ -734,7 +764,6 @@
       if (!synth || !isPlaying) return;
       const item = LESSONS_DATA[currentLessonIdx];
 
-      // YÊU CẦU: Dừng đọc nếu đã đọc tới câu thứ 3 (chỉ số 0, 1, 2)
       if (!item.sentences || sIdx >= item.sentences.length || sIdx >= 3) {
         handleLessonFinished();
         return;
@@ -787,22 +816,16 @@
       synth.speak(currentUtterance);
     };
 
-    // YÊU CẦU: Bấm Lùi/Tiến tự động cập nhật bài hát và Auto-Play
     document.getElementById('prevBtn').addEventListener('click', () => {
       if (currentLessonIdx > 0) {
         stopPlayback();
         currentLessonIdx--;
         
-        // Đồng bộ Dropdown Chọn bài với bài hiện tại
-        startIdx = currentLessonIdx;
-        endIdx = currentLessonIdx;
-        startSelect.value = startIdx;
-        endSelect.value = endIdx;
-
+        syncDropdownsToCurrent(currentLessonIdx);
         renderLesson(currentLessonIdx);
         playlistLoopCount = 0;
         
-        // Tự động bật Auto-Play
+        // ĐỒNG BỘ: Auto-play ngay khi bấm lùi
         isPlaying = true;
         document.getElementById('playIcon').className = "fa-solid fa-pause text-sm";
         playCurrentLesson();
@@ -814,16 +837,11 @@
         stopPlayback();
         currentLessonIdx++;
         
-        // Đồng bộ Dropdown Chọn bài với bài hiện tại
-        startIdx = currentLessonIdx;
-        endIdx = currentLessonIdx;
-        startSelect.value = startIdx;
-        endSelect.value = endIdx;
-
+        syncDropdownsToCurrent(currentLessonIdx);
         renderLesson(currentLessonIdx);
         playlistLoopCount = 0;
 
-        // Tự động bật Auto-Play
+        // ĐỒNG BỘ: Auto-play ngay khi bấm tiến
         isPlaying = true;
         document.getElementById('playIcon').className = "fa-solid fa-pause text-sm";
         playCurrentLesson();
