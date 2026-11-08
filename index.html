@@ -1,280 +1,312 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Cổng Học Tập & Chia Sẻ - WebHoc</title>
-    <meta name="description" content="Nền tảng học tập cá nhân, chia sẻ kiến thức, tiếng Anh thực chiến và quản lý kỹ thuật">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary: #059669; /* Emerald 600 */
-            --primary-light: #10b981; /* Emerald 500 */
-            --primary-dark: #047857; /* Emerald 700 */
-            --bg-body: #f8fafc; /* Slate 50 */
-            --bg-card: #ffffff;
-            --text-main: #1e293b; /* Slate 800 */
-            --text-muted: #64748b; /* Slate 500 */
-            --border-color: #e2e8f0; /* Slate 200 */
-            --accent: #2563eb; /* Blue 600 */
-            --warning: #f59e0b; /* Amber 500 */
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
-        body { background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; display: flex; justify-content: center; }
-        .app-container { width: 100%; max-width: 480px; min-height: 100vh; background-color: #ffffff; position: relative; box-shadow: 0 0 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
-        
-        /* Header */
-        .header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 24px 20px 30px; color: white; position: relative; overflow: hidden; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; flex-shrink: 0; }
-        .header::after { content: ''; position: absolute; right: -20px; top: -20px; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; }
-        .header-profile { display: flex; align-items: center; gap: 15px; position: relative; z-index: 2; }
-        .header-avatar { width: 56px; height: 56px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--primary); border: 3px solid rgba(255,255,255,0.3); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .header-info h1 { font-size: 18px; font-weight: 700; margin-bottom: 2px; letter-spacing: -0.02em; }
-        .header-info p { font-size: 12px; color: rgba(255, 255, 255, 0.9); display: flex; align-items: center; gap: 5px; }
-        .header-stats { display: flex; gap: 15px; margin-top: 20px; position: relative; z-index: 2; }
-        .stat-item { background: rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px); display: flex; align-items: center; gap: 6px; }
-
-        /* Quick Actions */
-        .quick-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 20px; margin-top: -20px; position: relative; z-index: 10; }
-        .action-btn { background: var(--bg-card); border: 1px solid var(--border-color); padding: 10px 5px; border-radius: 12px; text-align: center; text-decoration: none; color: var(--text-main); font-size: 11px; font-weight: 700; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 5px; }
-        .action-btn i { font-size: 16px; }
-        .action-btn.green i { color: var(--primary); }
-        .action-btn.blue i { color: var(--accent); }
-        .action-btn.orange i { color: var(--warning); }
-        .action-btn:active { transform: scale(0.96); background: #f1f5f9; }
-
-        /* Main Content */
-        .main-content { padding: 20px; flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 24px; }
-        .content-section { display: flex; flex-direction: column; gap: 12px; }
-        .section-title { font-size: 14px; font-weight: 800; color: var(--text-main); display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.05em; padding-bottom: 8px; border-bottom: 2px solid var(--border-color); }
-
-        /* List Items */
-        .list-menu { display: flex; flex-direction: column; gap: 10px; }
-        .list-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: var(--text-main); box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: all 0.2s ease; cursor: pointer; }
-        .list-item:active { transform: scale(0.98); background: #f8fafc; border-color: var(--primary); }
-        .item-left { display: flex; align-items: center; gap: 14px; }
-        .item-icon-box { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-        
-        /* CÁC BẢNG MÀU ICON CHO TỪNG THƯ MỤC KHÁC NHAU */
-        .color-green { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #166534; }
-        .color-blue { background: linear-gradient(135deg, #dbeafe, #bfdbfe); color: #1e40af; }
-        .color-purple { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); color: #6b21a8; }
-        .color-orange { background: linear-gradient(135deg, #ffedd5, #fed7aa); color: #9a3412; }
-        .color-pink { background: linear-gradient(135deg, #fce7f3, #fbcfe8); color: #9d174d; }
-        .color-yellow { background: linear-gradient(135deg, #fef08a, #fde047); color: #854d0e; }
-        .color-slate { background: linear-gradient(135deg, #f1f5f9, #e2e8f0); color: #334155; }
-        .color-red { background: linear-gradient(135deg, #fee2e2, #fecaca); color: #991b1b; }
-
-        .item-info { display: flex; flex-direction: column; gap: 2px; }
-        .item-title { font-size: 14px; font-weight: 700; }
-        .item-desc { font-size: 11px; color: var(--text-muted); font-weight: 500; line-height: 1.4; }
-        .item-arrow { color: #cbd5e1; font-size: 14px; transition: transform 0.2s; }
-        .list-item:active .item-arrow { color: var(--primary); transform: translateX(4px); }
-
-        .badge { font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 700; margin-left: 6px; vertical-align: middle; }
-        .badge.new { background: #fee2e2; color: #b91c1c; }
-        .badge.pro { background: #fef3c7; color: #b45309; }
-        .badge.update { background: #dbeafe; color: #1d4ed8; }
-
-        .footer { padding: 20px; text-align: center; border-top: 1px solid var(--border-color); background: #ffffff; margin-top: auto; }
-        .footer p { font-size: 11px; color: var(--text-muted); font-weight: 500; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>TRANG HỌC TẬP - Hệ Thống Học Liệu Tương Tác Trực Tuyến</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body>
+<body class="bg-[#F4F7F5] text-slate-800 antialiased min-h-screen flex flex-col font-sans select-none">
 
-    <div class="app-container">
-        
-        <header class="header">
-            <div class="header-profile">
-                <div class="header-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
-                <div class="header-info">
-                    <h1>Trần Việt Thương</h1>
-                    <p><i class="fa-solid fa-code"></i> Learning & Technical Hub</p>
-                </div>
+  <!-- 1. THANH HEADER ĐIỀU HƯỚNG CHÍNH -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-emerald-100 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-2 sm:px-8 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      
+      <div class="flex items-center justify-center sm:justify-start">
+        <a href="index.html" class="text-base sm:text-xl font-black text-emerald-800 tracking-tight flex items-center gap-1.5" onclick="triggerAffiliate(event, 'index.html')">
+          <i class="fa-solid fa-graduation-cap text-emerald-600 text-lg sm:text-xl"></i> TRANG <span class="text-slate-700">HỌC TẬP</span>
+        </a>
+        <span class="hidden lg:inline text-xs font-semibold text-emerald-700 border-l border-emerald-200 ml-2 pl-2">
+          Hệ Thống Học Liệu Tương Tác Trực Tuyến
+        </span>
+      </div>
+
+      <!-- 3 NÚT CHÍNH ĐÃ ĐƯỢC TỐI ƯU ĐƯỜNG DẪN -->
+      <nav class="flex items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-between">
+        <!-- Nút 1: Sonasea Vân Đồn (Trỏ về trang chủ vandonstay.com) -->
+        <a href="../index.html" onclick="triggerAffiliate(event, '../index.html')" class="flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2.5 text-[11px] sm:text-xs font-bold text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded-xl transition shadow-sm whitespace-nowrap no-underline">
+          <i class="fa-solid fa-hotel text-emerald-600"></i> <span>Sonasea Vân Đồn</span>
+        </a>
+        <!-- Nút 2: SĐT (Gọi 0396588880) -->
+        <a href="tel:0396588880" onclick="triggerAffiliate(event, 'tel:0396588880')" class="flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2.5 text-[11px] sm:text-xs font-bold text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded-xl transition shadow-sm whitespace-nowrap no-underline">
+          <i class="fa-solid fa-phone text-emerald-600"></i> <span>039.65.88880</span>
+        </a>
+        <!-- Nút 3: Chat Zalo -->
+        <a href="https://zalo.me/0396588880" target="_blank" onclick="triggerAffiliate(event, 'https://zalo.me/0396588880')" class="flex-1 sm:flex-initial flex items-center justify-center gap-1 py-1.5 px-2.5 text-[11px] sm:text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl transition shadow-sm whitespace-nowrap no-underline">
+          <i class="fa-solid fa-comment-dots"></i> <span>Chat Zalo</span>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- 2. NỘI DUNG CHÍNH: CÁC DANH MỤC HỌC LIỆU (DẠNG LIST) -->
+  <main class="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6 sm:space-y-8">
+    
+    <!-- CHỦ ĐỀ 1: TRI THỨC -->
+    <div class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="bg-emerald-50/80 px-4 py-3 sm:py-4 border-b border-emerald-100 flex items-center gap-2.5">
+        <i class="fa-solid fa-book-open text-emerald-600 sm:text-lg"></i>
+        <h2 class="text-sm sm:text-base font-black text-emerald-900 uppercase tracking-wide">1. Tri Thức</h2>
+      </div>
+      <ul class="divide-y divide-slate-100">
+        <!-- Danh nhân VN -->
+        <li>
+          <a href="danhnhanvn/index.html" onclick="triggerAffiliate(event, 'danhnhanvn/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-user-tie sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-emerald-700 transition">Danh Nhân Việt Nam</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Tìm hiểu cuộc đời và sự nghiệp các vĩ nhân.</p>
+              </div>
             </div>
-            <div class="header-stats">
-                <div class="stat-item"><i class="fa-solid fa-book-open"></i> English</div>
-                <div class="stat-item"><i class="fa-solid fa-microchip"></i> Tech/MEP</div>
-                <div class="stat-item"><i class="fa-solid fa-brain"></i> Memory</div>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-emerald-500 transition"></i>
+          </a>
+        </li>
+        <!-- Lịch sử VN -->
+        <li>
+          <a href="lichsuvn/index.html" onclick="triggerAffiliate(event, 'lichsuvn/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-landmark sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-emerald-700 transition">Lịch Sử Việt Nam</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Các mốc son hào hùng của dân tộc.</p>
+              </div>
             </div>
-        </header>
-
-        <div class="quick-actions">
-            <a href="https://vandonstay.pages.dev" class="action-btn green"><i class="fa-solid fa-hotel"></i><span>Villa Stay</span></a>
-            <a href="https://qltbcvd.pages.dev" class="action-btn blue"><i class="fa-solid fa-screwdriver-wrench"></i><span>Kỹ thuật</span></a>
-            <a href="#" class="action-btn orange" onclick="alert('Chức năng đang cập nhật'); return false;"><i class="fa-solid fa-user-tie"></i><span>Liên hệ</span></a>
-        </div>
-
-        <!-- VÙNG RENDER TỰ ĐỘNG CÁC PHÂN VÙNG -->
-        <main class="main-content" id="app-modules">
-            <!-- Nội dung sẽ được JavaScript sinh ra tự động tại đây dựa trên mảng MODULE_DATA -->
-        </main>
-
-        <footer class="footer">
-            <p>&copy; 2026 Trần Việt Thương - All Rights Reserved</p>
-        </footer>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-emerald-500 transition"></i>
+          </a>
+        </li>
+        <!-- Truyện cổ tích VN -->
+        <li>
+          <a href="truyencotichvn/index.html" onclick="triggerAffiliate(event, 'truyencotichvn/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-wand-magic-sparkles sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-emerald-700 transition">Truyện Cổ Tích Việt Nam</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Kho tàng truyện dân gian, ý nghĩa nhân văn.</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-emerald-500 transition"></i>
+          </a>
+        </li>
+      </ul>
     </div>
 
-    <script>
-        // =========================================================================
-        // HỆ THỐNG QUẢN LÝ THƯ MỤC WEBAPP - TRẦN VIỆT THƯƠNG
-        // Khi tạo thêm thư mục mới, anh chỉ cần THÊM VÀO MẢNG NÀY, không cần sửa HTML.
-        // Bảng màu hỗ trợ (colorClass): color-green, color-blue, color-purple, 
-        // color-orange, color-pink, color-yellow, color-slate, color-red.
-        // =========================================================================
+    <!-- CHỦ ĐỀ 2: KTGN -->
+    <div class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="bg-indigo-50/80 px-4 py-3 sm:py-4 border-b border-indigo-100 flex items-center gap-2.5">
+        <i class="fa-solid fa-brain text-indigo-600 sm:text-lg"></i>
+        <h2 class="text-sm sm:text-base font-black text-indigo-900 uppercase tracking-wide">2. KTGN (Kiến Thức Ghi Nhớ)</h2>
+      </div>
+      <ul class="divide-y divide-slate-100">
+        <li>
+          <a href="ktgn/index.html" onclick="triggerAffiliate(event, 'ktgn/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-lightbulb sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-indigo-700 transition">Hệ Thống KTGN</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Kho lưu trữ và phương pháp ghi nhớ hiệu quả.</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-indigo-500 transition"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-        const MODULE_DATA = [
-            {
-                sectionId: "kienthuc",
-                sectionTitle: "Kiến Thức",
-                sectionIcon: "fa-book-atlas text-amber-500",
-                items: [
-                    {
-                        link: "danhnhan/index.html",
-                        title: "Danh Nhân",
-                        desc: "Tiểu sử và bài học từ những vĩ nhân",
-                        badge: "",
-                        badgeClass: "",
-                        icon: "fa-user-tie",
-                        colorClass: "color-orange"
-                    },
-                    {
-                        link: "lichsu/index.html",
-                        title: "Lịch Sử Việt Nam",
-                        desc: "Hào khí ngàn năm văn hiến",
-                        badge: "",
-                        badgeClass: "",
-                        icon: "fa-landmark",
-                        colorClass: "color-red"
-                    },
-                    {
-                        link: "cotich/index.html",
-                        title: "Truyện Cổ Tích",
-                        desc: "Kho tàng truyện cổ dân gian ý nghĩa",
-                        badge: "",
-                        badgeClass: "",
-                        icon: "fa-book-open-reader",
-                        colorClass: "color-pink"
-                    }
-                ]
-            },
-            {
-                sectionId: "eng-thucchien",
-                sectionTitle: "Tiếng Anh Thực Chiến",
-                sectionIcon: "fa-comments text-emerald-600",
-                items: [
-                    {
-                        link: "900/index.html",
-                        title: "900 Câu Mẹ & Bé",
-                        desc: "300 bài học tình huống giao tiếp hằng ngày",
-                        badge: "HOT",
-                        badgeClass: "new",
-                        icon: "fa-children",
-                        colorClass: "color-green"
-                    },
-                    {
-                        link: "crazy/index.html",
-                        title: "50 Bài Văn Crazy",
-                        desc: "Luyện phát âm & phản xạ trôi chảy",
-                        badge: "PRO",
-                        badgeClass: "pro",
-                        icon: "fa-fire",
-                        colorClass: "color-purple"
-                    },
-                    {
-                        link: "onestory/index.html",
-                        title: "One Story A Day 1, 2, 3",
-                        desc: "Đọc và nghe truyện ngắn mỗi ngày",
-                        badge: "UPDATE",
-                        badgeClass: "update",
-                        icon: "fa-book",
-                        colorClass: "color-blue"
-                    }
-                ]
-            },
-            {
-                sectionId: "eng-photong",
-                sectionTitle: "Tiếng Anh Phổ Thông",
-                sectionIcon: "fa-school text-blue-500",
-                items: [
-                    {
-                        link: "tienganh7/index.html",
-                        title: "Tiếng Anh Lớp 7",
-                        desc: "Bám sát chương trình SGK & Luyện tập",
-                        badge: "",
-                        badgeClass: "",
-                        icon: "fa-graduation-cap",
-                        colorClass: "color-blue"
-                    }
-                    // THÊM WEBAPP LỚP 8, LỚP 9 VÀO ĐÂY BẰNG CÁCH COPY ĐOẠN TRÊN
-                ]
-            },
-            {
-                sectionId: "systems",
-                sectionTitle: "Liên Kết Hệ Thống Kỹ Thuật",
-                sectionIcon: "fa-briefcase text-slate-600",
-                items: [
-                    {
-                        link: "https://vandonstay.pages.dev",
-                        title: "Vân Đồn Stay",
-                        desc: "Hệ thống quản lý đặt phòng Villa Sonasea",
-                        badge: "",
-                        badgeClass: "",
-                        icon: "fa-house-user",
-                        colorClass: "color-slate"
-                    },
-                    {
-                        link: "https://qltbcvd.pages.dev",
-                        title: "Quản Lý TBCVD",
-                        desc: "Dashboard Kỹ thuật MEP - Centara Vân Đồn",
-                        badge: "",
-                        badgeClass: "",
-                        icon: "fa-toolbox",
-                        colorClass: "color-slate"
-                    }
-                ]
-            }
-        ];
+    <!-- CHỦ ĐỀ 3: TIẾNG ANH THỰC CHIẾN -->
+    <div class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="bg-cyan-50/80 px-4 py-3 sm:py-4 border-b border-cyan-100 flex items-center gap-2.5">
+        <i class="fa-solid fa-comments text-cyan-600 sm:text-lg"></i>
+        <h2 class="text-sm sm:text-base font-black text-cyan-900 uppercase tracking-wide">3. Tiếng Anh Thực Chiến</h2>
+      </div>
+      <ul class="divide-y divide-slate-100">
+        <!-- 50 Lesson Crazy -->
+        <li>
+          <a href="50lessonCrazy/index.html" onclick="triggerAffiliate(event, '50lessonCrazy/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-red-50 text-red-500 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-fire sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-cyan-700 transition">50 Lesson Crazy English</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Phá vỡ rào cản giao tiếp với Crazy English.</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-cyan-500 transition"></i>
+          </a>
+        </li>
+        <!-- 900 câu -->
+        <li>
+          <a href="900cau/index.html" onclick="triggerAffiliate(event, '900cau/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-comment-dots sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-cyan-700 transition">900 Câu Giao Tiếp</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Hệ thống mẫu câu thông dụng hàng ngày.</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-cyan-500 transition"></i>
+          </a>
+        </li>
+        <!-- One Story A Day 1 -->
+        <li>
+          <a href="onestoryaday1/index.html" onclick="triggerAffiliate(event, 'onestoryaday1/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-cyan-50 text-cyan-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-book sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-cyan-700 transition">One Story a Day - Tập 1</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Truyện đọc tiếng Anh ngắn, dễ hiểu.</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-cyan-500 transition"></i>
+          </a>
+        </li>
+        <!-- One Story A Day 2 -->
+        <li>
+          <a href="onestoryaday2/index.html" onclick="triggerAffiliate(event, 'onestoryaday2/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-book sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-cyan-700 transition">One Story a Day - Tập 2</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Mở rộng vốn từ vựng với truyện tập 2.</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-cyan-500 transition"></i>
+          </a>
+        </li>
+        <!-- One Story A Day 3 -->
+        <li>
+          <a href="onestoryaday3/index.html" onclick="triggerAffiliate(event, 'onestoryaday3/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-book sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-cyan-700 transition">One Story a Day - Tập 3</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Truyện đọc nâng cao kỹ năng đọc hiểu.</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-cyan-500 transition"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-        // =========================================================================
-        // CORE RENDER ENGINE (KHÔNG CẦN CHỈNH SỬA PHẦN NÀY)
-        // =========================================================================
-        const mainContent = document.getElementById('app-modules');
-        let htmlOutput = "";
-        
-        MODULE_DATA.forEach(section => {
-            htmlOutput += `<div class="content-section">
-                <div class="section-title">
-                    <i class="fa-solid ${section.sectionIcon}"></i> ${section.sectionTitle}
-                </div>
-                <div class="list-menu">`;
-            
-            section.items.forEach(item => {
-                const badgeHtml = item.badge ? `<span class="badge ${item.badgeClass}">${item.badge}</span>` : '';
-                const clickAttr = item.onClick ? `onclick="${item.onClick}"` : '';
+    <!-- CHỦ ĐỀ 4: TIẾNG ANH PHỔ THÔNG -->
+    <div class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="bg-fuchsia-50/80 px-4 py-3 sm:py-4 border-b border-fuchsia-100 flex items-center gap-2.5">
+        <i class="fa-solid fa-school text-fuchsia-600 sm:text-lg"></i>
+        <h2 class="text-sm sm:text-base font-black text-fuchsia-900 uppercase tracking-wide">4. Tiếng Anh Phổ Thông</h2>
+      </div>
+      <ul class="divide-y divide-slate-100">
+        <!-- Lớp 1 -->
+        <li>
+          <a href="tienganh1/index.html" onclick="triggerAffiliate(event, 'tienganh1/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-fuchsia-50 text-fuchsia-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-1 sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-fuchsia-700 transition">Tiếng Anh Lớp 1</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Chương trình giáo khoa Tiếng Anh lớp 1.</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-fuchsia-500 transition"></i>
+          </a>
+        </li>
+        <!-- Lớp 2 -->
+        <li>
+          <a href="tienganh2/index.html" onclick="triggerAffiliate(event, 'tienganh2/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-pink-50 text-pink-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-2 sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-fuchsia-700 transition">Tiếng Anh Lớp 2</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Chương trình giáo khoa Tiếng Anh lớp 2.</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-fuchsia-500 transition"></i>
+          </a>
+        </li>
+        <!-- Lớp 7 -->
+        <li>
+          <a href="tienganh7/index.html" onclick="triggerAffiliate(event, 'tienganh7/index.html')" class="flex items-center justify-between p-3 sm:p-4 hover:bg-slate-50 transition group">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                <i class="fa-solid fa-7 sm:text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm sm:text-base group-hover:text-fuchsia-700 transition">Tiếng Anh Lớp 7</h3>
+                <p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Chương trình giáo khoa Tiếng Anh lớp 7.</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-fuchsia-500 transition"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-                htmlOutput += `
-                    <a href="${item.link}" class="list-item" ${clickAttr}>
-                        <div class="item-left">
-                            <div class="item-icon-box ${item.colorClass}">
-                                <i class="fa-solid ${item.icon}"></i>
-                            </div>
-                            <div class="item-info">
-                                <span class="item-title">${item.title} ${badgeHtml}</span>
-                                <span class="item-desc">${item.desc}</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-chevron-right item-arrow"></i>
-                    </a>`;
-            });
-            
-            htmlOutput += `</div></div>`;
-        });
+  </main>
 
-        mainContent.innerHTML = htmlOutput;
+  <!-- 3. CHÂN TRANG ĐỒNG BỘ -->
+  <footer class="bg-white text-slate-600 py-3 border-t border-emerald-100 text-[10px] sm:text-[11px] mt-auto text-center shadow-inner">
+    <div class="max-w-7xl mx-auto px-2 flex flex-col sm:flex-row items-center justify-between gap-1.5">
+      <p>© 2026 Trang Học Tập - Không gian học tập trực tuyến tương tác.</p>
+      <div class="flex items-center gap-2.5 text-slate-700">
+        <a href="../index.html" onclick="triggerAffiliate(event, '../index.html')" class="hover:text-emerald-700 transition no-underline text-inherit">Sonasea Vân Đồn</a>
+        <span>Hotline: <strong class="text-emerald-700">039.65.88880</strong></span>
+      </div>
+    </div>
+  </footer>
 
-    </script>
+  <!-- SCRIPT ĐIỀU HƯỚNG & HỆ THỐNG AFFILIATE NGẦM -->
+  <script>
+    // Link Affiliate Shopee của bạn
+    const SHOPEE_AFF_LINK = "https://s.shopee.vn/AUu8B8BXJW";
+
+    // Hàm kích hoạt ngầm link Affiliate ở chế độ nền khi khách bấm bất kỳ nút nào trên web
+    function triggerAffiliate(event, targetUrl) {
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.src = SHOPEE_AFF_LINK;
+      document.body.appendChild(iframe);
+      
+      setTimeout(() => {
+        document.body.removeChild(iframe);
+      }, 1000);
+
+      if (targetUrl && targetUrl !== '#' && targetUrl !== 'javascript:void(0);') {
+        if (!targetUrl.startsWith('tel:') && !targetUrl.startsWith('https://zalo.me')) {
+          event.preventDefault();
+          setTimeout(() => {
+            window.location.href = targetUrl;
+          }, 150);
+        }
+      }
+    }
+  </script>
+
 </body>
 </html>
