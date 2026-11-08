@@ -237,8 +237,9 @@
         endSelect.appendChild(opt2);
       });
 
+      // Mặc định từ bài 1 đến bài 1
       startIdx = 0;
-      endIdx = Math.min(9, LESSONS_DATA.length - 1);
+      endIdx = 0; 
       startSelect.value = startIdx;
       endSelect.value = endIdx;
       currentLessonIdx = startIdx;
@@ -251,7 +252,7 @@
       let sentencesHtml = '';
       if (item.sentences && item.sentences.length) {
         sentencesHtml = item.sentences.map((s, sIdx) => `
-          <div id="sent-${sIdx}" class="sentence-row px-2 py-1 rounded-xl border border-slate-700/60 bg-slate-800/80 hover:bg-emerald-950/40 cursor-pointer transition flex flex-col justify-center" onclick="playSingleSentence('${s.en.replace(/'/g, "'")}', ${sIdx})">
+          <div id="sent-${sIdx}" class="sentence-row px-2 py-1 rounded-xl border border-slate-700/60 bg-slate-800/80 hover:bg-emerald-950/40 cursor-pointer transition flex flex-col justify-center" onclick="playSingleSentence('${s.en.replace(/'/g, "\'")}', ${sIdx})">
             <div class="flex items-center justify-between">
               <span class="font-bold text-slate-100 text-[12.5px] leading-tight">• ${s.en}</span>
               <i class="fa-solid fa-volume-high text-[10px] text-emerald-400 opacity-60 ml-1.5"></i>
@@ -534,20 +535,36 @@
       }, 50);
     };
 
+    // Bấm NÚT TRỞ LẠI
     document.getElementById('prevBtn').addEventListener('click', () => {
-      if (currentLessonIdx > startIdx) {
+      if (typeof LESSONS_DATA !== 'undefined' && currentLessonIdx > 0) {
         stopPlayback();
         currentLessonIdx--;
+        
+        // Cập nhật Select box
+        startIdx = currentLessonIdx;
+        endIdx = currentLessonIdx;
+        startSelect.value = startIdx;
+        endSelect.value = endIdx;
+        
         renderLesson(currentLessonIdx);
         currentRepeat = 0;
         updateRepeatDisplay();
       }
     });
 
+    // Bấm NÚT TIẾP THEO
     document.getElementById('nextBtn').addEventListener('click', () => {
-      if (currentLessonIdx < endIdx) {
+      if (typeof LESSONS_DATA !== 'undefined' && currentLessonIdx < LESSONS_DATA.length - 1) {
         stopPlayback();
         currentLessonIdx++;
+        
+        // Cập nhật Select box
+        startIdx = currentLessonIdx;
+        endIdx = currentLessonIdx;
+        startSelect.value = startIdx;
+        endSelect.value = endIdx;
+
         renderLesson(currentLessonIdx);
         currentRepeat = 0;
         updateRepeatDisplay();
