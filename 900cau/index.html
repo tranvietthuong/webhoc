@@ -48,7 +48,7 @@
     <!-- 1. THANH ĐIỀU HƯỚNG NHANH HỆ SINH THÁI (3 NÚT LIÊN KẾT) -->
     <div class="flex items-center justify-between gap-1 pb-1 shrink-0 border-b border-slate-800">
       <a href="../index.html" class="flex-1 py-1 px-1.5 bg-slate-800/90 hover:bg-slate-700 text-emerald-400 rounded-lg text-[10.5px] font-bold border border-slate-700 flex items-center justify-center gap-1 transition shadow-sm">
-        <i class="fa-solid fa-graduation-cap text-xs"></i> <span>Vandon Stu</span>
+        <i class="fa-solid fa-graduation-cap text-xs"></i> <span>Trang Chủ</span>
       </a>
       <a href="../../index.html" class="flex-1 py-1 px-1.5 bg-slate-800/90 hover:bg-slate-700 text-teal-300 rounded-lg text-[10.5px] font-bold border border-slate-700 flex items-center justify-center gap-1 transition shadow-sm">
         <i class="fa-solid fa-hotel text-xs"></i> <span>Villa Sonasea</span>
@@ -112,7 +112,7 @@
         <button data-speed="2.0" class="speed-opt px-2 py-1 rounded bg-slate-800 hover:bg-cyan-700 text-xs font-bold text-white transition">2.0</button>
       </div>
 
-      <!-- HÀNG 1: 3 Nút tùy chỉnh (Cân đối chiều rộng)[cite: 14] -->
+      <!-- HÀNG 1: 3 Nút tùy chỉnh (Cân đối chiều rộng) -->
       <div class="grid grid-cols-12 gap-1.5">
         <button id="voiceToggleBtn" class="col-span-6 py-1 px-2 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1 border border-emerald-600 transition shadow truncate">
           <i class="fa-solid fa-file-audio text-[11px]" id="voiceIcon"></i>
@@ -132,7 +132,7 @@
         </button>
       </div>
 
-      <!-- HÀNG 2: 3 Nút điều hướng & Phát (Cân đối tuyệt đối)[cite: 14] -->
+      <!-- HÀNG 2: 3 Nút điều hướng & Phát (Cân đối tuyệt đối) -->
       <div class="grid grid-cols-12 gap-1.5">
         <button id="prevBtn" class="col-span-2 h-8 bg-slate-800 hover:bg-slate-700 active:scale-95 text-gray-300 rounded-lg border border-slate-700 flex items-center justify-center transition">
           <i class="fa-solid fa-backward-step text-sm"></i>
@@ -164,25 +164,38 @@
     let currentUtterance = null;
     let isSpeechUnlocked = false;
 
+    // --- SỬA LỖI MẤT TIẾNG AI TRÊN ĐIỆN THOẠI BẰNG CÁCH UNLOCK AUDIO ENGINE ---
     function unlockAudioEngine() {
       if (!isSpeechUnlocked && synth) {
         try {
-          const u = new SpeechSynthesisUtterance('');
-          u.volume = 0;
+          const u = new SpeechSynthesisUtterance(' '); // Cần khoảng trắng để trigger
+          u.volume = 0; // Phát âm lượng 0 để không gây tiếng động
           synth.speak(u);
           isSpeechUnlocked = true;
-        } catch (e) {}
+          // Gỡ bỏ sự kiện sau khi unlock thành công
+          document.body.removeEventListener('touchstart', unlockAudioEngine);
+          document.body.removeEventListener('click', unlockAudioEngine);
+        } catch (e) {
+          console.error("Audio unlock failed:", e);
+        }
       }
     }
     document.body.addEventListener('touchstart', unlockAudioEngine, { once: true });
     document.body.addEventListener('click', unlockAudioEngine, { once: true });
+    // -----------------------------------------------------------------------
 
     function getEnVoice() {
       if (!synth) return null;
       const voices = synth.getVoices() || [];
-      return voices.find(v => v.lang === 'en-US' || v.lang === 'en_US') ||
-             voices.find(v => v.lang.startsWith('en')) || null;
+      // Ưu tiên giọng US, sau đó tới bất kỳ giọng EN nào
+      let selectedVoice = voices.find(v => v.lang === 'en-US' || v.lang === 'en_US');
+      if (!selectedVoice) {
+         selectedVoice = voices.find(v => v.lang.startsWith('en'));
+      }
+      return selectedVoice || null;
     }
+    
+    // Load voices cho trình duyệt cần chờ
     if (synth && synth.onvoiceschanged !== undefined) {
       synth.onvoiceschanged = () => { synth.getVoices(); };
     }
@@ -238,7 +251,7 @@
       let sentencesHtml = '';
       if (item.sentences && item.sentences.length) {
         sentencesHtml = item.sentences.map((s, sIdx) => `
-          <div id="sent-${sIdx}" class="sentence-row px-2 py-1 rounded-xl border border-slate-700/60 bg-slate-800/80 hover:bg-emerald-950/40 cursor-pointer transition flex flex-col justify-center" onclick="playSingleSentence('${s.en.replace(/'/g, "\\'")}', ${sIdx})">
+          <div id="sent-${sIdx}" class="sentence-row px-2 py-1 rounded-xl border border-slate-700/60 bg-slate-800/80 hover:bg-emerald-950/40 cursor-pointer transition flex flex-col justify-center" onclick="playSingleSentence('${s.en.replace(/'/g, "'")}', ${sIdx})">
             <div class="flex items-center justify-between">
               <span class="font-bold text-slate-100 text-[12.5px] leading-tight">• ${s.en}</span>
               <i class="fa-solid fa-volume-high text-[10px] text-emerald-400 opacity-60 ml-1.5"></i>
@@ -305,7 +318,7 @@
     function updateRepeatDisplay() {
       const limitStr = currentRepeatLimit === 999 ? '∞' : `${currentRepeatLimit}`;
       document.getElementById('repeatText').innerText = `Lặp: ${limitStr}`;
-      document.getElementById('repeatProgress').innerText = `(${currentRepeat}/${limitStr})`;
+      // Nút hiển thị lặp không cần hiện số lần chạy, chỉ cần hiện mục tiêu lặp
     }
 
     document.querySelectorAll('.speed-opt').forEach(btn => {
@@ -439,6 +452,7 @@
       audioPlayer.playbackRate = currentSpeed;
       
       audioPlayer.play().catch(() => {
+        // Dự phòng nếu lỗi load MP3 thì chuyển qua AI đọc
         voiceBtn.click();
         playCurrentLesson();
       });
@@ -478,12 +492,21 @@
         if (isPlaying) setTimeout(() => playAi(sIdx + 1), 350);
       };
 
-      synth.speak(currentUtterance);
+      // Đảm bảo không bị kẹt ở Chrome/Safari
+      setTimeout(() => {
+          synth.speak(currentUtterance);
+      }, 50);
     }
 
+    // Hàm gọi khi nhấn trực tiếp vào câu
     window.playSingleSentence = function(text, sIdx) {
+      // Đảm bảo AI đã được unlock
+      unlockAudioEngine();
+      
       stopPlayback();
       if (!synth) return;
+      
+      // Xóa màu active của câu khác
       document.querySelectorAll('.sentence-row').forEach(el => el.classList.remove('active-sentence'));
       const row = document.getElementById(`sent-${sIdx}`);
       if (row) row.classList.add('active-sentence');
@@ -498,10 +521,17 @@
       const v = getEnVoice();
       if (v) currentUtterance.voice = v;
 
-      currentUtterance.onend = () => row.classList.remove('active-sentence');
-      currentUtterance.onerror = () => row.classList.remove('active-sentence');
+      currentUtterance.onend = () => {
+          if (row) row.classList.remove('active-sentence');
+      };
+      currentUtterance.onerror = () => {
+          if (row) row.classList.remove('active-sentence');
+      };
 
-      synth.speak(currentUtterance);
+      // Set timeout nhỏ giúp mobile browser xử lý tốt hơn
+      setTimeout(() => {
+          synth.speak(currentUtterance);
+      }, 50);
     };
 
     document.getElementById('prevBtn').addEventListener('click', () => {
@@ -524,10 +554,10 @@
       }
     });
 
+    // Chạy khởi tạo
     initLessonSelectors();
     renderLesson(startIdx);
     updateRepeatDisplay();
   </script>
 </body>
 </html>
-```[cite: 13, 14]
