@@ -488,8 +488,9 @@
         endSelect.appendChild(opt2);
       });
 
+      // YÊU CẦU: Mặc định chọn nghe bài 1 đến bài 1
       startIdx = 0;
-      endIdx = Math.min(2, LESSONS_DATA.length - 1);
+      endIdx = 0;
       startSelect.value = startIdx;
       endSelect.value = endIdx;
       currentLessonIdx = startIdx;
@@ -504,8 +505,11 @@
       const item = LESSONS_DATA[idx];
 
       let sentencesHtml = '';
-      if (item.sentences && item.sentences.length) {
-        sentencesHtml = item.sentences.map((s, sIdx) => {
+      // YÊU CẦU: Chỉ render và đọc ĐÚNG 3 CÂU đầu tiên
+      const displaySentences = item.sentences ? item.sentences.slice(0, 3) : [];
+      
+      if (displaySentences.length) {
+        sentencesHtml = displaySentences.map((s, sIdx) => {
           const viTrans = s.vi || '';
           const ipaText = s.ipa || '';
 
@@ -524,10 +528,6 @@
         }).join('');
       }
 
-      // XỬ LÝ LỖI ĐƯỜNG DẪN ẢNH KHI TRÊN CLOUDFLARE PAGES:
-      // Các host tĩnh (như Cloudflare) rất nhạy cảm với việc đường dẫn ảnh không có extension (.jpg).
-      // Để triệt để: Gọi thẻ img không ghi đè src nếu nó fail, mà tự động thay đổi src thông qua hàm onerror.
-      
       currentCardContainer.innerHTML = `
         <div class="border border-emerald-200 bg-emerald-50/30 rounded-2xl p-2 shadow-sm flex flex-col justify-between h-full">
           
@@ -537,9 +537,9 @@
           </div>
 
           <div class="w-full bg-white rounded-xl p-1 border border-emerald-100 flex items-center justify-center overflow-hidden my-1 flex-1 min-h-[130px] shadow-inner">
-            <img id="lesson-image-${item.id}" src="./image/${item.id}.jpg" alt="Minh họa bài ${item.id}" 
+            <img src="./image/${item.id}.jpg" alt="Minh họa bài ${item.id}" 
                  class="max-w-full max-h-full object-contain scale-105 char-animation drop-shadow-sm" 
-                 onerror="this.onerror=null; this.src='./image/${item.id}'; setTimeout(() => { if (this.naturalWidth === 0) this.src = './image/${item.id}.jpeg'; }, 50);">
+                 onerror="this.onerror=null; this.src='./image/${item.id}.jpeg'; setTimeout(()=>{if(this.naturalWidth===0) this.src='./image/${item.id}.png'}, 50);">
           </div>
 
           <div class="space-y-1.5 shrink-0">
@@ -734,7 +734,8 @@
       if (!synth || !isPlaying) return;
       const item = LESSONS_DATA[currentLessonIdx];
 
-      if (!item.sentences || sIdx >= item.sentences.length) {
+      // YÊU CẦU: Dừng đọc nếu đã đọc tới câu thứ 3 (chỉ số 0, 1, 2)
+      if (!item.sentences || sIdx >= item.sentences.length || sIdx >= 3) {
         handleLessonFinished();
         return;
       }
@@ -786,12 +787,25 @@
       synth.speak(currentUtterance);
     };
 
+    // YÊU CẦU: Bấm Lùi/Tiến tự động cập nhật bài hát và Auto-Play
     document.getElementById('prevBtn').addEventListener('click', () => {
       if (currentLessonIdx > 0) {
         stopPlayback();
         currentLessonIdx--;
+        
+        // Đồng bộ Dropdown Chọn bài với bài hiện tại
+        startIdx = currentLessonIdx;
+        endIdx = currentLessonIdx;
+        startSelect.value = startIdx;
+        endSelect.value = endIdx;
+
         renderLesson(currentLessonIdx);
         playlistLoopCount = 0;
+        
+        // Tự động bật Auto-Play
+        isPlaying = true;
+        document.getElementById('playIcon').className = "fa-solid fa-pause text-sm";
+        playCurrentLesson();
       }
     });
 
@@ -799,12 +813,24 @@
       if (currentLessonIdx < LESSONS_DATA.length - 1) {
         stopPlayback();
         currentLessonIdx++;
+        
+        // Đồng bộ Dropdown Chọn bài với bài hiện tại
+        startIdx = currentLessonIdx;
+        endIdx = currentLessonIdx;
+        startSelect.value = startIdx;
+        endSelect.value = endIdx;
+
         renderLesson(currentLessonIdx);
         playlistLoopCount = 0;
+
+        // Tự động bật Auto-Play
+        isPlaying = true;
+        document.getElementById('playIcon').className = "fa-solid fa-pause text-sm";
+        playCurrentLesson();
       }
     });
 
-    // Hàm setTimeout để chờ file data.js load xong trước khi chạy hàm khởi tạo
+    // Khởi chạy hệ thống sau khi load file data.js
     setTimeout(() => {
         initLessonSelectors();
         renderLesson(startIdx);
