@@ -17,8 +17,8 @@
       background-color: #f8fafc;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     }
-    .ipa-text { color: #059669; }
-    .vn-text { color: #475569; }
+    .ipa-text { color: #059669; font-weight: 500; font-style: italic; }
+    .vn-text { color: #475569; font-weight: normal; }
     .active-sentence { border-color: #10b981 !important; background-color: #ecfdf5 !important; }
     .char-animation { animation: float 3s ease-in-out infinite; }
     @keyframes float {
@@ -26,7 +26,6 @@
       50% { transform: translateY(-4px); }
     }
 
-    /* Ẩn các class tự sinh của Cloudflare/Netlify */
     [data-netlify-deploy-id], 
     iframe[src*="netlify"], 
     div[class*="netlify"], 
@@ -43,7 +42,6 @@
       width: 0 !important;
     }
 
-    /* HEADER BANNER */
     .study-header-banner {
       background: #ffffff;
       border-bottom: 1.5px solid #d1fae5;
@@ -61,7 +59,6 @@
       text-decoration: none;
     }
 
-    /* 3 NÚT ĐIỀU HƯỚNG MỚI */
     .study-actions-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -92,7 +89,6 @@
     .btn-study  { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
     .btn-group  { background: linear-gradient(135deg, #0284c7, #0369a1); }
 
-    /* DẢI GÓC ỦNG HỘ SHOPEE */
     .shopee-promo-bar {
       width: 100%;
       padding: 0 8px 6px;
@@ -165,7 +161,6 @@
       display: block;
     }
 
-    /* SHOPEE MODAL */
     .shopee-modal-overlay {
       position: fixed;
       inset: 0;
@@ -266,10 +261,10 @@
         <i class="fa-solid fa-hotel"></i> <span>Villa Sonasea</span>
       </a>
       <a href="../index.html" class="study-action-btn btn-study">
-        <i class="fa-solid fa-graduation-cap"></i> <span>Trang Học Tập</span>
+        <i class="fa-solid fa-graduation-cap"></i> <span>Web Học</span>
       </a>
-      <a href="https://facebook.com/groups/yourgrouphoctap" target="_blank" rel="noopener noreferrer" class="study-action-btn btn-group" title="Tham gia Group Học Tập">
-        <i class="fa-solid fa-users"></i> <span>Group Học Tập</span>
+      <a href="https://zalo.me/g/beo1xhgdcvvyr7kr4x4y" target="_blank" rel="noopener noreferrer" class="study-action-btn btn-group" title="Tham gia Group Học Tập">
+        <i class="fa-solid fa-users"></i> <span>Join Nhóm</span>
       </a>
     </div>
 
@@ -344,84 +339,83 @@
     </div>
 
     <!-- 4. KHUNG CHỌN BÀI HỌC -->
-    <header class="bg-emerald-50/80 border border-emerald-200 rounded-lg px-2.5 py-1.5 flex items-center justify-between shadow-sm shrink-0 gap-1 mt-0 mx-2">
-      <div class="flex items-center gap-1 font-bold text-emerald-900 text-[11px]">
-        <span>Từ:</span>
-        <select id="startLessonSelect" class="bg-white font-bold py-0.5 px-1 rounded border border-emerald-300 focus:outline-none text-[11px] shadow-sm cursor-pointer"></select>
-        <span class="ml-1">Đến:</span>
-        <select id="endLessonSelect" class="bg-white font-bold py-0.5 px-1 rounded border border-emerald-300 focus:outline-none text-[11px] shadow-sm cursor-pointer"></select>
+    <header class="bg-white border border-emerald-200 rounded-lg px-2.5 py-1.5 flex items-center justify-between shadow-sm shrink-0 gap-1 mt-0 mx-2">
+      <div class="flex items-center gap-1 font-bold text-slate-800 text-[12px]">
+        <span>Từ bài:</span>
+        <select id="startLessonSelect" class="bg-white font-bold py-0.5 px-1 rounded border border-slate-300 focus:outline-none text-[12px] shadow-sm cursor-pointer"></select>
+        <span class="ml-1">Đến bài:</span>
+        <select id="endLessonSelect" class="bg-white font-bold py-0.5 px-1 rounded border border-slate-300 focus:outline-none text-[12px] shadow-sm cursor-pointer"></select>
       </div>
 
-      <button id="toggleTransBtn" class="bg-emerald-600 hover:bg-emerald-700 text-white border border-emerald-500 px-2 py-1 rounded font-bold flex items-center gap-1 shadow-sm transition text-[10px]">
-        <i class="fa-solid fa-language text-[11px]"></i> <span>Dịch & IPA</span>
+      <button id="toggleTransBtn" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 shadow-sm transition text-[11px]">
+        <i class="fa-solid fa-language text-[12px]"></i> <span>Dịch & IPA</span>
       </button>
     </header>
 
     <!-- 5. KHUNG NỘI DUNG BÀI HỌC -->
-    <main class="flex-1 flex flex-col justify-between py-1.5 px-2 overflow-hidden" id="mainContent">
+    <main class="flex-1 flex flex-col justify-between py-1 px-2 overflow-hidden" id="mainContent">
       <div id="currentCardContainer" class="h-full flex flex-col justify-between"></div>
     </main>
 
-    <!-- 6. THANH ĐIỀU KHIỂN DƯỚI ĐÁY (ALL IN ONE LINE) -->
-    <footer class="bg-white border-t border-slate-200 rounded-xl p-1.5 mx-1.5 shrink-0 relative shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] mt-0.5">
+    <!-- 6. THANH ĐIỀU KHIỂN DƯỚI ĐÁY -->
+    <footer class="bg-white border-t border-slate-200 rounded-xl p-1.5 mx-1.5 shrink-0 relative shadow-md mt-0.5">
       
       <!-- Popup Lặp Lại -->
-      <div id="repeatMenu" class="hidden absolute bottom-[50px] left-1/2 -translate-x-1/2 w-28 bg-white border border-slate-200 rounded-xl p-1 shadow-xl z-50">
-        <button data-repeat="1" class="repeat-opt w-full text-left px-3 py-1.5 rounded hover:bg-emerald-50 text-slate-700 text-xs font-bold transition mb-0.5">1 lần</button>
-        <button data-repeat="2" class="repeat-opt w-full text-left px-3 py-1.5 rounded hover:bg-emerald-50 text-slate-700 text-xs font-bold transition mb-0.5">2 lần</button>
-        <button data-repeat="3" class="repeat-opt w-full text-left px-3 py-1.5 rounded hover:bg-emerald-50 text-slate-700 text-xs font-bold transition mb-0.5">3 lần</button>
-        <button data-repeat="5" class="repeat-opt w-full text-left px-3 py-1.5 rounded hover:bg-emerald-50 text-slate-700 text-xs font-bold transition mb-0.5">5 lần</button>
-        <button data-repeat="999" class="repeat-opt w-full text-left px-3 py-1.5 rounded hover:bg-emerald-50 text-emerald-600 text-xs font-black transition">Vô tận (∞)</button>
+      <div id="repeatMenu" class="hidden absolute bottom-[50px] left-[65%] -translate-x-1/2 w-20 bg-white border border-slate-200 rounded-xl shadow-xl z-50 p-1">
+        <button data-repeat="1" class="repeat-opt w-full text-center px-1 py-1.5 rounded hover:bg-emerald-50 text-slate-700 text-[12px] font-bold transition mb-0.5">1</button>
+        <button data-repeat="2" class="repeat-opt w-full text-center px-1 py-1.5 rounded hover:bg-emerald-50 text-slate-700 text-[12px] font-bold transition mb-0.5">2</button>
+        <button data-repeat="3" class="repeat-opt w-full text-center px-1 py-1.5 rounded hover:bg-emerald-50 text-slate-700 text-[12px] font-bold transition mb-0.5">3</button>
+        <button data-repeat="5" class="repeat-opt w-full text-center px-1 py-1.5 rounded hover:bg-emerald-50 text-slate-700 text-[12px] font-bold transition mb-0.5">5</button>
+        <button data-repeat="999" class="repeat-opt w-full text-center px-1 py-1.5 rounded hover:bg-emerald-50 text-emerald-600 text-[12px] font-black transition">∞</button>
       </div>
 
       <!-- Popup Tốc Độ -->
-      <div id="speedMenu" class="hidden absolute bottom-[50px] right-2 w-24 bg-white border border-slate-200 rounded-xl p-1 shadow-xl z-50">
-        <button data-speed="0.5" class="speed-opt w-full text-left px-3 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-xs font-bold transition mb-0.5">0.5x</button>
-        <button data-speed="0.75" class="speed-opt w-full text-left px-3 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-xs font-bold transition mb-0.5">0.75x</button>
-        <button data-speed="1.0" class="speed-opt w-full text-left px-3 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-xs font-bold transition mb-0.5">1.0x (Chuẩn)</button>
-        <button data-speed="1.25" class="speed-opt w-full text-left px-3 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-xs font-bold transition mb-0.5">1.25x</button>
-        <button data-speed="1.5" class="speed-opt w-full text-left px-3 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-xs font-bold transition mb-0.5">1.5x</button>
-        <button data-speed="2.0" class="speed-opt w-full text-left px-3 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-xs font-bold transition">2.0x</button>
+      <div id="speedMenu" class="hidden absolute bottom-[50px] right-1 w-20 bg-white border border-slate-200 rounded-xl shadow-xl z-50 p-1">
+        <button data-speed="0.5" class="speed-opt w-full text-center px-1 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-[12px] font-bold transition mb-0.5">0.5x</button>
+        <button data-speed="0.75" class="speed-opt w-full text-center px-1 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-[12px] font-bold transition mb-0.5">0.75x</button>
+        <button data-speed="1.0" class="speed-opt w-full text-center px-1 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-[12px] font-bold transition mb-0.5">1.0x</button>
+        <button data-speed="1.25" class="speed-opt w-full text-center px-1 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-[12px] font-bold transition mb-0.5">1.25x</button>
+        <button data-speed="1.5" class="speed-opt w-full text-center px-1 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-[12px] font-bold transition mb-0.5">1.5x</button>
+        <button data-speed="2.0" class="speed-opt w-full text-center px-1 py-1.5 rounded hover:bg-cyan-50 text-slate-700 text-[12px] font-bold transition">2.0x</button>
       </div>
 
       <!-- 1 HÀNG DUY NHẤT -->
-      <div class="flex items-center justify-between gap-1 w-full">
+      <div class="flex items-center justify-between gap-1.5 w-full">
         
         <!-- Nút Gốc (MP3) -->
-        <button id="voiceToggleBtn" class="flex-1 max-w-[90px] h-9 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] flex items-center justify-center gap-1 border border-emerald-500 transition shadow-sm whitespace-nowrap px-1">
-          <i class="fa-solid fa-file-audio text-[11px]" id="voiceIcon"></i>
+        <button id="voiceToggleBtn" class="flex-none max-w-[95px] h-9 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center gap-1.5 border border-emerald-500 transition shadow-sm whitespace-nowrap px-2">
+          <i class="fa-solid fa-file-audio text-[12px]" id="voiceIcon"></i>
           <span id="voiceText">Gốc (MP3)</span>
         </button>
 
         <!-- Nút Bài Trước -->
-        <button id="prevBtn" class="w-10 h-9 shrink-0 bg-slate-50 hover:bg-slate-100 active:scale-95 text-slate-600 rounded-lg border border-slate-200 flex items-center justify-center transition shadow-sm">
-          <i class="fa-solid fa-backward-step text-[13px]"></i>
+        <button id="prevBtn" class="flex-1 max-w-[50px] h-9 bg-slate-50 hover:bg-slate-100 active:scale-95 text-slate-600 rounded-lg border border-slate-200 flex items-center justify-center transition shadow-sm">
+          <i class="fa-solid fa-backward-step text-[14px]"></i>
         </button>
 
         <!-- Nút PLAY Lớn Ở Giữa -->
-        <button id="playBtn" class="flex-1 max-w-[80px] h-9 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white rounded-lg border border-emerald-500 flex items-center justify-center shadow transition mx-0.5">
-          <i class="fa-solid fa-play text-sm" id="playIcon"></i>
+        <button id="playBtn" class="flex-1 max-w-[100px] h-9 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white rounded-lg border border-emerald-500 flex items-center justify-center shadow transition mx-0.5">
+          <i class="fa-solid fa-play text-[16px]" id="playIcon"></i>
         </button>
 
         <!-- Nút Bài Sau -->
-        <button id="nextBtn" class="w-10 h-9 shrink-0 bg-slate-50 hover:bg-slate-100 active:scale-95 text-slate-600 rounded-lg border border-slate-200 flex items-center justify-center transition shadow-sm">
-          <i class="fa-solid fa-forward-step text-[13px]"></i>
+        <button id="nextBtn" class="flex-1 max-w-[50px] h-9 bg-slate-50 hover:bg-slate-100 active:scale-95 text-slate-600 rounded-lg border border-slate-200 flex items-center justify-center transition shadow-sm">
+          <i class="fa-solid fa-forward-step text-[14px]"></i>
         </button>
 
         <!-- Nút Lặp -->
-        <button id="repeatToggleBtn" class="w-10 h-9 shrink-0 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-[10.5px] border border-slate-200 flex items-center justify-center gap-1 transition shadow-sm">
-          <i class="fa-solid fa-rotate text-[9px] text-emerald-600"></i>
+        <button id="repeatToggleBtn" class="flex-none w-[42px] h-9 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-[11.5px] border border-slate-200 flex items-center justify-center gap-1 transition shadow-sm">
+          <i class="fa-solid fa-rotate text-[10px] text-emerald-600"></i>
           <span id="repeatText">1</span>
         </button>
 
         <!-- Nút Tốc Độ -->
-        <button id="speedToggleBtn" class="w-12 h-9 shrink-0 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-[10.5px] border border-slate-200 flex items-center justify-center gap-1 transition shadow-sm">
-          <i class="fa-solid fa-gauge-high text-[9px] text-cyan-600"></i>
+        <button id="speedToggleBtn" class="flex-none w-[52px] h-9 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-[11.5px] border border-slate-200 flex items-center justify-center gap-1 transition shadow-sm">
+          <i class="fa-solid fa-gauge-high text-[10px] text-cyan-600"></i>
           <span id="speedText">1.0x</span>
         </button>
         
       </div>
-
     </footer>
 
   </div>
@@ -478,7 +472,7 @@
     let playlistLoopCount = 0;
 
     let isPlaying = false;
-    let showDetails = true;
+    let showDetails = false;
     let audioPlayer = new Audio();
 
     const startSelect = document.getElementById('startLessonSelect');
@@ -557,18 +551,18 @@
           const ipaText = s.ipa || '';
 
           return `
-            <div id="sent-${sIdx}" class="sentence-row px-2.5 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition flex items-start justify-between shadow-sm mb-1" onclick="playSingleSentence('${s.en.replace(/'/g, "\'")}', ${sIdx})">
+            <div id="sent-${sIdx}" class="sentence-row px-2.5 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition flex items-center justify-between shadow-sm mb-1" onclick="playSingleSentence('${s.en.replace(/'/g, "\'")}', ${sIdx})">
               
-              <div class="text-[12px] leading-[1.3] flex-1">
+              <div class="text-[14px] leading-snug flex-1">
                 <span class="font-bold text-slate-900">• ${s.en}</span>
                 <span class="trans-box ${showDetails ? 'inline' : 'hidden'}">
-                  ${ipaText ? `<span class="ipa-text font-mono font-semibold ml-1">/${ipaText}/</span>` : ''}
-                  ${viTrans ? `<span class="vn-text font-medium ml-1">(${viTrans})</span>` : ''}
+                  ${ipaText ? `<span class="ipa-text font-medium ml-1.5">/${ipaText}/</span>` : ''}
+                  ${viTrans ? `<span class="vn-text ml-1.5 text-[13px]">${viTrans}</span>` : ''}
                 </span>
               </div>
               
-              <div class="pt-[3px] shrink-0 ml-2">
-                  <i class="fa-solid fa-volume-high text-[11px] text-emerald-500 opacity-80"></i>
+              <div class="shrink-0 ml-2">
+                  <i class="fa-solid fa-volume-high text-[13px] text-emerald-500 opacity-80"></i>
               </div>
               
             </div>
@@ -579,19 +573,19 @@
       currentCardContainer.innerHTML = `
         <div class="border border-emerald-200 bg-emerald-50/40 rounded-xl p-2 shadow-sm flex flex-col h-full">
           
-          <div class="flex items-center justify-between pb-1 border-b border-emerald-200/60 shrink-0 mb-1.5">
-            <span class="text-[11px] font-black uppercase text-emerald-700 tracking-wider">Tình huống thực tế</span>
-            <span class="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold shadow-sm">Bài ${item.id}</span>
+          <div class="flex items-center justify-between pb-1.5 border-b border-emerald-200/60 shrink-0 mb-1.5">
+            <span class="text-[12px] font-black uppercase text-emerald-700 tracking-wider">Tình huống thực tế</span>
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[11px] font-bold shadow-sm">Bài ${item.id}</span>
           </div>
 
-          <div class="w-full bg-white rounded-lg p-1 border border-slate-200 flex items-center justify-center overflow-hidden flex-1 shadow-inner min-h-0 relative">
-            <img src="./image/${item.id}.jpg?v=6" alt="Minh họa bài ${item.id}" 
+          <div class="w-full bg-white rounded-lg p-1 border border-slate-200 flex items-center justify-center overflow-hidden flex-1 shadow-inner min-h-0 relative mb-1.5">
+            <img src="./image/${item.id}.jpg?v=7" alt="Minh họa bài ${item.id}" 
                  class="max-w-full max-h-full object-contain scale-[1.02] char-animation drop-shadow-sm absolute inset-0 m-auto" 
                  data-attempt="0"
                  onerror="handleImageFallback(this, '${item.id}')">
           </div>
 
-          <div class="shrink-0 flex flex-col mt-2 gap-1.5">
+          <div class="shrink-0 flex flex-col gap-1">
             ${sentencesHtml}
           </div>
         </div>
@@ -603,9 +597,9 @@
     toggleTransBtn.addEventListener('click', () => {
       showDetails = !showDetails;
       if (showDetails) {
-        toggleTransBtn.className = "bg-emerald-600 hover:bg-emerald-700 text-white border border-emerald-500 px-2 py-1 rounded font-bold flex items-center gap-1.5 shadow-sm transition text-[10px]";
+        toggleTransBtn.className = "bg-emerald-600 hover:bg-emerald-700 text-white border border-emerald-500 px-2.5 py-1 rounded font-bold flex items-center gap-1.5 shadow-sm transition text-[11px]";
       } else {
-        toggleTransBtn.className = "bg-slate-100 hover:bg-slate-200 text-slate-600 border border-slate-300 px-2 py-1 rounded font-bold flex items-center gap-1.5 shadow-sm transition text-[10px]";
+        toggleTransBtn.className = "bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 px-2.5 py-1 rounded font-bold flex items-center gap-1.5 shadow-sm transition text-[11px]";
       }
 
       document.querySelectorAll('.trans-box').forEach(el => {
@@ -640,7 +634,7 @@
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         currentRepeatLimit = parseInt(e.target.getAttribute('data-repeat'));
-        playlistLoopCount = 0;
+        currentRepeat = 0;
         updateRepeatDisplay();
         repeatMenu.classList.add('hidden');
       });
@@ -670,7 +664,7 @@
       }
       currentLessonIdx = startIdx;
       renderLesson(currentLessonIdx);
-      playlistLoopCount = 0;
+      currentRepeat = 0;
     });
 
     endSelect.addEventListener('change', (e) => {
@@ -682,7 +676,7 @@
       }
       currentLessonIdx = startIdx;
       renderLesson(currentLessonIdx);
-      playlistLoopCount = 0;
+      currentRepeat = 0;
     });
 
     const voiceBtn = document.getElementById('voiceToggleBtn');
@@ -690,13 +684,13 @@
       stopPlayback();
       if (currentMode === 'mp3') {
         currentMode = 'ai';
-        voiceBtn.className = "flex-1 max-w-[90px] h-9 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-[10px] flex items-center justify-center gap-1 border border-blue-500 transition shadow-sm whitespace-nowrap px-1";
-        document.getElementById('voiceIcon').className = "fa-solid fa-robot text-[11px]";
+        voiceBtn.className = "flex-1 max-w-[95px] h-9 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-[11px] flex items-center justify-center gap-1.5 border border-blue-500 transition shadow-sm whitespace-nowrap px-2";
+        document.getElementById('voiceIcon').className = "fa-solid fa-robot text-[12px]";
         document.getElementById('voiceText').innerText = "AI Speech";
       } else {
         currentMode = 'mp3';
-        voiceBtn.className = "flex-1 max-w-[90px] h-9 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] flex items-center justify-center gap-1 border border-emerald-500 transition shadow-sm whitespace-nowrap px-1";
-        document.getElementById('voiceIcon').className = "fa-solid fa-file-audio text-[11px]";
+        voiceBtn.className = "flex-1 max-w-[95px] h-9 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center gap-1.5 border border-emerald-500 transition shadow-sm whitespace-nowrap px-2";
+        document.getElementById('voiceIcon').className = "fa-solid fa-file-audio text-[12px]";
         document.getElementById('voiceText').innerText = "Gốc (MP3)";
       }
     });
@@ -712,7 +706,7 @@
           currentLessonIdx = startIdx;
           renderLesson(currentLessonIdx);
         }
-        playlistLoopCount = 0;
+        currentRepeat = 0;
         playCurrentLesson();
       }
     });
@@ -729,21 +723,27 @@
     function handleLessonFinished() {
       if (!isPlaying) return;
 
-      if (currentLessonIdx < endIdx) {
-        currentLessonIdx++;
-        syncDropdownsToCurrent(currentLessonIdx);
-        renderLesson(currentLessonIdx);
-        setTimeout(() => { if (isPlaying) playCurrentLesson(); }, 500);
-      } else {
-        playlistLoopCount++;
+      currentRepeat++;
 
-        if (currentRepeatLimit === 999 || playlistLoopCount < currentRepeatLimit) {
-          currentLessonIdx = startIdx;
+      if (currentRepeat < currentRepeatLimit) {
+        setTimeout(() => { if (isPlaying) playCurrentLesson(); }, 400);
+      } else {
+        currentRepeat = 0;
+
+        if (currentLessonIdx < endIdx) {
+          currentLessonIdx++;
           syncDropdownsToCurrent(currentLessonIdx);
           renderLesson(currentLessonIdx);
-          setTimeout(() => { if (isPlaying) playCurrentLesson(); }, 700);
+          setTimeout(() => { if (isPlaying) playCurrentLesson(); }, 600);
         } else {
-          stopPlayback();
+          if (currentRepeatLimit === 999) {
+            currentLessonIdx = startIdx;
+            syncDropdownsToCurrent(currentLessonIdx);
+            renderLesson(currentLessonIdx);
+            setTimeout(() => { if (isPlaying) playCurrentLesson(); }, 800);
+          } else {
+            stopPlayback();
+          }
         }
       }
     }
@@ -846,7 +846,7 @@
         currentLessonIdx--;
         syncDropdownsToCurrent(currentLessonIdx);
         renderLesson(currentLessonIdx);
-        playlistLoopCount = 0;
+        currentRepeat = 0;
         
         isPlaying = true;
         document.getElementById('playIcon').className = "fa-solid fa-pause text-sm";
@@ -860,7 +860,7 @@
         currentLessonIdx++;
         syncDropdownsToCurrent(currentLessonIdx);
         renderLesson(currentLessonIdx);
-        playlistLoopCount = 0;
+        currentRepeat = 0;
         
         isPlaying = true;
         document.getElementById('playIcon').className = "fa-solid fa-pause text-sm";
