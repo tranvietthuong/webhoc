@@ -52,7 +52,7 @@ STORIES_DATA["03 March"] = [
     sentences: [
       { start: 4.8, en: "My grandma loved little chicks.", ipa: "/maɪ ˈɡrændmɑː lʌvd ˈlɪtl tʃɪks/", vi: "Bà tôi rất yêu thích những chú gà con." },
       { start: 8.5, en: "When the salesman came to our village with his little chicks, she carefully picked ten chicks to bring home.", ipa: "/wɛn ðə ˈseɪlzmən keɪm tuː ˈaʊər ˈvɪlɪdʒ wɪð hɪz ˈlɪtl tʃɪks ʃiː ˈkɛərfəli pɪkt tɛn tʃɪks tuː brɪŋ hoʊm/", vi: "Khi người bán hàng đến làng mang theo đàn gà con, bà đã cẩn thận chọn lấy mười con mang về." },
-      { start: 19.5, en: "Somehow, she had a way of choosing the chicks that would grow up to be hens, not roosters.", ipa: "/ˈsʌmhaʊ ʃiː hæd ə weɪ əv ˈtʃuːzɪŋ ðə tʃɪks ðæt wʊd ɡroʊ ʌp tuː biː hɛnz nɒt ˈruːstərz/", vi: "Không hiểu sao bà luôn có cách chọn đúng những con sau này lớn lên thành gà mái chứ không phải gà trống." },
+      { start: 19.5, en: "Somehow, she had a way of choosing the chicks that would grow up to be hens, not roosters.", ipa: "/ˈsʌmhaʊ ʃiː hæd ə way əv ˈtʃuːzɪŋ ðə tʃɪks ðæt wʊd ɡroʊ ʌp tuː biː hɛnz nɒt ˈruːstərz/", vi: "Không hiểu sao bà luôn có cách chọn đúng những con sau này lớn lên thành gà mái chứ không phải gà trống." },
       { start: 29.5, en: "We loved to help her take care of the baby chicks too.", ipa: "/wiː lʌvd tuː hɛlp hɜːr teɪk kɛər əv ðə ˈbeɪbi tʃɪks tuː/", vi: "Chúng tôi cũng rất thích giúp bà chăm sóc đàn gà con." },
       { start: 34.5, en: "Day by day, the little chicks grew bigger.", ipa: "/deɪ baɪ deɪ ðə ˈlɪtl tʃɪks ɡruː ˈbɪɡər/", vi: "Ngày qua ngày, những chú gà con lớn nhanh lên." },
       { start: 39.5, en: "After eight months, they laid their first eggs!", ipa: "/ˈɑːftər eɪt mʌnθs ðeɪ leɪd ðɛər fɜːrst ɛɡz!/", vi: "Sau tám tháng, chúng đã đẻ những quả trứng đầu tiên!" },
@@ -475,13 +475,13 @@ STORIES_DATA["03 March"] = [
       { start: 9.5, en: "His mom makes his lunch for him.", ipa: "/hɪz mɒm meɪks hɪz lʌntʃ fɔːr hɪm/", vi: "Mẹ là người chuẩn bị hộp cơm trưa cho cậu." },
       { start: 13.8, en: "She puts a sandwich, an apple, and a banana in his lunch bag.", ipa: "/ʃiː pʊts ə ˈsænwɪdʒ ən ˈæpl ænd ə bəˈnɑːnə ɪn hɪz lʌntʃ bæɡ/", vi: "Mẹ xếp một chiếc bánh mì kẹp, một quả táo và một quả chuối vào túi cơm." },
       { start: 22.0, en: "Jack does not like apples.", ipa: "/dʒæk dʌz nɒt laɪk ˈæplz/", vi: "Nhưng Jack lại không thích ăn táo chút nào." },
-      { start: 26.0, en: '"Who wants this apple?" he asks.', ipa: '/huː wɒnts ðɪs ˈæpl? hiː ɑːsks/', vi: '"Ai muốn ăn quả táo này không?" cậu hỏi.' },
-      { start: 30.5, en: '"Me!" his friend Kate says.', ipa: '/miː! hɪz frɛnd keɪt sɛz/', vi: '"Tớ muốn!" bạn Kate lên tiếng.' },
-      { start: 34.5, en: '"Here you are!"', ipa: '/hɪər juː ɑːr!/', vi: '"Của cậu đây!"' },
-      { start: 37.0, en: "Jack gives the apple to her.", ipa: "/dʒæk ɡɪvz ði ˈæpl tuː hɜːr/", vi: "Jack đưa quả táo cho Kate." },
-      { start: 40.5, en: '"Thanks!" Kate smiles.', ipa: '/θæŋks! keɪt smaɪlz/', vi: '"Cảm ơn cậu nhé!" Kate cười tươi.' },
-      { start: 44.5, en: '"One apple a day keeps the doctor away," she says.', ipa: '/wʌn ˈæpl ə deɪ kiːps ðə ˈdɒktər əˈweɪ ʃiː sɛz/', vi: '"Mỗi ngày một quả táo sẽ giúp chúng ta khỏe mạnh không phải gặp bác sĩ," cô bé nói.' },
-      { start: 51.5, en: "Apples are good for you.", ipa: "/ˈæplz ɑːr ɡʊd fɔːr juː/", vi: "Táo rất tốt cho cơ thể của bạn." }
+      { start: 26.0, en: '"Who wants this apple?" he asks.', ipa: '/huː wɒnts ðɪs ˈæpl? hiː ɑːsks/', vi: '"Who wants this apple?" he asks.' },
+      { start: 30.5, en: '"Me!" his friend Kate says.', ipa: '/miː! hɪz frɛnd keɪt sɛz/', vi: '"Me!" his friend Kate says.' },
+      { start: 34.5, en: '"Here you are!"', ipa: '/hɪər juː ɑːr!/', vi: '"Here you are!"' },
+      { start: 37.0, en: "Jack gives the apple to her.", ipa: "/dʒæk ɡɪvz ði ˈæpl tuː hɜːr/", vi: "Jack gives the apple to her." },
+      { start: 40.5, en: '"Thanks!" Kate smiles.', ipa: '/θæŋks! keɪt smaɪlz/', vi: '"Thanks!" Kate smiles.' },
+      { start: 44.5, en: '"One apple a day keeps the doctor away," she says.', ipa: '/wʌn ˈæpl ə deɪ kiːps ðə ˈdɒktər əˈweɪ ʃiː sɛz/', vi: '"One apple a day keeps the doctor away," she says.' },
+      { start: 51.5, en: "Apples are good for you.", ipa: "/ˈæplz ɑːr ɡʊd fɔːr juː/", vi: "Apples are good for you." }
     ]
   },
   {
@@ -490,20 +490,20 @@ STORIES_DATA["03 March"] = [
     image: "03 March/images/day_28.webp",
     audio: "03 March/audio/A0328 A Rainy Day.mp3",
     sentences: [
-      { start: 4.8, en: "It's raining again.", ipa: "/ɪts ˈreɪnɪŋ əˈɡɛn/", vi: "Trời lại bắt đầu mưa rồi." },
-      { start: 7.5, en: "Mira doesn't like that.", ipa: "/ˈmɪrə ˈdʌznt laɪk ðæt/", vi: "Mira không thích điều đó chút nào." },
-      { start: 11.0, en: '"Why does it have to rain?" asks Mira.', ipa: '/waɪ dʌz ɪt hæv tuː reɪn? ɑːsks ˈmɪrə/', vi: '"Tại sao trời cứ phải mưa thế nhỉ?" Mira thắc mắc.' },
-      { start: 16.5, en: '"Without rain, we can\'t live!" says her dad.', ipa: '/wɪˈðaʊt reɪn wiː kænt lɪv! sɛz hɜːr dæd/', vi: '"Không có mưa thì chúng ta không thể sống nổi đâu!" bố đáp.' },
-      { start: 22.5, en: '"Really?"', ipa: '/ˈrɪəli?/', vi: '"Thật thế ạ?"' },
-      { start: 24.2, en: "Mira doesn't understand.", ipa: "/ˈmɪrə ˈdʌznt ˌʌndərˈstænd/", vi: "Mira ngơ ngác chưa hiểu." },
-      { start: 27.5, en: '"Yes.', ipa: '/jɛs/', vi: '"Đúng vậy.' },
-      { start: 29.2, en: 'We would have nothing to eat," says her dad.', ipa: '/wiː wʊd hæv ˈnʌθɪŋ tuː iːt sɛz hɜːr dæd/', vi: 'Chúng ta sẽ chẳng có gì để ăn cả," bố giải thích.' },
-      { start: 35.0, en: "It is true.", ipa: "/ɪt ɪz truː/", vi: "Đúng là như vậy." },
-      { start: 37.5, en: "Just think about it.", ipa: "/dʒʌst θɪŋk əˈbaʊt ɪt/", vi: "Con hãy ngẫm mà xem." },
-      { start: 41.0, en: "The plants need rain to grow.", ipa: "/ðə plɑːnts niːd reɪn tuː ɡroʊ/", vi: "Cây cối cần có mưa để sinh trưởng." },
-      { start: 46.0, en: "The animals need plants to grow.", ipa: "/ði ˈænɪmlz niːd plɑːnts tuː ɡroʊ/", vi: "Động vật cần cỏ cây để phát triển." },
-      { start: 51.5, en: "Without rain, we would have no food to eat and no water to drink.", ipa: "/wɪˈðaʊt reɪn wiː wʊd hæv noʊ fuːd tuː iːt ænd noʊ ˈwɔːtər tuː drɪŋk/", vi: "Không có mưa, chúng ta sẽ không có thức ăn để ăn và không có nước để uống." },
-      { start: 59.5, en: "Oh no, it's raining again.", ipa: "/oʊ noʊ ɪts ˈreɪnɪŋ əˈɡɛn/", vi: "Ôi không, trời lại đang mưa nữa rồi." }
+      { start: 4.8, en: "It's raining again.", ipa: "/ɪts ˈreɪnɪŋ əˈɡɛn/", vi: "It's raining again." },
+      { start: 7.5, en: "Mira doesn't like that.", ipa: "/ˈmɪrə ˈdʌznt laɪk ðæt/", vi: "Mira doesn't like that." },
+      { start: 11.0, en: '"Why does it have to rain?" asks Mira.', ipa: '/waɪ dʌz ɪt hæv tuː reɪn? ɑːsks ˈmɪrə/', vi: '"Why does it have to rain?" asks Mira.' },
+      { start: 16.5, en: '"Without rain, we can\'t live!" says her dad.', ipa: '/wɪˈðaʊt reɪn wiː kænt lɪv! sɛz hɜːr dæd/', vi: '"Without rain, we can\'t live!" says her dad.' },
+      { start: 22.5, en: '"Really?"', ipa: '/ˈrɪəli?/', vi: '"Really?"' },
+      { start: 24.2, en: "Mira doesn't understand.", ipa: "/ˈmɪrə ˈdʌznt ˌʌndərˈstænd/", vi: "Mira doesn't understand." },
+      { start: 27.5, en: '"Yes.', ipa: '/jɛs/', vi: '"Yes.' },
+      { start: 29.2, en: 'We would have nothing to eat," says her dad.', ipa: '/wiː wʊd hæv ˈnʌθɪŋ tuː iːt sɛz hɜːr dæd/', vi: 'We would have nothing to eat," says her dad.' },
+      { start: 35.0, en: "It is true.", ipa: "/ɪt ɪz truː/", vi: "It is true." },
+      { start: 37.5, en: "Just think about it.", ipa: "/dʒʌst θɪŋk əˈbaʊt ɪt/", vi: "Just think about it." },
+      { start: 41.0, en: "The plants need rain to grow.", ipa: "/ðə plɑːnts niːd reɪn tuː ɡroʊ/", vi: "The plants need rain to grow." },
+      { start: 46.0, en: "The animals need plants to grow.", ipa: "/ði ˈænɪmlz niːd plɑːnts tuː ɡroʊ/", vi: "The animals need plants to grow." },
+      { start: 51.5, en: "Without rain, we would have no food to eat and no water to drink.", ipa: "/wɪˈðaʊt reɪn wiː wʊd hæv noʊ fuːd tuː iːt ænd noʊ ˈwɔːtər tuː drɪŋk/", vi: "Without rain, we would have no food to eat and no water to drink." },
+      { start: 59.5, en: "Oh no, it's raining again.", ipa: "/oʊ noʊ ɪts ˈreɪnɪŋ əˈɡɛn/", vi: "Oh no, it's raining again." }
     ]
   },
   {
@@ -512,14 +512,14 @@ STORIES_DATA["03 March"] = [
     image: "03 March/images/day_29.webp",
     audio: "03 March/audio/A0329 Tomato Plants.mp3",
     sentences: [
-      { start: 4.8, en: "In early spring, Uncle Ted planted a few tomato plants in his garden.", ipa: "/ɪn ˈɜːrli sprɪŋ ˈʌŋkl tɛd ˈplɑːntɪd ə fjuː təˈmɑːtoʊ plɑːnts ɪn hɪz ˈɡɑːrdn/", vi: "Vào đầu mùa xuân, chú Ted đã trồng vài khóm cà chua trong khu vườn." },
-      { start: 13.5, en: "A few weeks passed.", ipa: "/ə fjuː wiːks pɑːst/", vi: "Vài tuần trôi qua." },
-      { start: 16.5, en: "The plants were still the same.", ipa: "/ðə plɑːnts wɜːr stɪl ðə seɪm/", vi: "Những cây cà chua trông vẫn y nguyên như trước." },
-      { start: 21.0, en: 'Uncle Ted said to me, "My tomato plants are not growing.', ipa: '/ˈʌŋkl tɛd sɛd tuː miː maɪ təˈmɑːtoʊ plɑːnts ɑːr nɒt ˈɡroʊɪŋ/', vi: 'Chú Ted bảo tôi: "Cà chua của chú chẳng chịu lớn gì cả.' },
-      { start: 28.5, en: 'For the last two weeks, they\'re just sitting there, waiting."', ipa: '/fɔːr ðə lɑːst tuː wiːks ðeɪr dʒʌst ˈsɪtɪŋ ðɛər ˈweɪtɪŋ/', vi: 'Hai tuần nay chúng cứ đứng ì một chỗ chờ đợi thôi."' },
-      { start: 36.0, en: '"Waiting?" I asked, "What are they waiting for?"', ipa: '/ˈweɪtɪŋ? aɪ ɑːskt wɒt ɑːr ðeɪ ˈweɪtɪŋ fɔːr?/', vi: '"Chờ đợi ạ?" tôi ngạc nhiên hỏi: "Chúng đang chờ cái gì thế ạ?"' },
-      { start: 43.5, en: 'My uncle said, "The sun! The heat!"', ipa: '/maɪ ˈʌŋkl sɛd ðə sʌn! ðə hiːt!/', vi: 'Chú đáp: "Ánh nắng mặt trời! Hơi ấm đấy!"' },
-      { start: 50.5, en: "Keep growing, plants!", ipa: "/kiːp ˈɡroʊɪŋ plɑːnts!/", vi: "Mau lớn nhanh lên nhé những cây cà chua nhỏ!" }
+      { start: 4.8, en: "In early spring, Uncle Ted planted a few tomato plants in his garden.", ipa: "/ɪn ˈɜːrli sprɪŋ ˈʌŋkl tɛd ˈplɑːntɪd ə fjuː təˈmɑːtoʊ plɑːnts ɪn hɪz ˈɡɑːrdn/", vi: "In early spring, Uncle Ted planted a few tomato plants in his garden." },
+      { start: 13.5, en: "A few weeks passed.", ipa: "/ə fjuː wiːks pɑːst/", vi: "A few weeks passed." },
+      { start: 16.5, en: "The plants were still the same.", ipa: "/ðə plɑːnts wɜːr stɪl ðə seɪm/", vi: "The plants were still the same." },
+      { start: 21.0, en: 'Uncle Ted said to me, "My tomato plants are not growing.', ipa: '/ˈʌŋkl tɛd sɛd tuː miː maɪ təˈmɑːtoʊ plɑːnts ɑːr nɒt ˈɡroʊɪŋ/', vi: 'Uncle Ted said to me, "My tomato plants are not growing.' },
+      { start: 28.5, en: 'For the last two weeks, they\'re just sitting there, waiting."', ipa: '/fɔːr ðə lɑːst tuː wiːks ðeɪr dʒʌst ˈsɪtɪŋ ðɛər ˈweɪtɪŋ/', vi: 'For the last two weeks, they\'re just sitting there, waiting."' },
+      { start: 36.0, en: '"Waiting?" I asked, "What are they waiting for?"', ipa: '/ˈweɪtɪŋ? aɪ ɑːskt wɒt ɑːr ðeɪ ˈweɪtɪŋ fɔːr?/', vi: '"Waiting?" I asked, "What are they waiting for?"' },
+      { start: 43.5, en: 'My uncle said, "The sun! The heat!"', ipa: '/maɪ ˈʌŋkl sɛd ðə sʌn! ðə hiːt!/', vi: 'My uncle said, "The sun! The heat!"' },
+      { start: 50.5, en: "Keep growing, plants!", ipa: "/kiːp ˈɡroʊɪŋ plɑːnts!/", vi: "Keep growing, plants!" }
     ]
   },
   {
@@ -528,15 +528,15 @@ STORIES_DATA["03 March"] = [
     image: "03 March/images/day_30.webp",
     audio: "03 March/audio/A0330 The Cow Didn_t Listen.mp3",
     sentences: [
-      { start: 4.8, en: "Mr. Lee went to the city with his cow.", ipa: "/ˈmɪstər liː wɛnt tuː ðə ˈsɪti wɪð hɪz kaʊ/", vi: "Ông Lee dắt theo con bò của mình ra phố." },
-      { start: 10.0, en: "He followed the animal as it crossed the street, not noticing the traffic lights.", ipa: "/hiː ˈfɒloʊd ði ˈænɪml æz ɪt krɒst ðə striːt nɒt ˈnoʊtɪsɪŋ ðə ˈtræfɪk laɪts/", vi: "Ông đi theo con vật băng qua đường mà chẳng buồn chú ý đến đèn tín hiệu giao thông." },
-      { start: 19.5, en: '"Stop!" A policeman said to them loudly.', ipa: '/stɒp! ə pəˈliːsmən sɛd tuː ðɛm ˈlaʊdli/', vi: '"Dừng lại ngay!" Một viên cảnh sát lớn tiếng quát."}' },
-      { start: 25.0, en: "He started to write a ticket.", ipa: "/hiː ˈstɑːrtɪd tuː raɪt ə ˈtɪkɪt/", vi: "Viên cảnh sát bắt đầu viết vé phạt." },
-      { start: 29.0, en: 'Mr. Lee said to his cow, "Stop! Didn\'t you hear the policeman?"', ipa: '/ˈmɪstər liː sɛd tuː hɪz kaʊ stɒp! ˈdɪdnt juː hɪər ðə pəˈliːsmən?/', vi: 'Ông Lee vội quay sang mắng con bò: "Dừng lại! Mày không nghe thấy chú cảnh sát gọi à?"' },
-      { start: 38.0, en: "But the cow kept moving forward.", ipa: "/bʌt ðə kaʊ kɛpt ˈmuːvɪŋ ˈfɔːrwərd/", vi: "Nhưng con bò vẫn thản nhiên bước tiếp." },
-      { start: 42.5, en: 'Mr. Lee said, "You see? It\'s not me.', ipa: '/ˈmɪstər liː sɛd juː siː? ɪts nɒt miː/', vi: 'Ông Lee phân trần: "Chú thấy chưa, đâu phải tại tôi.' },
-      { start: 47.0, en: 'It\'s the cow you should give the ticket to."', ipa: '/ɪts ðə kaʊ juː ʃʊd ɡɪv ðə ˈtɪkɪt tuː/', vi: 'Chính con bò này mới là người chú phải phạt đấy chứ."' },
-      { start: 54.5, en: "Here is your ticket!", ipa: "/hɪər ɪz jɔːr ˈtɪkɪt!/", vi: "Vé phạt của bác đây này!" }
+      { start: 4.8, en: "Mr. Lee went to the city with his cow.", ipa: "/ˈmɪstər liː wɛnt tuː ðə ˈsɪti wɪð hɪz kaʊ/", vi: "Mr. Lee went to the city with his cow." },
+      { start: 10.0, en: "He followed the animal as it crossed the street, not noticing the traffic lights.", ipa: "/hiː ˈfɒloʊd ði ˈænɪml æz ɪt krɒst ðə striːt nɒt ˈnoʊtɪsɪŋ ðə ˈtræfɪk laɪts/", vi: "He followed the animal as it crossed the street, not noticing the traffic lights." },
+      { start: 19.5, en: '"Stop!" A policeman said to them loudly.', ipa: '/stɒp! ə pəˈliːsmən sɛd tuː ðɛm ˈlaʊdli/', vi: '"Stop!" A policeman said to them loudly.' },
+      { start: 25.0, en: "He started to write a ticket.", ipa: "/hiː ˈstɑːrtɪd tuː raɪt ə ˈtɪkɪt/", vi: "He started to write a ticket." },
+      { start: 29.0, en: 'Mr. Lee said to his cow, "Stop! Didn\'t you hear the policeman?"', ipa: '/ˈmɪstər liː sɛd tuː hɪz kaʊ stɒp! ˈdɪdnt juː hɪər ðə pəˈliːsmən?/', vi: 'Mr. Lee said to his cow, "Stop! Didn\'t you hear the policeman?"' },
+      { start: 38.0, en: "But the cow kept moving forward.", ipa: "/bʌt ðə kaʊ kɛpt ˈmuːvɪŋ ˈfɔːrwərd/", vi: "But the cow kept moving forward." },
+      { start: 42.5, en: 'Mr. Lee said, "You see? It\'s not me.', ipa: '/ˈmɪstər liː sɛd juː siː? ɪts nɒt miː/', vi: 'Mr. Lee said, "You see? It\'s not me.' },
+      { start: 47.0, en: 'It\'s the cow you should give the ticket to."', ipa: '/ɪts ðə kaʊ juː ʃʊd ɡɪv ðə ˈtɪkɪt tuː/', vi: 'It\'s the cow you should give the ticket to."' },
+      { start: 54.5, en: "Here is your ticket!", ipa: "/hɪər ɪz jɔːr ˈtɪkɪt!/", vi: "Here is your ticket!" }
     ]
   },
   {
@@ -545,15 +545,15 @@ STORIES_DATA["03 March"] = [
     image: "03 March/images/day_31.webp",
     audio: "03 March/audio/A0331 Nature.mp3",
     sentences: [
-      { start: 4.8, en: 'Two young people are talking about art.', ipa: '/tuː jʌŋ ˈpiːpl ɑːr ˈtɔːkɪŋ əˈbaʊt ɑːrt/', vi: 'Hai người trẻ tuổi đang trò chuyện với nhau về nghệ thuật.' },
-      { start: 10.0, en: '"Do you know a great artist?" asks Evan.', ipa: '/duː juː noʊ ə ɡreɪt ˈɑːrtɪst? ɑːsks ˈɛvən/', vi: '"Cậu có biết vị nghệ sĩ vĩ đại nào không?" Evan hỏi.' },
-      { start: 15.5, en: '"I think nature is a great artist," says Emma.', ipa: '/aɪ θɪŋk ˈneɪtʃər ɪz ə ɡreɪt ˈɑːrtɪst sɛz ˈɛmə/', vi: '"Tớ nghĩ thiên nhiên chính là một nghệ sĩ tài ba nhất," Emma đáp.' },
-      { start: 22.0, en: '"Why?" asks her friend Evan.', ipa: '/waɪ? ɑːsks hɜːr frɛnd ˈɛvən/', vi: '"Tại sao lại thế?" bạn cô là Evan thắc mắc.' },
-      { start: 26.5, en: '"Well, remember seeing the trees in autumn?', ipa: '/wɛl rɪˈmɛmbər ˈsiːɪŋ ðə triːz ɪn ˈɔːtəm/', vi: '"Ừm, cậu còn nhớ những tán cây vào mùa thu chứ?' },
-      { start: 32.5, en: 'The leaves change into many colours!"', ipa: '/ðə liːvz tʃeɪndʒ ˈɪntuː ˈmɛni ˈkʌlərz!/', vi: 'Những chiếc lá chuyển sang vô vàn sắc màu rực rỡ cơ mà!"' },
-      { start: 38.5, en: '"Yes, they are really beautiful!" answers Evan.', ipa: '/jɛs ðeɪ ɑːr ˈrɪəli ˈbjuːtɪfl! ˈɑːnsərz ˈɛvən/', vi: '"Đúng vậy, chúng thực sự rất đẹp!" Evan gật đầu đồng tình.' },
-      { start: 45.0, en: '"That\'s why I think nature is the greatest artist!" says Emma.', ipa: '/ðæts waɪ aɪ θɪŋk ˈneɪtʃər ɪz ðə ˈɡreɪtɪst ˈɑːrtɪst! sɛz ˈɛmə/', vi: '"Chính vì thế tớ mới cho rằng thiên nhiên là người nghệ sĩ vĩ đại nhất!" Emma cười nói.' },
-      { start: 53.0, en: "The leaves are beautiful!", ipa: "/ðə liːvz ɑːr ˈbjuːtɪfl!/", vi: "Những chiếc lá thu thật là tuyệt đẹp!" }
+      { start: 4.8, en: 'Two young people are talking about art.', ipa: '/tuː jʌŋ ˈpiːpl ɑːr ˈtɔːkɪŋ əˈbaʊt ɑːrt/', vi: 'Two young people are talking about art.' },
+      { start: 10.0, en: '"Do you know a great artist?" asks Evan.', ipa: '/duː juː noʊ ə ɡreɪt ˈɑːrtɪst? ɑːsks ˈɛvən/', vi: '"Do you know a great artist?" asks Evan.' },
+      { start: 15.5, en: '"I think nature is a great artist," says Emma.', ipa: '/aɪ θɪŋk ˈneɪtʃər ɪz ə ɡreɪt ˈɑːrtɪst sɛz ˈɛmə/', vi: '"I think nature is a great artist," says Emma.' },
+      { start: 22.0, en: '"Why?" asks her friend Evan.', ipa: '/waɪ? ɑːsks hɜːr frɛnd ˈɛvən/', vi: '"Why?" asks her friend Evan.' },
+      { start: 26.5, en: '"Well, remember seeing the trees in autumn?', ipa: '/wɛl rɪˈmɛmbər ˈsiːɪŋ ðə triːz ɪn ˈɔːtəm/', vi: '"Well, remember seeing the trees in autumn?' },
+      { start: 32.5, en: 'The leaves change into many colours!"', ipa: '/ðə liːvz tʃeɪndʒ ˈɪntuː ˈmɛni ˈkʌlərz!/', vi: 'The leaves change into many colours!"' },
+      { start: 38.5, en: '"Yes, they are really beautiful!" answers Evan.', ipa: '/jɛs ðeɪ ɑːr ˈrɪəli ˈbjuːtɪfl! ˈɑːnsərz ˈɛvən/', vi: '"Yes, they are really beautiful!" answers Evan.' },
+      { start: 45.0, en: '"That\'s why I think nature is the greatest artist!" says Emma.', ipa: '/ðæts waɪ aɪ θɪŋk ˈneɪtʃər ɪz ðə ˈɡreɪtɪst ˈɑːrtɪst! sɛz ˈɛmə/', vi: '"That\'s why I think nature is the greatest artist!" says Emma.' },
+      { start: 53.0, en: "The leaves are beautiful!", ipa: "/ðə liːvz ɑːr ˈbjuːtɪfl!/", vi: "The leaves are beautiful!" }
     ]
   }
 ];
