@@ -111,7 +111,7 @@ STORIES_DATA["05 May"] = [
     day: 8,
     title: "A Bear's Visit - Part 1",
     image: "05 May/images/day_08.webp",
-    audio: "05 May/audio/A0508 A Bear_s Visit 1.mp3",
+    audio: "05 May/audio/A0508 A Bear_s Visit - 1.mp3",
     sentences: [
       { start: 4.8, en: "Leo loves nature. He lives outside the city.", ipa: "/ˈliːoʊ lʌvz ˈneɪtʃər. hiː lɪvz ˌaʊtˈsaɪd ðə ˈsɪti/", vi: "Leo rất yêu thiên nhiên. Cậu sống ở vùng ngoại ô thành phố." },
       { start: 10.5, en: "One day, as he was working in the garden, his dog began to growl.", ipa: "/wʌn deɪ æz hiː wɒz ˈwɜːrkɪŋ ɪn ðə ˈɡɑːrdn hɪz dɒɡ bɪˈɡæn tuː ɡraʊl/", vi: "Một hôm, khi cậu đang làm vườn trong sân, chú chó cưng bỗng gầm gừ." },
@@ -127,7 +127,7 @@ STORIES_DATA["05 May"] = [
     day: 9,
     title: "A Bear's Visit - Part 2",
     image: "05 May/images/day_09.webp",
-    audio: "05 May/audio/A0509 A Bear_s Visit 2.mp3",
+    audio: "05 May/audio/A0509 A Bear_s Visit - 2.mp3",
     sentences: [
       { start: 4.8, en: "When Leo got close to his house, he didn't hear the sound of the bear behind him.", ipa: "/wɛn ˈliːoʊ ɡɒt kloʊs tuː hɪz haʊs hiː ˈdɪdnt hɪər ðə saʊnd əv ðə bɛər bɪˈhaɪnd hɪm/", vi: "Khi chạy đến gần nhà, Leo không còn nghe thấy tiếng động của con gấu đuổi theo phía sau nữa." },
       { start: 13.5, en: "He stopped and turned around to see where the bear was.", ipa: "/hiː stɒpt ænd tɜːrnd əˈraʊnd tuː siː wɛər ðə bɛər wɒz/", vi: "Cậu dừng lại và quay người ngoái nhìn xem con gấu đâu rồi." },
@@ -163,7 +163,7 @@ STORIES_DATA["05 May"] = [
     sentences: [
       { start: 4.8, en: "Jan and Mike go to the seaside after school.", ipa: "/dʒæn ænd maɪk ɡoʊ tuː ðə ˈsiːˌsaɪd ˈɑːftər skuːl/", vi: "Jan và Mike cùng ra bãi biển chơi sau giờ tan học." },
       { start: 10.0, en: "They see many boats on the water.", ipa: "/ðeɪ siː ˈmɛni boʊts ɒn ðə ˈwɔːtər/", vi: "Họ nhìn thấy rất nhiều tàu thuyền trên mặt nước." },
-      { start: 14.5, en: "They see a sailboat. It has a big sail to catch the wind and make it go.", ipa: "/ðeɪ siː ə ˈseɪlˌboʊt. ɪt hæz ə bɪɡ seɪl tuː kætʃ ðə wɪnd ænd meɪk ɪt ɡoʊ/", vi: "Họ thấy một chiếc thuyền buồm với tấmψ buồm lớn để đón gió lướt đi." },
+      { start: 14.5, en: "They see a sailboat. It has a big sail to catch the wind and make it go.", ipa: "/ðeɪ siː ə ˈseɪlˌboʊt. ɪt hæz ə bɪɡ seɪl tuː kætʃ ðə wɪnd ænd meɪk ɪt ɡoʊ/", vi: "Họ thấy một chiếc thuyền buồm với tấm buồm lớn để đón gió lướt đi." },
       { start: 22.5, en: "They see a rowboat. It has two oars. A man is rowing the boat to make it go.", ipa: "/ðeɪ siː ə ˈroʊˌboʊt. ɪt hæz tuː ɔːrz. ə mæn ɪz ˈroʊɪŋ ðə boʊt tuː meɪk ɪt ɡoʊ/", vi: "Họ thấy một chiếc thuyền chèo có hai mái chèo. Có một người đàn ông đang chèo thuyền đi." },
       { start: 32.0, en: "Now, they see a motor boat. It has a motor to make it go. It makes a loud noise.", ipa: "/naʊ ðeɪ siː ə ˈmoʊtər boʊt. ɪt hæz ə ˈmoʊtər tuː meɪk ɪt ɡoʊ. ɪt meɪks ə laʊd nɔɪz/", vi: "Giờ thì họ nhìn thấy một chiếc cano gắn máy. Nó chạy bằng động cơ và phát ra tiếng ồn ào." },
       { start: 41.0, en: "Of all the boats they see, they like the tall sailboat the best.", ipa: "/ɒv ɔːl ðə boʊts ðeɪ siː ðeɪ laɪk ðə tɔːl ˈseɪlˌboʊt ðə bɛst/", vi: "Trong số các loại tàu thuyền, họ thích chiếc thuyền buồm cao lớn nhất." },
@@ -204,7 +204,7 @@ STORIES_DATA["05 May"] = [
     day: 14,
     title: "The Days of the Week",
     image: "05 May/images/day_14.webp",
-    audio: "05 May/audio/A0514 The Days of the Week.mp3",
+    audio: "05 May/audio/A0514 The Days of The Week.mp3",
     sentences: [
       { start: 4.8, en: "Jill is learning the days of the week.", ipa: "/dʒɪl ɪz ˈlɜːrnɪŋ ðə deɪz əv ðə wiːk/", vi: "Jill đang học các ngày trong tuần." },
       { start: 9.0, en: "'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, and Sunday,' she chants with her dad on the way to daycare.", ipa: "/ˈmʌndeɪ ˈtuːzdeɪ ˈwɛnzdeɪ ˈθɜːrzdeɪ ˈfraɪdeɪ ˈsætərdeɪ ænd ˈsʌndeɪ ʃiː tʃænts wɪð hɜːr dæd ɒn ðə weɪ tuː ˈdeɪˌkɛər/", vi: "'Thứ Hai, Thứ Ba, Thứ Tư, Thứ Năm, Thứ Sáu, Thứ Bảy và Chủ Nhật,' cô bé nhẩm đọc cùng bố trên đường tới nhà trẻ." },
@@ -262,7 +262,7 @@ STORIES_DATA["05 May"] = [
     day: 18,
     title: "Fire Station - Part 1",
     image: "05 May/images/day_18.webp",
-    audio: "05 May/audio/A0518 Fire Station 1.mp3",
+    audio: "05 May/audio/A0518 Fire Station - 1.mp3",
     sentences: [
       { start: 4.8, en: "Micah likes fire trucks.", ipa: "/ˈmaɪkə laɪks ˈfaɪər trʌks/", vi: "Cậu bé Micah rất thích xe cứu hỏa." },
       { start: 8.5, en: "He is only two years old, but he knows fire trucks can do great things.", ipa: "/hiː ɪz ˈoʊnli tuː jɪərz oʊld bʌt hiː noʊz ˈfaɪər trʌks kæn duː ɡreɪt θɪŋz/", vi: "Bé mới hai tuổi thôi nhưng đã biết rằng xe cứu hỏa có thể làm được những việc vô cùng vĩ đại." },
@@ -276,7 +276,7 @@ STORIES_DATA["05 May"] = [
     day: 19,
     title: "Fire Station - Part 2",
     image: "05 May/images/day_19.webp",
-    audio: "05 May/audio/A0519 Fire Station 2.mp3",
+    audio: "05 May/audio/A0519 Fire Station - 2.mp3",
     sentences: [
       { start: 4.8, en: "When Micah came to the fire station, a fireman was standing by the truck.", ipa: "/wɛn ˈmaɪkə keɪm tuː ðə ˈfaɪər ˈsteɪʃən ə ˈfaɪərmən wɒz ˈstændɪŋ baɪ ðə trʌk/", vi: "Khi Micah đến nơi, có một chú lính cứu hỏa đang đứng cạnh chiếc xe." },
       { start: 12.0, en: "Micah asked the man, 'May I come close to see the fire truck?'", ipa: "/ˈmaɪkə ɑːskt ðə mæn meɪ aɪ kʌm kloʊs tuː siː ðə ˈfaɪər trʌk/", vi: "Micah rụt rè hỏi chú ấy: 'Cháu có thể đến gần để ngắm xe cứu hỏa được không ạ?'" },
@@ -415,7 +415,7 @@ STORIES_DATA["05 May"] = [
     day: 29,
     title: "Bug School - Part 1",
     image: "05 May/images/day_29.webp",
-    audio: "05 May/audio/A0529 Bug School 1.mp3",
+    audio: "05 May/audio/A0529 Bug School - 1.mp3",
     sentences: [
       { start: 4.8, en: "There are ants, crickets, butterflies, earwigs, and many other insects in the Bug School.", ipa: "/ðɛər ɑːr ænts ˈkrɪkɪts ˈbʌtərˌflaɪz ˈɪərˌwɪɡz ænd ˈmɛni ˈʌðər ˈɪnsɛkts ɪn ðə bʌɡ skuːl/", vi: "Có rất nhiều kiến, dế, bướm, sâu bọ và vô số loài côn trùng khác theo học tại Trường học Côn trùng." },
       { start: 16.0, en: "Everyone likes their school. Everyone, except the spider.", ipa: "/ˈɛvriˌwʌn laɪks ðɛər skuːl. ˈɛvriˌwʌn ɪkˈsɛpt ðə ˈspaɪdər/", vi: "Ai ai cũng yêu mến ngôi trường của mình, ngoại trừ chú nhện nhỏ." },
@@ -429,7 +429,7 @@ STORIES_DATA["05 May"] = [
     day: 30,
     title: "Bug School - Part 2",
     image: "05 May/images/day_30.webp",
-    audio: "05 May/audio/A0530 Bug School 2.mp3",
+    audio: "05 May/audio/A0530 Bug School - 2.mp3",
     sentences: [
       { start: 4.8, en: "Spider begins to cry. Tears run down his face.", ipa: "/ˈspaɪdər bɪˈɡɪnz tuː kraɪ. tɪərz rʌn daʊn hɪz feɪs/", vi: "Nhện nhỏ lại òa khóc, nước mắt giàn giụa trên khuôn mặt." },
       { start: 10.5, en: "The insects make fun of Spider because he is different. All insects have six legs. But spiders have eight legs.", ipa: "/ðə ˈɪnsɛkts meɪk fʌn əv ˈspaɪdər bɪˈkəz hiː ɪz ˈdɪfrənt. ɔːl ˈɪnsɛkts hæv sɪks lɛɡz. bʌt ˈspaɪdərz hæv eɪt lɛɡz/", vi: "Bọn côn trùng trêu ghẹo nhện vì trông nó khác lạ. Tất cả côn trùng chỉ có sáu chân, riêng nhện lại có tới tám chân." },
@@ -451,7 +451,7 @@ STORIES_DATA["05 May"] = [
       { start: 29.5, en: "People then began to work and live together to grow these crops.", ipa: "/ˈpiːpl ðɛn bɪˈɡæn tuː wɜːrk ænd lɪv təˈɡɛðər tuː ɡroʊ ðiːz krɒps/", vi: "Từ đó, con người bắt đầu quây quần sinh sống và lao động cùng nhau để canh tác những loại hoa màu này." },
       { start: 37.0, en: "They could grow enough food for everyone.", ipa: "/ðeɪ kʊd ɡroʊ ɪˈnʌf fuːd fɔːr ˈɛvriˌwʌn/", vi: "Họ đã có thể tự sản xuất đủ lương thực nuôi sống tất cả mọi người." },
       { start: 42.0, en: "They did not have to spend all their time travelling and looking for food.", ipa: "/ðeɪ dɪd nɒt hæv tuː spɛnd ɔːl ðɛər taɪm ˈtrævəlɪŋ ænd ˈlʊkɪŋ fɔːr fuːd/", vi: "Họ không còn phải dành toàn bộ thời gian tất bật di chuyển khắp nơi chỉ để tìm đồ ăn nữa." },
-      { start: 50.0, en: "Rice, corn and wheat are very important!", ipa: "/raɪs kɔːrn ænd wiːt ɑːr ˈvɛri ɪmˈpɔːrtnt!/", vi: "Lúa gạo, ngô và lúa mì thực sự vô cùng quan trọng đối với nhân loại!" }
+      { start: 50.0, en: "Rice, corn and wheat are very important!", ipa: "/raɪs kɔːrn ænd wiːt ɑːr ˈvɛri ɪmˈpɔːrtrt!/", vi: "Lúa gạo, ngô và lúa mì thực sự vô cùng quan trọng đối với nhân loại!" }
     ]
   }
 ];
