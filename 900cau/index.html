@@ -26,7 +26,6 @@
       50% { transform: translateY(-4px); }
     }
 
-    /* Ẩn các class tự sinh của Cloudflare/Netlify */
     [data-netlify-deploy-id], 
     iframe[src*="netlify"], 
     div[class*="netlify"], 
@@ -115,7 +114,7 @@
         <button data-speed="2.0" class="speed-opt w-full text-left px-3 py-2 rounded hover:bg-cyan-50 text-slate-700 text-xs font-bold transition">2.0x</button>
       </div>
 
-      <!-- HÀNG 1: Tùy chỉnh -->
+      <!-- HÀNG 1: Tùy chỉnh (THIẾT KẾ MỚI GỌN GÀNG, ÍT CHỮ) -->
       <div class="grid grid-cols-12 gap-1.5">
         <button id="voiceToggleBtn" class="col-span-6 h-8 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center gap-1.5 border border-emerald-500 transition shadow-sm">
           <i class="fa-solid fa-file-audio text-[12px]" id="voiceIcon"></i>
@@ -123,25 +122,25 @@
         </button>
 
         <button id="repeatToggleBtn" class="col-span-3 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] border border-slate-300 flex items-center justify-center gap-1 transition shadow-sm">
-          <i class="fa-solid fa-rotate text-[10px] text-emerald-600"></i>
-          <span id="repeatText">Lặp: 1</span>
+          <i class="fa-solid fa-rotate text-[11px] text-emerald-600"></i>
+          <span id="repeatText">1</span>
         </button>
 
         <button id="speedToggleBtn" class="col-span-3 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] border border-slate-300 flex items-center justify-center gap-1 transition shadow-sm">
-          <i class="fa-solid fa-gauge-high text-[10px] text-cyan-600"></i>
+          <i class="fa-solid fa-gauge-high text-[11px] text-cyan-600"></i>
           <span id="speedText">1.0x</span>
         </button>
       </div>
 
-      <!-- HÀNG 2: Điều hướng -->
+      <!-- HÀNG 2: Điều hướng (Đổi icon play thành nhỏ gọn, bỏ chữ) -->
       <div class="grid grid-cols-12 gap-1.5">
         <button id="prevBtn" class="col-span-2 h-10 bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 rounded-lg border border-slate-300 flex items-center justify-center transition shadow-sm">
           <i class="fa-solid fa-backward-step text-sm"></i>
         </button>
 
-        <button id="playBtn" class="col-span-8 h-10 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-[13px] rounded-lg border border-emerald-500 flex items-center justify-center gap-2 shadow-md transition">
+        <!-- Đã thu gọn nút Play, căn giữa -->
+        <button id="playBtn" class="col-span-8 h-10 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-lg rounded-lg border border-emerald-500 flex items-center justify-center shadow-md transition">
           <i class="fa-solid fa-play" id="playIcon"></i>
-          <span id="playText">Phát Audio</span>
         </button>
 
         <button id="nextBtn" class="col-span-2 h-10 bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 rounded-lg border border-slate-300 flex items-center justify-center transition shadow-sm">
@@ -266,20 +265,24 @@
       const displaySentences = item.sentences ? item.sentences.slice(0, 3) : [];
       
       if (displaySentences.length) {
+        // TỐI ƯU HIỂN THỊ CÂU THEO ĐÚNG MẪU: TỪ VỰNG - PHIÊN ÂM - DỊCH TRÊN CÙNG 1 DÒNG
         sentencesHtml = displaySentences.map((s, sIdx) => {
           const viTrans = s.vi || '';
           const ipaText = s.ipa || '';
 
           return `
-            <div id="sent-${sIdx}" class="sentence-row px-3 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition flex flex-col justify-center shadow-sm" onclick="playSingleSentence('${s.en.replace(/'/g, "\'")}', ${sIdx})">
-              <div class="flex items-center justify-between">
+            <div id="sent-${sIdx}" class="sentence-row px-2 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition flex flex-col justify-center shadow-sm mb-1" onclick="playSingleSentence('${s.en.replace(/'/g, "\'")}', ${sIdx})">
+              
+              <div class="flex items-center justify-between mb-0.5">
                 <span class="font-bold text-slate-800 text-[13px] leading-tight">• ${s.en}</span>
                 <i class="fa-solid fa-volume-high text-[11px] text-emerald-600 opacity-80 ml-1.5"></i>
               </div>
-              <div class="trans-box ${showDetails ? '' : 'hidden'} mt-1 space-y-1 text-[11px]">
-                ${ipaText ? `<p class="ipa-text font-mono leading-tight font-semibold">${ipaText}</p>` : ''}
-                ${viTrans ? `<p class="vn-text font-medium leading-tight text-slate-600"><span class="bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded text-[9px] mr-1 font-bold">VN</span>${viTrans}</p>` : ''}
+              
+              <div class="trans-box ${showDetails ? '' : 'hidden'} text-[11px] leading-snug">
+                <span class="ipa-text font-mono font-semibold mr-1">${ipaText}</span>
+                <span class="vn-text font-medium text-slate-600">(${viTrans})</span>
               </div>
+              
             </div>
           `;
         }).join('');
@@ -288,19 +291,19 @@
       currentCardContainer.innerHTML = `
         <div class="border border-emerald-200 bg-emerald-50/50 rounded-2xl p-2.5 shadow-sm flex flex-col justify-between h-full">
           
-          <div class="flex items-center justify-between pb-1.5 border-b border-emerald-200/60 shrink-0">
+          <div class="flex items-center justify-between pb-1 border-b border-emerald-200/60 shrink-0">
             <span class="text-[11px] font-black uppercase text-emerald-800 tracking-wider">Tình huống thực tế</span>
             <span class="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold shadow-sm">Bài ${item.id}</span>
           </div>
 
-          <div class="w-full bg-white rounded-xl p-1.5 border border-slate-200 flex items-center justify-center overflow-hidden my-2 flex-1 min-h-[140px] shadow-inner">
-            <img src="./image/${item.id}.jpg?v=3" alt="Minh họa bài ${item.id}" 
+          <div class="w-full bg-white rounded-xl p-1.5 border border-slate-200 flex items-center justify-center overflow-hidden my-1.5 flex-1 min-h-[140px] shadow-inner">
+            <img src="./image/${item.id}.jpg?v=4" alt="Minh họa bài ${item.id}" 
                  class="max-w-full max-h-full object-contain scale-[1.02] char-animation drop-shadow-md" 
                  data-attempt="0"
                  onerror="handleImageFallback(this, '${item.id}')">
           </div>
 
-          <div class="space-y-2 shrink-0">
+          <div class="shrink-0 flex flex-col">
             ${sentencesHtml}
           </div>
         </div>
@@ -351,7 +354,7 @@
 
     function updateRepeatDisplay() {
       const limitStr = currentRepeatLimit === 999 ? '∞' : `${currentRepeatLimit}`;
-      document.getElementById('repeatText').innerText = `Lặp: ${limitStr}`;
+      document.getElementById('repeatText').innerText = limitStr;
     }
 
     document.querySelectorAll('.speed-opt').forEach(btn => {
@@ -410,7 +413,6 @@
       } else {
         isPlaying = true;
         document.getElementById('playIcon').className = "fa-solid fa-pause";
-        document.getElementById('playText').innerText = "Tạm Dừng";
 
         if (currentLessonIdx < startIdx || currentLessonIdx > endIdx) {
           currentLessonIdx = startIdx;
@@ -427,7 +429,6 @@
       if (synth) synth.cancel();
       currentUtterance = null;
       document.getElementById('playIcon').className = "fa-solid fa-play";
-      document.getElementById('playText').innerText = "Phát Audio";
       document.querySelectorAll('.sentence-row').forEach(el => el.classList.remove('active-sentence'));
     }
 
@@ -561,7 +562,6 @@
         
         isPlaying = true;
         document.getElementById('playIcon').className = "fa-solid fa-pause";
-        document.getElementById('playText').innerText = "Tạm Dừng";
         playCurrentLesson();
       }
     });
@@ -576,7 +576,6 @@
         
         isPlaying = true;
         document.getElementById('playIcon').className = "fa-solid fa-pause";
-        document.getElementById('playText').innerText = "Tạm Dừng";
         playCurrentLesson();
       }
     });
