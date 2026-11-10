@@ -10,7 +10,7 @@ STORIES_DATA["09 September"] = [
     audio: "09 September/audio/A0901 Stop the Cars.mp3",
     sentences: [
       { start: 4.8, en: "One day, a mother duck and her babies were waiting to cross the road.", ipa: "/wʌn deɪ ə ˈmʌðər dʌk ænd hɜːr ˈbeɪbiz wɜːr ˈweɪtɪŋ tuː krɒs ðə roʊd/", vi: "Một hôm, một cô vịt mẹ và các con đang đứng chờ để sang đường." },
-      { start: 12.0, en: "Cars kept coming. The mother duck and her babies waited and waited. Finally, a man got out of his car and stopped the traffic.", ipa: "/kɑːrz kɛpt ˈkʌmɪŋ. ðə ˈmʌðər dʌk ænd hɜːr ˈbeɪbiz ˈweɪtɪd ænd ˈweɪtɪd. ˈfaɪnəli ə mæn ɡɒt aʊt əv hɪz kɑːr ænd stɒpt ðə ˈtræfɪk/", vi: "Xe cộ cứ chạy qua lại liên tục. Vịt mẹ cùng lũ con phải chờ đợi mãi. Cuối cùng, một người đàn ông đã bước ra khỏi ô tô và ra hiệu dừng xe lại." },
+      { start: 12.0, en: "Cars kept coming. The mother duck and her babies waited and waited. Finally, a man got out of his car and stopped the traffic.", ipa: "/kɑːrz kɛpt ˈkʌmɪŋ. ðə ˈmʌðər dʌk ænd hɜːr ˈbeɪbiz ˈweɪtɪŋ ænd ˈweɪtɪŋ. ˈfaɪnəli ə mæn ɡɒt aʊt əv hɪz kɑːr ænd stɒpt ðə ˈtræfɪk/", vi: "Xe cộ cứ chạy qua lại liên tục. Vịt mẹ cùng lũ con phải chờ đợi mãi. Cuối cùng, một người đàn ông đã bước ra khỏi ô tô và ra hiệu dừng xe lại." },
       { start: 24.5, en: "As the ducks crossed the road, many people took pictures.", ipa: "/æz ðə dʌks krɒst ðə roʊd ˈmɛni ˈpiːpl tʊk ˈpɪktʃərz/", vi: "Khi đàn vịt băng qua đường, rất nhiều người đã đứng lại chụp ảnh." },
       { start: 30.5, en: "Who would think that a little mother duck could make all the cars stop?", ipa: "/huː wʊd θɪŋk ðæt ə ˈlɪtl ˈmʌðər dʌk kʊd meɪk ɔːl ðə kɑːrz stɒp/", vi: "Ai mà ngờ được rằng một cô vịt mẹ nhỏ bé lại có thể làm cho tất cả xe cộ phải dừng lại cơ chứ?" },
       { start: 38.0, en: "These baby ducks must have been so proud of their mom!", ipa: "/ðiːz ˈbeɪbi dʌks mʌst hæv biːn soʊ praʊd əv ðɛər mɒm/", vi: "Lũ vịt con chắc hẳn phải cảm thấy vô cùng tự hào về người mẹ của mình!" }
@@ -47,7 +47,7 @@ STORIES_DATA["09 September"] = [
     day: 4,
     title: "My Eyes",
     image: "09 September/images/day_04.webp",
-    audio: "09 September/audio/A04 My Eyes.mp3",
+    audio: "09 September/audio/A0904 My Eyes.mp3",
     sentences: [
       { start: 4.8, en: "I have two eyes. They let me see everything around me.", ipa: "/aɪ hæv tuː aɪz. ðeɪ lɛt miː siː ˈɛvriˌθɪŋ əˈraʊnd miː/", vi: "Tôi có hai con mắt, chúng giúp tôi nhìn ngắm mọi vật xung quanh." },
       { start: 11.5, en: "Can everyone see with their eyes? No. Some people cannot see at all. They are blind.", ipa: "/kæn ˈɛvriwʌn siː wɪð ðɛər aɪz? noʊ. sʌm ˈpiːpl ˈkænɒt siː æt ɔːl. ðeɪ ɑːr blaɪnd/", vi: "Phải chăng ai cũng nhìn thấy được bằng đôi mắt? Không đâu. Một số người không thể nhìn thấy gì cả, họ bị khiếm thị." },
@@ -90,7 +90,7 @@ STORIES_DATA["09 September"] = [
     sentences: [
       { start: 4.8, en: "I love swimming. When I go swimming, I always go with a friend. Why? Swimming can be dangerous.", ipa: "/aɪ lʌv ˈswɪmɪŋ. wɛn aɪ ɡoʊ ˈswɪmɪŋ aɪ ˈɔːlweɪz ɡoʊ wɪð ə frɛnd. waɪ? ˈswɪmɪŋ kæn biː ˈdeɪndʒərəs/", vi: "Tôi rất thích bơi lội. Mỗi khi đi bơi, tôi luôn đi cùng một người bạn. Tại sao ư? Vì bơi lội tiềm ẩn rất nhiều nguy hiểm." },
       { start: 14.5, en: "Once, I was swimming in the sea, and I was almost pulled away by the big waves. That was scary.", ipa: "/wʌns aɪ wɒz ˈswɪmɪŋ ɪn ðə siː ænd aɪ wɒz ˈɔːlmoʊst pʊld əˈweɪ baɪ ðə bɪɡ weɪvz. ðæt wɒz ˈskɛri/", vi: "Có lần, tôi đang bơi ngoài biển và suýt bị những con sóng lớn cuốn đi mất. Lần đó thực sự rất đáng sợ." },
-      { start: 24.5, en: "I like to go to the beach, but I only go swimming if there is a lifeguard. Don't go too far out in the water. Stay close, so the lifeguard can see you.", ipa: "/aɪ laɪk tuː ɡoʊ tuː ðə biːtʃ bʌt aɪ ˈoʊnli ɡoʊ ˈswɪmɪŋ ɪf ðɛər ɪz ə ˈlaɪɡˌɡɑːrd. doʊnt ɡoʊ tuː fɑːr aʊt ɪn ðə ˈwɔːtər. steɪ kloʊs soʊ ðə ˈlaɪɡˌgɑːrd kæn siː juː/", vi: "Tôi thích ra biển, nhưng chỉ bơi khi có nhân viên cứu hộ túc trực. Đừng bơi ra quá xa, hãy ở gần để nhân viên cứu hộ có thể quan sát thấy bạn." },
+      { start: 24.5, en: "I like to go to the beach, but I only go swimming if there is a lifeguard. Don't go too far out in the water. Stay close, so the lifeguard can see you.", ipa: "/aɪ laɪk tuː ɡoʊ tuː ðə biːtʃ bʌt aɪ ˈoʊnli ɡoʊ ˈswɪmɪŋ ɪf ðɛər ɪz ə ˈlaɪɡˌɡɑːrd. doʊnt ɡoʊ tuː fɑːr aʊt ɪn ðə ˈwɔːtər. steɪ kloʊs soʊ ðə ˈlaɪɡˌɡɑːrd kæn siː juː/", vi: "Tôi thích ra biển, nhưng chỉ bơi khi có nhân viên cứu hộ túc trực. Đừng bơi ra quá xa, hãy ở gần để nhân viên cứu hộ có thể quan sát thấy bạn." },
       { start: 39.5, en: "Swimming is fun. But always be careful. Swim safely.", ipa: "/ˈswɪmɪŋ ɪz fʌn. bʌt ˈɔːlweɪz biː ˈkɛrfl. swɪm ˈseɪfli/", vi: "Bơi lội rất vui, nhưng hãy luôn cẩn thận và bơi lội thật an toàn nhé." }
     ]
   },
@@ -98,7 +98,7 @@ STORIES_DATA["09 September"] = [
     day: 8,
     title: "Goodnight, Moon!",
     image: "09 September/images/day_08.webp",
-    audio: "09 September/audio/A0908 Goodnight Moon.mp3",
+    audio: "09 September/audio/A0908 Goodnight, Moon.mp3",
     sentences: [
       { start: 4.8, en: "Every night, Jody turns on her night light to sleep. One evening, the bulb had burned out.", ipa: "/ˈɛvri naɪt ˈdʒoʊdi tɜːrnz ɒn hɜːr naɪt laɪt tuː sliːp. wʌn ˈiːvnɪŋ ðə bʌlb hæd bɜːrnd aʊt/", vi: "Mỗi tối, Jody đều bật đèn ngủ để chìm vào giấc ngủ. Nhưng có một buổi tối, bóng đèn bị cháy hỏng mất." },
       { start: 13.5, en: "'Oh, no,' she said. 'What will I use for a light?'", ipa: "/oʊ noʊ ʃiː sɛd. wɒt wɪl aɪ juːz fɔːr ə laɪt/", vi: "'Ôi không,' cô bé thốt lên. 'Giờ mình lấy gì làm đèn ngủ đây?'" },
@@ -111,7 +111,7 @@ STORIES_DATA["09 September"] = [
     day: 9,
     title: "Measure with Care",
     image: "09 September/images/day_09.webp",
-    audio: "09 September/audio/A0909 Measure with Care.mp3",
+    audio: "09 September/audio/A0909 Measure With Care.mp3",
     sentences: [
       { start: 4.8, en: "Long ago, there was a king who had a beautiful robe. But the robe was too long. An old man was asked to cut the robe to fit the king.", ipa: "/lɒŋ əˈɡoʊ ðɛr wɒz ə kɪŋ huː hæd ə ˈbjuːtɪfl roʊb. bʌt ðə roʊb wɒz tuː lɒŋ. ən oʊld mæn wɒz ɑːskt tuː kʌt ðə roʊb tuː fɪt ðə kɪŋ/", vi: "Ngày xửa ngày xưa, có vị vua sở hữu chiếc áo bào vô cùng lộng lẫy nhưng lại hơi dài. Một thợ may lớn tuổi được giao nhiệm vụ cắt sửa lại chiếc áo cho vừa vặn với nhà vua." },
       { start: 17.5, en: "The man was scared and nervous. He quickly measured the king. Then, he cut the beautiful cloth. But to everyone's surprise, the cloth was now too short!", ipa: "/ðə mæn wɒz skɛrd ænd ˈnɜːrvəs. hiː ˈkwɪkli ˈmɛʒərd ðə kɪŋ. ðɛn hiː kʌt ðə ˈbjuːtɪfl klɒθ. bʌt tuː ˈɛvriwʌnz sərˈpraɪz ðə klɒθ wɒz naʊ tuː ʃɔːrt/", vi: "Ông cụ vô cùng sợ hãi và hồi hộp. Cụ vội vàng đo đạc qua loa rồi cắt phắt tấm vải đẹp. Nhưng thật bất ngờ, chiếc áo giờ đây lại bị ngắn cũn cỡn!" },
@@ -267,9 +267,21 @@ STORIES_DATA["09 September"] = [
   },
   {
     day: 22,
-    title: "Names",
+    title: "Renting a Donkey - Part 2",
     image: "09 September/images/day_22.webp",
-    audio: "09 September/audio/A0922 Names.mp3",
+    audio: "09 September/audio/A0922 Renting a Donkey 2.mp3",
+    sentences: [
+      { start: 4.8, en: "'I rented the donkey, and that means I bought the shadow too!' the farmer said.", ipa: "/aɪ ˈrɛntɪd ðə ˈdɒŋki ænd ðæt miːnz aɪ bɔːt ðə ˈʃædoʊ tuː! ðə ˈfɑːrmər sɛd/", vi: "'Tôi đã thuê con lừa, điều đó có nghĩa là tôi mua luôn cả cái bóng của nó rồi!' bác nông dân cãi." },
+      { start: 13.0, en: "'No, you only rented the donkey, not the shadow!' said the owner of the donkey.", ipa: "/noʊ juː ˈoʊnli ˈrɛntɪd ðə ˈdɒŋki nɒt ðə ˈʃædoʊ! sɛd ði ˈoʊnər əv ðə ˈdɒŋki/", vi: "'Không đời nào, ngươi chỉ thuê con lừa chứ có thuê cái bóng đâu!' chủ con lừa đốp chát lại." },
+      { start: 22.5, en: "The two men argued and argued. Neither of them would back down.", ipa: "/ðə tuː mɛn ˈɑːrɡjuːd ænd ˈɑːrɡjuːd. ˈniːðər əv ðɛm wʊd bæk daʊn/", vi: "Hai người cứ thế tranh cãi hồi lâu, chẳng ai chịu nhường ai câu nào." },
+      { start: 30.5, en: "What do you think? Did the farmer buy the shadow when he rented the donkey?", ipa: "/wɒt duː juː θɪŋk? dɪd ðə ˈfɑːrmər baɪ ðə ˈʃædoʊ wɛn hiː ˈrɛntɪd ðə ˈdɒŋki?/", vi: "Theo bạn thì sao? Bác nông dân có mua luôn cái bóng khi thuê con lừa hay không?" }
+    ]
+  },
+  {
+    day: 23,
+    title: "Names",
+    image: "09 September/images/day_23.webp",
+    audio: "09 September/audio/A0923 Names.mp3",
     sentences: [
       { start: 4.8, en: "A name can tell us a lot about something. An animal named the anteater loves to eat ants.", ipa: "/ə neɪm kæn tɛl ʌs ə lɒt əv ˈsʌmθɪŋ. ən ˈænɪml neɪmd ði ˈæntˌiːtər lʌvz tʊ iːt ænts/", vi: "Cái tên có thể bật mí cho chúng ta rất nhiều điều thú vị. Chẳng hạn như loài thú ăn kiến (anteater) có cái tên nói lên sở thích chuyên săn kiến để ăn." },
       { start: 15.0, en: "A little insect named the honeybee is a bee and it loves to eat honey.", ipa: "/ə ˈlɪtl ˈɪnsɛkt neɪmd ðə ˈhʌniˌbiː ɪz ə biː ænd ɪt lʌvz tʊ iːt ˈhʌni/", vi: "Hay như chú ong mật (honeybee) nhỏ bé chính là loài ong cực kỳ hảo ngọt." },
@@ -279,10 +291,10 @@ STORIES_DATA["09 September"] = [
     ]
   },
   {
-    day: 23,
+    day: 24,
     title: "A Sleepover",
-    image: "09 September/images/day_23.webp",
-    audio: "09 September/audio/A0923 A Sleepover.mp3",
+    image: "09 September/images/day_24.webp",
+    audio: "09 September/audio/A0924 A Sleepover.mp3",
     sentences: [
       { start: 4.8, en: "Tonight, Eric is going to his best friend Jack's house for a sleepover. It will be his first time sleeping away from home. He is excited.", ipa: "/təˈnaɪt ˈɛrɪk ɪz ˈɡoʊɪŋ tuː hɪz bɛst frɛnd dʒæks haʊs fɔːr ə ˈsliːpˌoʊvər. ɪt wɪl biː hɪz fɜːrst taɪm ˈsliːpɪŋ əˈweɪ frɒm hoʊm. hiː ɪz ɪkˈsaɪtɪd/", vi: "Tối nay, Eric sẽ sang nhà cậu bạn thân Jack để ngủ qua đêm. Đây là lần đầu tiên cậu bé ngủ lại nhà người khác nên cảm thấy vô cùng phấn khích." },
       { start: 17.5, en: "Eric has packed a sleeping bag, his favourite pillow, a pair of pajamas and a toothbrush to take with him.", ipa: "/ˈɛrɪk hæz pækt ə ˈsliːpɪŋ bæɡ hɪz ˈfeɪvərɪt ˈpɪloʊ ə pɛr əv pəˈdʒɑːməz ænd ə ˈtuːθˌbrʌʃ tuː teɪk wɪð hɪm/", vi: "Eric đã chuẩn bị sẵn một chiếc túi ngủ, chiếc gối ôm quen thuộc, một bộ đồ ngủ và bàn chải đánh răng để mang theo." },
@@ -291,10 +303,10 @@ STORIES_DATA["09 September"] = [
     ]
   },
   {
-    day: 24,
+    day: 25,
     title: "Birds of a Feather - Part 1",
-    image: "09 September/images/day_24.webp",
-    audio: "09 September/audio/A0924 Birds of a Feather 1.mp3",
+    image: "09 September/images/day_25.webp",
+    audio: "09 September/audio/A0925 Birds of a Feather 1.mp3",
     sentences: [
       { start: 4.8, en: "A pretty little bird loves to sit in her tree and sing beautiful songs. Her friends gather and listen to her every day.", ipa: "/ə ˈprɪti ˈlɪtl bɜːrd lʌvz tuː sɪt ɪn hɜːr triː ænd sɪŋ ˈbjuːtɪfl sɔːŋz. hɜːr frɛndz ˈɡæðər ænd ˈlɪsn tuː hɜːr ˈɛvri deɪ/", vi: "Một chú chim nhỏ xinh xắn rất thích đậu trên cây cất tiếng hót réo rắt mỗi ngày. Bạn bè xung quanh thường tụ tập lại để lắng nghe giọng ca tuyệt vời ấy." },
       { start: 16.0, en: "One day, a cat comes to the tree. He does not like the little bird's singing.", ipa: "/wʌn deɪ ə kæt kʌmz tuː ðə triː. hiː dʌz nɒt laɪk ðə ˈlɪtl bɜːrdz ˈsɪŋɪŋ/", vi: "Cho đến một ngày nọ, một con mèo hoang bén mảng đến gốc cây và tỏ ra vô cùng khó chịu trước tiếng hót của chim nhỏ." },
@@ -303,10 +315,10 @@ STORIES_DATA["09 September"] = [
     ]
   },
   {
-    day: 25,
+    day: 26,
     title: "Birds of a Feather - Part 2",
-    image: "09 September/images/day_25.webp",
-    audio: "09 September/audio/A0925 Birds of a Feather 2.mp3",
+    image: "09 September/images/day_26.webp",
+    audio: "09 September/audio/A0926 Birds of a Feather 2.mp3",
     sentences: [
       { start: 4.8, en: "The little bird and her friends gather in a new tree.", ipa: "/ðə ˈlɪtl bɜːrd ænd hɜːr frɛndz ˈɡæðər ɪn ə nuː triː/", vi: "Chú chim nhỏ cùng đàn bạn tụ tập lại trên một tán cây mới." },
       { start: 10.0, en: "'What can we do? We are birds. We cannot fight the cat. He is big and he is strong.'", ipa: "/wɒt kæn wiː duː? wiː ɑːr bɜːrdz. wiː ˈkænɒt faɪt ðə kæt. hiː ɪz bɪɡ ænd hiː ɪz strɒŋ/", vi: "'Chúng ta phải làm sao bây giờ? Bọn mình chỉ là loài chim nhỏ, không thể đánh lại con mèo to xác và hung dữ đó đâu.'" },
@@ -315,10 +327,10 @@ STORIES_DATA["09 September"] = [
     ]
   },
   {
-    day: 26,
+    day: 27,
     title: "Birds of a Feather - Part 3",
-    image: "09 September/images/day_26.webp",
-    audio: "09 September/audio/A0926 Birds of a Feather 3.mp3",
+    image: "09 September/images/day_27.webp",
+    audio: "09 September/audio/A0927 Birds of a Feather 3.mp3",
     sentences: [
       { start: 4.8, en: "They all fly to the tree. One by one, they begin to sing.", ipa: "/ðeɪ ɔːl flaɪ tuː ðə triː. wʌn baɪ wʌn ðeɪ bɪˈɡɪn tuː sɪŋ/", vi: "Cả đàn cùng bay ngược trở lại ngọn cây cũ và lần lượt cất tiếng ca vang." },
       { start: 11.5, en: "The cat is angry. He chases away each bird as it begins to sing. But another bird comes. The cat runs after that bird too.", ipa: "/ðə kæt ɪz ˈæŋɡri. hiː ˈtʃeɪsɪz əˈweɪ iːtʃ bɜːrd æz ɪt bɪˈɡɪnz tuː sɪŋ. bʌt əˈnʌðər bɜːrd kʌmz. ðə kæt rʌnz ˈɑːftər ðæt bɜːrd tuː/", vi: "Con mèo nổi giận lôi đình, lao tới xua đuổi từng con chim vừa cất giọng hát. Nhưng con này vừa bay đi thì con khác lại sà tới. Con mèo bèn hộc tốc đuổi theo." },
@@ -327,10 +339,10 @@ STORIES_DATA["09 September"] = [
     ]
   },
   {
-    day: 27,
+    day: 28,
     title: "Visit to Uncle Bear",
-    image: "09 September/images/day_27.webp",
-    audio: "09 September/audio/A0927 Visit to Uncle Bear.mp3",
+    image: "09 September/images/day_28.webp",
+    audio: "09 September/audio/A0928 Visit to Uncle Bear.mp3",
     sentences: [
       { start: 4.8, en: "Two bears are going to visit their uncle. He lives far away, on the other side of the mountain.", ipa: "/tuː bɛərz ɑːr ˈɡoʊɪŋ tuː ˈvɪzɪt ðɛər ˈʌŋkl. hiː lɪvz fɑːr əˈweɪ ɒn ði ˈʌðər saɪd əv ðə ˈmaʊntɪn/", vi: "Hai chú gấu đang trên đường đi thăm người bác ruột sống ở mãi sườn núi bên kia." },
       { start: 13.5, en: "The two bears go up the mountain. They are very tired, but they get to the top. They can see their uncle's house. It is at the bottom of the mountain.", ipa: "/ðə tuː bɛərz ɡoʊ ʌp ðə ˈmaʊntɪn. ðeɪ ɑːr ˈvɛri ˈtaɪərd bʌt ðeɪ ɡɛt tuː ðə tɒp. ðeɪ kæn siː ðɛər ˈʌŋklz haʊs. ɪt ɪz æt ðə ˈbɒtəm əv ðə ˈmaʊntɪn/", vi: "Hai chú gấu leo mãi lên đỉnh núi cao. Dù mệt phờ phạc nhưng cuối cùng cũng lên tới đỉnh và nhìn thấy ngôi nhà của bác nằm tít dưới chân núi bên kia." },
@@ -339,10 +351,10 @@ STORIES_DATA["09 September"] = [
     ]
   },
   {
-    day: 28,
+    day: 29,
     title: "The Old Guitar",
-    image: "09 September/images/day_28.webp",
-    audio: "09 September/audio/A0928 The Old Guitar.mp3",
+    image: "09 September/images/day_29.webp",
+    audio: "09 September/audio/A0929 The Old Guitar.mp3",
     sentences: [
       { start: 4.8, en: "Grandpa's old guitar broke so we bought him a new one. But he hardly played it.", ipa: "/ˈɡrændpɑːz oʊld ɡɪˈtɑːr broʊk soʊ wiː bɔːt hɪm ə nuː wʌn. bʌt hiː ˈhɑːrdli pleɪd ɪt/", vi: "Cây đàn guitar cũ của ông bị hỏng nên gia đình đã mua tặng ông một cây đàn mới. Thế nhưng ông rất ít khi đụng đến nó." },
       { start: 14.5, en: "One day, when he opened up the guitar case, he got a big surprise. It was his old guitar fixed up. He laughed.", ipa: "/wʌn deɪ wɛn hiː ˈoʊpənd ʌp ðə ɡɪˈtɑːr keɪs hiː ɡɒt ə bɪɡ sərˈpraɪz. ɪt wɒz hɪz oʊld ɡɪˈtɑːr fɪkst ʌp. hiː lɑːft/", vi: "Một hôm, khi mở hộp đàn ra, ông vô cùng ngỡ ngàng khi thấy cây đàn guitar cũ kỹ ngày xưa đã được sửa chữa lành lặn như mới. Ông bật cười vui sướng." },
@@ -352,15 +364,15 @@ STORIES_DATA["09 September"] = [
     ]
   },
   {
-    day: 29,
+    day: 30,
     title: "Practice Makes Perfect",
-    image: "09 September/images/day_29.webp",
-    audio: "09 September/audio/A0929 Practice Makes Perfect.mp3",
+    image: "09 September/images/day_30.webp",
+    audio: "09 September/audio/A0930 Practice Makes Perfect.mp3",
     sentences: [
       { start: 4.8, en: "Ben is six years old. He is learning how to play chess.", ipa: "/bɛn ɪz sɪks jɪərz oʊld. hiː ɪz ˈlɜːrnɪŋ haʊ tuː pleɪ tʃɛs/", vi: "Ben năm nay sáu tuổi và đang tập chơi cờ vua." },
       { start: 11.5, en: "After a few weeks of learning, his grandpa comes for a visit. Ben is excited.", ipa: "/ˈɑːftər ə fjuː wiːks əv ˈlɜːrnɪŋ hɪz ˈɡrændpɑː kʌmz fɔːr ə ˈvɪzɪt. bɛn ɪz ɪkˈsaɪtɪd/", vi: "Sau vài tuần học chơi, ông nội đến thăm nhà. Ben vô cùng hào hứng khoe chiến tích." },
-      { start: 19.5, en: "'Come, Grandpa. Let's play a game of chess,' he says. In only a few minutes, Grandpa beats him. Ben begins to cry.", ipa: "/kʌm ˈɡrændpɑː. lɛts pleɪ ə ɡeɪm əv tʃɛs hiː sɛz. ɪn ˈoʊnli ə fjuː ˈmɪnɪts ˈɡrændpɑː biːts hɪm. bɛn bɪˈɡɪnz tuː kraɪ/", vi: "'Ông ơi, vào làm một ván cờ với cháu đi,' cậu bé mời mọc. Chỉ vỏn vẹn vài phút sau, ông đã đánh bại cậu. Ben liền mếu máo khóc òa." },
-      { start: 32.5, en: "His grandpa says, 'Don't be upset. You can only get good at something if you work really hard at it. Practice makes perfect.'", ipa: "/hɪz ˈɡrændpɑː sɛd doʊnt biː ʌpˈsɛt. juː kæn ˈoʊnli ɡɛt ɡʊd æt ˈsʌmθɪŋ ɪf juː wɜːrk ˈrɪəli hɑːrd æt ɪt. ˈpræktɪs meɪks ˈpɜːrfɪkt/", vi: "Ông âu yếm vỗ về: 'Đừng buồn con ạ. Con chỉ có thể giỏi giang một thứ gì đó khi thực sự nỗ lực luyện tập. Có công mài sắt có ngày nên kim mà.'" }
+      { start: 19.5, en: "'Come, Grandpa. Let's play a game of chess,' he says. In only a few minutes, Grandpa beats him. Ben begins to cry.", ipa: "/kʌm ˈɡrændpɑː. lɛts pleɪ ə ɡeɪm əv tʃɛs hiː sɛd. ɪn ˈoʊnli ə fjuː ˈmɪnɪts ˈɡrændpɑː biːts hɪm. bɛn bɪˈɡɪnz tuː kraɪ/", vi: "'Ông ơi, vào làm một ván cờ với cháu đi,' cậu bé mời mọc. Chỉ vỏn vẹn vài phút sau, ông đã đánh bại cậu. Ben liền mếu máo khóc òa." },
+      { start: 32.5, en: "His grandpa says, 'Don't be upset. You can only get good at something if you work really hard at it. Practice makes perfect.'", ipa: "/hɪz ˈɡrændpɑː sɛd doʊnt biː ʌpˈsɛt. juː kæn ˈoʊnli ɡɛt ɡʊd æt ˈsʌmθɪŋ ɪf juː wɜːrk ˈrɪəli hɑːrd ænd ɪt. ˈpræktɪs meɪks ˈpɜːrfɪkt/", vi: "Ông âu yếm vỗ về: 'Đừng buồn con ạ. Con chỉ có thể giỏi giang một thứ gì đó khi thực sự nỗ lực luyện tập. Có công mài sắt có ngày nên kim mà.'" }
     ]
   }
 ];

@@ -88,7 +88,7 @@ STORIES_DATA["07 July"] = [
     sentences: [
       { start: 4.8, en: "The big yellow bus stops in front of a white house. John and his little sister Betty are waiting.", ipa: "/ðə bɪɡ ˈjɛloʊ bʌs stɒps ɪn frʌnt əv ə waɪt haʊs. dʒɒn ænd hɪz ˈlɪtl ˈsɪstər ˈbɛti ɑːr ˈweɪtɪŋ/", vi: "Chiếc xe buýt màu vàng lớn đỗ trước ngôi nhà màu trắng. John và cô em gái nhỏ Betty đang đứng đợi sẵn." },
       { start: 13.5, en: "John says, 'Wait for the red lights on the bus to come on. The flashing lights tell the cars to stop. Then we cross the road to get on the bus.'", ipa: "/dʒɒn sɛz weɪt fɔːr ðə rɛd laɪts ɒn ðə bʌs tuː kʌm ɒn. ðə ˈflæʃɪŋ laɪts tɛl ðə kɑːrz tuː stɒp. ðɛn wiː krɒs ðə roʊd tuː ɡɛt ɒn ðə bʌs/", vi: "John dặn em: 'Hãy đợi đèn đỏ trên xe buýt bật sáng. Đèn chớp nháy ra hiệu cho các ô tô dừng lại. Lúc đó chúng ta mới băng qua đường để lên xe buýt.'" },
-      { start: 27.5, en: "'The red light is flashing now, can we go?' says Betty.", ipa: "/ðə rɛd laɪt ɪz ˈflæʃɪŋ naʊ kæn wiː ɡoʊ? sɛz ˈbɛti/", vi: "'Đèn đỏ đang nhấp nháy rồi kìa, mình đi được chưa anh?' Betty hỏi." },
+      { start: 27.5, en: "'The red light is flashing now, can we go?' says Betty.", ipa: "/ðə rɛd laɪt ɪz ˈflæʃɪŋ naʊ kæn wiː goʊ? sɛz ˈbɛti/", vi: "'Đèn đỏ đang nhấp nháy rồi kìa, mình đi được chưa anh?' Betty hỏi." },
       { start: 34.0, en: "'Let's go. Look both ways. Be careful.' John takes his sister's hand. They cross the street together safely.", ipa: "/lɛts ɡoʊ. lʊk boʊθ weɪz. biː ˈkɛrfl. dʒɒn teɪks hɪz ˈsɪstərz hænd. ðeɪ krɒs ðə striːt təˈɡɛðər ˈseɪfli/", vi: "'Đi thôi nào. Nhìn cả hai hướng và cẩn thận nhé.' John nắm chặt tay em gái. Hai anh em cùng nhau băng qua đường an toàn." }
     ]
   },
@@ -108,7 +108,7 @@ STORIES_DATA["07 July"] = [
     day: 9,
     title: "Sun and Wind-1",
     image: "07 July/images/day_09.webp",
-    audio: "07 July/images/A0709 Sun and Wind 1.mp3",
+    audio: "07 July/audio/A0709 Sun and Wind 1.mp3",
     sentences: [
       { start: 4.8, en: "Sun says that there is great power in gentleness.", ipa: "/sʌn sɛz ðæt ðɛər ɪz ɡreɪt ˈpaʊər ɪn ˈdʒɛntlnəs/", vi: "Mặt Trời bảo rằng có sức mạnh to lớn ẩn chứa trong sự dịu dàng." },
       { start: 10.5, en: "Wind disagrees, 'I believe there is great power in strength.'", ipa: "/wɪnd ˌdɪsəˈɡriːz aɪ bɪˈliːv ðɛər ɪz ɡreɪt ˈpaʊər ɪn strɛŋθ/", vi: "Gió không đồng tình và phản bác: 'Ta tin rằng sức mạnh đích thực nằm ở sự uy lực.'" },
@@ -135,7 +135,7 @@ STORIES_DATA["07 July"] = [
     day: 11,
     title: "Flowers Please!",
     image: "07 July/images/day_11.webp",
-    audio: "07 July/images/A0711 Flowers Please.mp3",
+    audio: "07 July/audio/A0711 Flowers Please.mp3",
     sentences: [
       { start: 4.8, en: "I like flowers, no matter what kind. They come in many shapes and colours.", ipa: "/aɪ laɪk ˈflaʊərz noʊ ˈmætər wɒt kaɪnd. ðeɪ kʌm ɪn ˈmɛni ʃeɪps ænd ˈkʌlərz/", vi: "Tôi thích hoa, bất kể là loài nào đi nữa. Chúng có vô số hình dáng và màu sắc khác nhau." },
       { start: 13.5, en: "I like yellow daffodils the most. But I also like red tulips and pink roses. Blue bluebells and white lilies are pretty too.", ipa: "/aɪ laɪk ˈjɛloʊ ˈdæfədɪlz ðə moʊst. bʌt aɪ ˈɔːlsoʊ laɪk rɛd ˈtuːlɪps ænd pɪŋk ˈroʊzɪz. bluː ˈbluːˌbɛlz ænd waɪt ˈlɪliz ɑːr ˈprɪti tuː/", vi: "Tôi thích nhất là hoa thủy tiên vàng. Nhưng tôi cũng thích hoa tulip đỏ và hoa hồng hồng. Hoa chuông xanh và hoa loa kèn trắng cũng rất xinh." },
@@ -147,7 +147,7 @@ STORIES_DATA["07 July"] = [
     day: 12,
     title: "The Colour of Food",
     image: "07 July/images/day_12.webp",
-    audio: "07 July/images/A0712 The Colour of Food.mp3",
+    audio: "07 July/audio/A0712 The Colour of Food.mp3",
     sentences: [
       { start: 4.8, en: "My mom likes to teach me how to eat healthy food. It's very simple.", ipa: "/maɪ mɒm laɪks tuː tiːtʃ miː haʊ tʊ iːt ˈhɛlθi fuːd. ɪts ˈvɛri ˈsɪmpl/", vi: "Mẹ thích dạy tôi cách ăn uống lành mạnh. Mọi thứ rất đơn giản." },
       { start: 12.0, en: "She says, 'Pay attention to the colour of the food on the table. If it's colourful, you have a healthy meal. If it's just one colour, that's not good.'", ipa: "/ʃiː sɛz peɪ əˈtɛnʃən tuː ðə ˈkʌlər əv ðə fuːd ɒn ðə ˈteɪbl. ɪf ɪts ˈkʌlərfʊl juː hæv ə ˈhɛlθi miːl. ɪf ɪts dʒʌst wʌn ˈkʌlər ðæts nɒt ɡʊd/", vi: "Mẹ dặn rằng: 'Hãy chú ý đến màu sắc của thức ăn trên bàn. Nếu bữa ăn nhiều màu sắc, đó là bữa ăn lành mạnh. Còn nếu chỉ có một màu duy nhất thì không tốt đâu.'" },
@@ -159,9 +159,9 @@ STORIES_DATA["07 July"] = [
     day: 13,
     title: "My Mouth",
     image: "07 July/images/day_13.webp",
-    audio: "07 July/images/A0713 My Mouth.mp3",
+    audio: "07 July/audio/A0713 My Mouth.mp3",
     sentences: [
-      { start: 4.8, en: "Open wide. Smile. Eat. Talk to my friends. What do I use to do all these things? My mouth, of course.", ipa: "/ˈoʊpən waɪd. smaɪl. iːt. tɔːk tuː maɪ frɛndz. wɒt duː aɪ juːz tuː duː ɔːl ðiːz θɪŋz? maɪ maʊθ əv kɔːrs/", vi: "Há miệng to. Cười. Ăn. Nói chuyện với bạn bè. Tôi dùng bộ phận nào để làm những việc đó? Đương nhiên là cái miệng rồi." },
+      { start: 4.8, en: "Open wide. Smile. Eat. Talk to my friends. What do I use to do all these things? My mouth, of course.", ipa: "/ˈoʊpən waɪd. smaɪl. iːt. tɔːk tuː maɪ frɛndz. wɒt duː aɪ juːz tuː duː ɔːl ðiːz θɪŋz? maɪ maʊθ əv kɔːrs/", vi: "Há miệng to. C cười. Ăn. Nói chuyện với bạn bè. Tôi dùng bộ phận nào để làm những việc đó? Đương nhiên là cái miệng rồi." },
       { start: 16.5, en: "Look in my mouth. What do you see? Teeth. Yes, my teeth help me chew my food so I can eat.", ipa: "/lʊk ɪn maɪ maʊθ. wɒt duː juː siː? tiːθ. jɛs maɪ tiːθ hɛlp miː tʃuː maɪ fuːd soʊ aɪ kæn iːt/", vi: "Nhìn vào miệng tôi xem bạn thấy gì? Những chiếc răng. Vâng, răng giúp tôi nhai thức ăn để có thể ăn được." },
       { start: 26.5, en: "What else do you see? My tongue. My tongue helps me talk. It also helps me move food around, so I can swallow it.", ipa: "/wɒt ɛls duː juː siː? maɪ tʌŋ. maɪ tʌŋ hɛlp miː tɔːk. ɪt ˈɔːlsoʊ hɛlp miː muːv fuːd əˈraʊnd soʊ aɪ kæn ˈswɒloʊ ɪt/", vi: "Bạn còn thấy gì nữa? Cái lưỡi. Lưỡi giúp tôi nói chuyện, đồng thời giúp di chuyển thức ăn để tôi có thể nuốt xuống." },
       { start: 39.5, en: "Best of all, my tongue helps me taste all the delicious food that I eat.", ipa: "/bɛst əv ɔːl maɪ tʌŋ hɛlp miː teɪst ɔːl ðə dɪˈlɪʃəs fuːd ðæt aɪ iːt/", vi: "Tuyệt vời nhất là chiếc lưỡi giúp tôi nếm được tất cả món ăn ngon tuyệt mà mình ăn." }
@@ -171,7 +171,7 @@ STORIES_DATA["07 July"] = [
     day: 14,
     title: "Drawing Pictures",
     image: "07 July/images/day_14.webp",
-    audio: "07 July/images/A0714 Drawing Pictures.mp3",
+    audio: "07 July/audio/A0714 Drawing Pictures.mp3",
     sentences: [
       { start: 4.8, en: "Allan liked drawing pictures. Once, a big company invited children to draw pictures of 'Our Mother Earth'.", ipa: "/ˈælən laɪkt ˈdrɔːɪŋ ˈpɪktʃərz. wʌns ə bɪɡ ˈkʌmpəni ɪnˈvaɪtɪd ˈtʃɪldrən tuː drɔː ˈpɪktʃərz əv ˈaʊər ˈmʌðər ɜːrθ/", vi: "Allan rất thích vẽ tranh. Có lần, một công ty lớn mời các em nhỏ vẽ tranh về chủ đề 'Mẹ Trái Đất của chúng ta'." },
       { start: 16.0, en: "Any children from ages 5 to 8 could send in their pictures. The best one would be awarded a big prize.", ipa: "/ˈɛni ˈtʃɪldrən frɒm ˈeɪdʒɪz faɪv tuː eɪt kʊd sɛnd ɪn ðɛər ˈpɪktʃərz. ðə bɛst wʌn wʊd biː əˈwɔːrdɪd ə bɪɡ praɪz/", vi: "Bất kỳ trẻ em nào từ 5 đến 8 tuổi đều có thể gửi tranh dự thi. Bức tranh xuất sắc nhất sẽ được trao giải thưởng lớn." },
@@ -182,7 +182,7 @@ STORIES_DATA["07 July"] = [
     day: 15,
     title: "Snake Skin",
     image: "07 July/images/day_15.webp",
-    audio: "07 July/images/A0715 Snake Skin.mp3",
+    audio: "07 July/audio/A0715 Snake Skin.mp3",
     sentences: [
       { start: 4.8, en: "Many people are afraid of snakes. But snakes are interesting. They can be big or small, and they can be many different colours.", ipa: "/ˈmɛni ˈpiːpl ɑːr əˈfreɪd əv sneɪks. bʌt sneɪks ɑːr ˈɪntrəstɪŋ. ðeɪ kæn biː bɪɡ ɔːr smɔːl ænd ðeɪ kæn biː ˈmɛni ˈdɪfrənt ˈkʌlərz/", vi: "Nhiều người rất sợ rắn. Nhưng rắn rất thú vị. Chúng có thể lớn hoặc nhỏ, và có nhiều màu sắc khác nhau." },
       { start: 16.5, en: "Snakes grow new skin two or three times a year. When they grow new skin, they shed their old skin. It comes off in one long piece.", ipa: "/sneɪks ɡroʊ nuː skɪn tuː ɔːr θriː taɪmz ə jɪər. wɛn ðeɪ ɡroʊ nuː skɪn ðeɪ ʃɛd ðɛər oʊld skɪn. ɪt kʌmz ɒf ɪn wʌn lɒŋ piːs/", vi: "Rắn mọc da mới hai đến ba lần một năm. Khi mọc da mới, chúng lột bỏ lớp da cũ. Nó bong ra thành một mảnh dài." },
@@ -208,7 +208,7 @@ STORIES_DATA["07 July"] = [
     day: 17,
     title: "Water Animals",
     image: "07 July/images/day_17.webp",
-    audio: "07 July/images/A0717 Water Animals.mp3",
+    audio: "07 July/audio/A0717 Water Animals.mp3",
     sentences: [
       { start: 4.8, en: "What animals live in water? Fish. Yes, fish live in water. Whales live in water. Sharks and dolphins live in water too.", ipa: "/wɒt ˈænɪmlz lɪv ɪn ˈwɔːtər? fɪʃ. jɛs fɪʃ lɪv ɪn ˈwɔːtər. wɛɪlz lɪv ɪn ˈwɔːtər. ʃɑːrks ænd ˈdɒlfɪnz lɪv ɪn ˈwɔːtər tuː/", vi: "Những động vật nào sống dưới nước? Cá. Vâng, cá sống dưới nước. Cá voi sống dưới nước. Cá mập và cá heo cũng sống dưới nước." },
       { start: 17.5, en: "What about frogs? Do frogs live in water?", ipa: "/wɒt əˈbaʊt frɒɡz? duː frɒɡz lɪv ɪn ˈwɔːtər?/", vi: "Thế còn ếch thì sao? Ếch có sống dưới nước không?" },
@@ -221,7 +221,7 @@ STORIES_DATA["07 July"] = [
     day: 18,
     title: "How Big Can It Grow?",
     image: "07 July/images/day_18.webp",
-    audio: "07 July/images/A0718 How Big Can It Grow.mp3",
+    audio: "07 July/audio/A0718 How Big Can It Grow.mp3",
     sentences: [
       { start: 4.8, en: "James found a nut in the park. He asked his friend Henry, 'See this nut? Do you know how big it can become?'", ipa: "/dʒeɪmz faʊnd ə nʌt ɪn ðə pɑːrk. hiː ɑːskt hɪz frɛnd ˈhɛnri siː ðɪs nʌt? duː juː noʊ haʊ bɪɡ ɪt kæn bɪˈkʌm/", vi: "James tìm thấy một hạt quả trong công viên. Anh hỏi bạn mình là Henry: 'Thấy hạt này không? Cậu có biết nó có thể lớn đến mức nào không?'" },
       { start: 16.0, en: "'I don't know,' said Henry.", ipa: "/aɪ doʊnt noʊ sɛd ˈhɛnri/", vi: "'Tớ không biết,' Henry nói." },
@@ -235,10 +235,10 @@ STORIES_DATA["07 July"] = [
     day: 19,
     title: "A Lot of Food",
     image: "07 July/images/day_19.webp",
-    audio: "07 July/images/A0719 A Lot of Food.mp3",
+    audio: "07 July/audio/A0719 A Lot of Food.mp3",
     sentences: [
       { start: 4.8, en: "One day, Eddy asked his mom how much food he had eaten. His mom smiled. 'That's a math problem for you,' she said.", ipa: "/wʌn deɪ ˈɛdi ɑːskt hɪz mɒm haʊ mʌtʃ fuːd hiː hæd ˈiːtn. hɪz mɒm smaɪld. ðæts ə mæθ ˈprɒbləm fɔːr juː ʃiː sɛd/", vi: "Một ngày nọ, Eddy hỏi mẹ cậu đã ăn bao nhiêu thức ăn. Mẹ cười. 'Đó là một bài toán đố cho con đấy,' bà nói." },
-      { start: 16.5, en: "'Each day, you eat about half a kilogram of rice, two eggs, and some vegetables such as one head of lettuce. Can you get the total for a year?'", ipa: "/iːtʃ deɪ juː iːt əˈbaʊt hæf ə ˈkɪləˌɡræ姆 əv raɪs tuː ɛɡz ænd sʌm ˈvɛdʒtəblz sʌtʃ æz wʌn hɛd əv ˈlɛtɪs. kæn juː ɡɛt ðə ˈtoʊtəl fɔːr ə jɪər/", vi: "'Mỗi ngày, con ăn khoảng nửa kg gạo, hai quả trứng và một số rau như một búp xà lách. Con tính tổng trong một năm xem nào?'" },
+      { start: 16.5, en: "'Each day, you eat about half a kilogram of rice, two eggs, and some vegetables such as one head of lettuce. Can you get the total for a year?'", ipa: "/iːtʃ deɪ juː iːt əˈbaʊt hæf ə ˈkɪləˌɡræm əv raɪs tuː ɛɡz ænd sʌm ˈvɛdʒtəblz sʌtʃ æz wʌn hɛd əv ˈlɛtɪs. kæn juː ɡɛt ðə ˈtoʊtəl fɔːr ə jɪər/", vi: "'Mỗi ngày, con ăn khoảng nửa kg gạo, hai quả trứng và một số rau như một búp xà lách. Con tính tổng trong một năm xem nào?'" },
       { start: 30.5, en: "Eddy quickly got the answer. 'In a year, I can eat 182.5 kilos of rice, 730 eggs, and 365 heads of lettuce.'", ipa: "/ˈɛdi ˈkwɪkli ɡɒt ði ˈɑːnsər. ɪn ə jɪər aɪ kæn iːt wʌn ˈhʌndrəd ˈeɪti tuː pɔɪnt faɪv ˈkiːloʊz əv raɪs ˈsɛvən ˈhʌndrəd ˈθɜːrti ɛɡz ænd θriː ˈhʌndrəd ˈsɪksti faɪv hɛdz əv ˈlɛtɪs/", vi: "Eddy nhanh chóng có câu trả lời. 'Trong một năm, con có thể ăn 182,5 kg gạo, 730 quả trứng và 365 búp xà lách.'" },
       { start: 43.5, en: "Wow! That's a lot of food!", ipa: "/waʊ! ðæts ə lɒt əv fuːd!/", vi: "Chà! Đó là rất nhiều thức ăn!" },
       { start: 48.0, en: "I love to eat!", ipa: "/aɪ lʌv tʊ iːt!/", vi: "Tôi thích ăn!" }
@@ -248,7 +248,7 @@ STORIES_DATA["07 July"] = [
     day: 20,
     title: "A Kind of House",
     image: "07 July/images/day_20.webp",
-    audio: "07 July/images/A0720 A Kind of House.mp3",
+    audio: "07 July/audio/A0720 A Kind of House.mp3",
     sentences: [
       { start: 4.8, en: "Sometimes, my dog likes to stay outside. Where does he sleep? He sleeps in his doghouse. That's right. It's a house for a dog.", ipa: "/ˈsʌmˌtaɪmz maɪ dɒɡ laɪks tuː steɪ ˌaʊtˈsaɪd. wɛr dʌz hiː sliːp? hiː sliːps ɪn hɪz ˈdɒɡˌhaʊs. ðæts raɪt. ɪts ə haʊs fɔːr ə dɒɡ/", vi: "Đôi khi, con chó của tôi thích ở bên ngoài. Nó ngủ ở đâu? Nó ngủ trong nhà chó. Đúng vậy. Đó là ngôi nhà dành cho chó." },
       { start: 17.5, en: "My mother loves birds. What does she put up in the yard? She puts up a birdhouse. Really. That's a house for birds to live in.", ipa: "/maɪ ˈmʌðər lʌvz bɜːrdz. wɒt dʌz ʃiː pʊt ʌp ɪn ðə jɑːrd? ʃiː pʊts ʌp ə ˈbɜːrdˌhaʊs. ˈrɪəli. ðæts ə haʊs fɔːr bɜːrdz tuː lɪv ɪn/", vi: "Mẹ tôi yêu chim chóc. Bà đặt gì trong sân? Bà dựng một cái nhà cho chim. Thật đấy. Đó là ngôi nhà cho chim sinh sống." },
@@ -259,7 +259,7 @@ STORIES_DATA["07 July"] = [
     day: 21,
     title: "Insect Names",
     image: "07 July/images/day_21.webp",
-    audio: "07 July/images/A0721 Insect Names.mp3",
+    audio: "07 July/audio/A0721 Insect Names.mp3",
     sentences: [
       { start: 4.8, en: "Insects are funny little creatures. Some of them have interesting names like ladybug, grasshopper and butterfly.", ipa: "/ˈɪnsɛkts ɑːr ˈfʌni ˈlɪtl ˈkriːtʃərz. sʌm əv ðɛm hæv ˈɪntrəstɪŋ neɪmz laɪk ˈleɪdiˌbʌɡ ˈɡræsˌhɒpər ænd ˈbʌtərˌflaɪ/", vi: "Côn trùng là những sinh vật nhỏ bé thú vị. Một số chúng có tên thú vị như bọ rùa, châu chấu và bướm." },
       { start: 17.5, en: "Are all ladybugs ladies? Does a grasshopper really hop on grass? Is a butterfly really butter that flies?", ipa: "/ɑːr ɔːl ˈleɪdiˌbʌɡz ˈleɪdiz? dʌz ə ˈɡræsˌhɒpər ˈrɪəli hɒp ɒn ɡræs? ɪz ə ˈbʌtərˌflaɪ ˈrɪəli ˈbʌtər ðæt flaɪz/", vi: "Tất cả bọ rùa đều là quý cô à? Châu chấu có thực sự nhảy trên cỏ không? Bướm có thực sự là bơ biết bay không?" },
@@ -271,7 +271,7 @@ STORIES_DATA["07 July"] = [
     day: 22,
     title: "Go Under the Water",
     image: "07 July/images/day_22.webp",
-    audio: "07 July/images/A0722 Go Under the Water.mp3",
+    audio: "07 July/audio/A0722 Go Under the Water.mp3",
     sentences: [
       { start: 4.8, en: "I can swim. But I am afraid of putting my head under the water. My brother is a good swimmer. He is teaching me.", ipa: "/aɪ kæn swɪm. bʌt aɪ æm əˈfreɪd əv ˈpʊtɪŋ maɪ hɛd ˈʌndər ðə ˈwɔːtər. maɪ ˈbrʌðər ɪz ə ɡʊd ˈswɪmər. hiː ɪz ˈtiːtʃɪŋ miː/", vi: "Tôi có thể bơi. Nhưng tôi sợ đưa đầu xuống nước. Anh trai tôi bơi giỏi. Anh đang dạy tôi." },
       { start: 16.0, en: "'Take a deep breath of air, and hold it,' he says. 'Now put your head under the water.'", ipa: "/teɪk ə diːp brɛθ əv ɛər ænd hoʊld ɪt hiː sɛd. naʊ pʊt jɔːr hɛd ˈʌndər ðə ˈwɔːtər/", vi: "'Hít một hơi thật sâu và nín thở,' anh nói. 'Bây giờ hãy đưa đầu xuống nước.'" },
@@ -283,7 +283,7 @@ STORIES_DATA["07 July"] = [
     day: 23,
     title: "Canadian Summer",
     image: "07 July/images/day_23.webp",
-    audio: "07 July/images/A0723 Canadian Summer.mp3",
+    audio: "07 July/audio/A0723 Canadian Summer.mp3",
     sentences: [
       { start: 4.8, en: "Many years ago, when my aunt first came to Canada, the only thing she knew about Canada was that the weather was cold.", ipa: "/ˈmɛni jɪərz əˈgoʊ wɛn maɪ ænt fɜːrst keɪm tuː ˈkænədə ðə ˈoʊnli θɪŋ ʃiː nuː əˈbaʊt ˈkænədə wɒz ðæt ðə ˈwɛðər wɒz koʊld/", vi: "Nhiều năm trước, khi dì tôi lần đầu đến Canada, điều duy nhất dì biết về Canada là thời tiết lạnh." },
       { start: 16.0, en: "When she arrived at the Toronto airport in July, she was wearing a winter coat. Soon, she was sweating while waiting for the taxi.", ipa: "/wɛn ʃiː əˈraɪvd æt ðə təˈrɒntoʊ ˈɛrˌpɔːrt ɪn dʒʊˈlaɪ ʃiː wɒz ˈwɛərɪŋ ə ˈwɪntər koʊt. suːn ʃiː wɒz ˈswɛtɪŋ waɪl ˈweɪtɪŋ fɔːr ðə ˈtæksi/", vi: "Khi cô đến sân bay Toronto vào tháng 7, cô mặc áo khoác mùa đông. Chẳng mấy chốc, cô đã đổ mồ hôi khi chờ taxi." },
@@ -295,7 +295,7 @@ STORIES_DATA["07 July"] = [
     day: 24,
     title: "Counting Eggs",
     image: "07 July/images/day_24.webp",
-    audio: "07 July/images/A0724 Counting Eggs.mp3",
+    audio: "07 July/audio/A0724 Counting Eggs.mp3",
     sentences: [
       { start: 4.8, en: "Jasmine's aunt lives on a farm. She has many animals. Jasmine's favourites are the chickens.", ipa: "/ˈdʒæzmɪnz ænt lɪvz ɒn ə fɑːrm. ʃiː hæz ˈmɛni ˈænɪmlz. ˈdʒæzmɪnz ˈfeɪvərɪts ɑːr ðə ˈtʃɪkɪnz/", vi: "Dì của Jasmine sống ở trang trại. Bà có nhiều động vật. Thú cưng yêu thích của Jasmine là những con gà." },
       { start: 15.0, en: "Cluck, cluck, cluck. The chickens lay eggs. Jasmine finds the eggs and puts them in a basket.", ipa: "/klʌk klʌk klʌk. ðə ˈtʃɪkɪnz leɪ ɛɡz. ˈdʒæzmɪn faɪndz ði ɛɡz ænd pʊts ðɛm ɪn ə ˈbɑːskɪt/", vi: "Cục tác, cục tác. Gà đẻ trứng. Jasmine tìm thấy trứng và cho chúng vào giỏ." },
@@ -307,7 +307,7 @@ STORIES_DATA["07 July"] = [
     day: 25,
     title: "A Good Player",
     image: "07 July/images/day_25.webp",
-    audio: "07 July/images/A0725 A Good Player.mp3",
+    audio: "07 July/audio/A0725 A Good Player.mp3",
     sentences: [
       { start: 4.8, en: "My grandpa loves to play sports. He is good at playing basketball, soccer and ping-pong.", ipa: "/maɪ ˈɡrændpɑː lʌvz tuː pleɪ spɔːrts. hiː ɪz ɡʊd æt ˈpleɪɪŋ ˈbæskɪtˌbɔːl ˈsɒkər ænd pɪŋ pɒŋ/", vi: "Ông tôi thích chơi thể thao. Ông giỏi chơi bóng rổ, bóng đá và bóng bàn." },
       { start: 14.0, en: "Even though he is over 60 years old, he often plays sports with people who are much younger than him.", ipa: "/ˈiːvn ðoʊ hiː ɪz ˈoʊvər ˈsɪksti jɪərz oʊld hiː ˈɔːfn pleɪz spɔːrts wɪð ˈpiːpl huː ɑːr mʌtʃ ˈjʌŋɡər ðæn hɪm/", vi: "Dù đã hơn 60 tuổi, ông thường chơi thể thao với những người trẻ hơn mình rất nhiều." },
@@ -360,7 +360,7 @@ STORIES_DATA["07 July"] = [
     day: 29,
     title: "Tiger and Fox-1",
     image: "07 July/images/day_29.webp",
-    audio: "07 July/images/A0729 Tiger and Fox 1.mp3",
+    audio: "07 July/audio/A0729 Tiger and Fox 1.mp3",
     sentences: [
       { start: 4.8, en: "-based on a Chinese tale", ipa: "/beɪst ɒn ə ˈtʃaɪniːz teɪl/", vi: "-dựa trên truyện ngụ ngôn Trung Quốc" },
       { start: 9.5, en: "One day, a big tiger was looking for food in the jungle. A fox happened to come by and the tiger caught it.", ipa: "/wʌn deɪ ə bɪɡ ˈtaɪɡər wɒz ˈlʊkɪŋ fɔːr fuːd ɪn ðə ˈdʒʌŋɡl. ə fɒks ˈhæpənd tuː kʌm baɪ ænd ðə ˈtaɪɡər kɔːt ɪt/", vi: "Một ngày nọ, một con hổ lớn đang tìm thức ăn trong rừng. Một con cáo tình cờ đi ngang qua và hổ bắt lấy nó." },
@@ -374,7 +374,7 @@ STORIES_DATA["07 July"] = [
     day: 30,
     title: "Tiger and Fox-2",
     image: "07 July/images/day_30.webp",
-    audio: "07 July/images/A0730 Tiger and Fox 2.mp3",
+    audio: "07 July/audio/A0730 Tiger and Fox 2.mp3",
     sentences: [
       { start: 4.8, en: "The fox and the tiger walked together in the forest. The tiger was looking around.", ipa: "/ðə fɒks ænd ðə ˈtaɪɡər wɔːkt təˈɡɛðər ɪn ðə ˈfɔːrɪst. ðə ˈtaɪɡər wɒz ˈlʊkɪŋ əˈraʊnd/", vi: "Cáo và hổ đi cùng nhau trong rừng. Hổ đang nhìn xung quanh." },
       { start: 13.5, en: "The other animals in the forest-rabbits, deer, bears, and squirrels saw the tiger and the fox coming, and they all ran away.", ipa: "/ði ˈʌðər ˈænɪmlz ɪn ðə ˈfɔːrɪst-ˈræbɪts dɪər bɛərz ænd ˈskwɜːrəlz sɔː ðə ˈtaɪɡər ænd ðə fɒks ˈkʌmɪŋ ænd ðeɪ ɔːl ræn əˈweɪ/", vi: "Các loài động vật khác trong rừng—thỏ, hươu, gấu và sóc thấy hổ và cáo đến, và tất cả đều bỏ chạy." },
@@ -386,12 +386,12 @@ STORIES_DATA["07 July"] = [
     day: 31,
     title: "Going to the Beach..",
     image: "07 July/images/day_31.webp",
-    audio: "07 July/images/A0731 Going to the Beach.mp3",
+    audio: "07 July/audio/A0731 Going to the Beach.mp3",
     sentences: [
       { start: 4.8, en: "Tomorrow is the last day of school. 'Let's go to the beach,' says my teacher.", ipa: "/təˈmɒroʊ ɪz ðə lɑːst deɪ əv skuːl. lɛts ɡoʊ tuː ðə biːtʃ sɛz maɪ ˈtiːtʃər/", vi: "Ngày mai là ngày học cuối cùng. 'Hãy đi ra bãi biển thôi,' giáo viên của tôi nói." },
       { start: 12.5, en: "'Hooray!' The class goes wild.", ipa: "/hʊˈreɪ! ðə klɑːs ɡoʊz waɪld/", vi: "'Hoan hô!' Cả lớp phát cuồng." },
       { start: 17.5, en: "'What will we bring?' ask some students.", ipa: "/wɒt wɪl wiː brɪŋ? ɑːsk sʌm ˈstjuːdənts/", vi: "'Chúng ta sẽ mang theo gì?' một số học sinh hỏi." },
-      { start: 22.0, en: "'We will bring our bathing suits. We will bring towels. We will bring a ball to play with. Oh yes, we need something to eat for lunch. We will bring sandwiches, apples and bananas.'", ipa: "/wiː wɪl brɪŋ ˈaʊər ˈbeɪðɪŋ suːts. wiː wɪl brɪŋ ˈtaʊəlz. wiː wɪl brɪŋ ə bɔːl tuː pleɪ wɪð. oʊ jɛs wiː niːd ˈsʌmθɪŋ tʊ iːt fɔːr lʌntʃ. wiː wɪl brɪŋ ˈsænwɪdʒɪz ˈæplz ænd bəˈnɑːnəz/", vi: "'Chúng ta sẽ mang đồ bơi. Chúng ta sẽ mang khăn tắm. Chúng ta sẽ mang bóng để chơi. À đúng rồi, chúng ta cần thứ gì đó để ăn trưa. Chúng ta sẽ mang bánh mì kẹp, táo và chuối.'" },
+      { start: 22.0, en: "'We will bring our bathing suits. We will bring towels. We will bring a ball to play with. Oh yes, we need something to eat for lunch. We will bring sandwiches, apples and bananas.'", ipa: "/wiː wɪl brɪŋ ˈaʊər ˈbeɪðɪŋ suːts. wiː wɪl brɪŋ ˈtaʊəlz. wiː wɪl brɪŋ a bɔːl tuː pleɪ wɪð. oʊ jɛs wiː niːd ˈsʌmθɪŋ tʊ iːt fɔːr lʌntʃ. wiː wɪl brɪŋ ˈsænwɪdʒɪz ˈæplz ænd bəˈnɑːnəz/", vi: "'Chúng ta sẽ mang đồ bơi. Chúng ta sẽ mang khăn tắm. Chúng ta sẽ mang bóng để chơi. À đúng rồi, chúng ta cần thứ gì đó để ăn trưa. Chúng ta sẽ mang bánh mì kẹp, táo và chuối.'" },
       { start: 39.5, en: "'What will we drink?' ask some students.", ipa: "/wɒt wɪl wiː drɪŋ? ɑːsk sʌm ˈstjuːdənts/", vi: "'Chúng ta sẽ uống gì?' một số học sinh hỏi." },
       { start: 43.5, en: "'Juice and water,' says our teacher.", ipa: "/dʒuːs ænd ˈwɔːtər sɛz ˈaʊər ˈtiːtʃər/", vi: "'Nước ép và nước,' giáo viên của chúng tôi nói." },
       { start: 48.0, en: "Yay! We are going to have fun at the beach!", ipa: "/jeɪ! wiː ɑːr ˈɡoʊɪŋ tuː hæv fʌn æt ðə biːtʃ/", vi: "Yeah! Chúng ta sẽ có khoảng thời gian vui vẻ ở bãi biển!" },

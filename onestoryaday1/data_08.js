@@ -82,9 +82,9 @@ STORIES_DATA["08 August"] = [
   },
   {
     day: 7,
-    title: "Baby Dinosaurs",
+    title: "Baby Dinosaur",
     image: "08 August/images/day_07.webp",
-    audio: "08 August/audio/A0807 Baby Dinosaurs.mp3",
+    audio: "08 August/audio/A0807 Baby Dinosaur.mp3",
     sentences: [
       { start: 4.8, en: "Where did baby dinosaurs come from? Did they come from eggs or were they born by their mother dinosaurs?", ipa: "/wɛr dɪd ˈbeɪbi ˈdaɪnəˌsɔːrz kʌm frɒm? dɪd ðeɪ kʌm frɒm ɛɡz ɔːr wɜːr ðeɪ bɔːrn baɪ ðɛər ˈmʌðər ˈdaɪnəˌsɔːrz/", vi: "Những chú khủng long con nở ra từ đâu? Chúng chui ra từ trứng hay được khủng long mẹ sinh trực tiếp?" },
       { start: 14.5, en: "Like birds today, baby dinosaurs were hatched from eggs. A mother dinosaur lays an egg. She sits on the egg for many days to keep it warm.", ipa: "/laɪk bɜːrdz təˈdeɪ ˈbeɪbi ˈdaɪnəˌsɔːrz wɜːr hætʃt frɒm ɛɡz. ə ˈmʌðər ˈdaɪnəˌsɔːr leɪz ən ɛɡ. ʃiː sɪts ɒn ði ɛɡ fɔːr ˈmɛni deɪz tuː kiːp ɪt wɔːrm/", vi: "Giống như loài chim ngày nay, khủng long con nở ra từ những quả trứng. Khủng long mẹ đẻ trứng, sau đó ấp trên ổ trứng suốt nhiều ngày liền để giữ ấm." },
@@ -108,7 +108,7 @@ STORIES_DATA["08 August"] = [
     day: 9,
     title: "More about Dinosaurs",
     image: "08 August/images/day_09.webp",
-    audio: "08 August/audio/A0809 More about Dinosaurs.mp3",
+    audio: "08 August/audio/A0809 More About Dinosaurs.mp3",
     sentences: [
       { start: 4.8, en: "Dinosaurs lived on earth a long time ago. They were the largest animals on land.", ipa: "/ˈdaɪnəˌsɔːrz lɪvd ɒn ɜːrθ ə lɒŋ taɪm əˈgoʊ. ðeɪ wɜːr ði ˈlɑːrdʒɪst ˈænɪmlz ɒn lænd/", vi: "Khủng long từng sinh sống trên Trái Đất từ thuở xa xưa. Chúng là loài động vật có kích thước lớn nhất trên cạn." },
       { start: 13.5, en: "But how do we know dinosaurs really existed?", ipa: "/bʌt haʊ duː wiː noʊ ˈdaɪnəˌsɔːrz ˈrɪəli ɪɡˈzɪstɪd/", vi: "Nhưng làm thế nào chúng ta biết chắc khủng long thực sự từng tồn tại?" },
@@ -197,7 +197,7 @@ STORIES_DATA["08 August"] = [
     audio: "08 August/audio/A0816 Follow Your Food.mp3",
     sentences: [
       { start: 4.8, en: "'Mom, what happens to my food after I take a bite?' Eddy asks.", ipa: "/mɒm wɒt ˈhæpənz tuː maɪ fuːd ˈɑːftər aɪ teɪk ə baɪt? ˈɛdi ɑːsks/", vi: "'Mẹ ơi, thức ăn sẽ đi đâu về đâu sau khi con cắn một miếng ạ?' Eddy thắc mắc." },
-      { start: 11.5, en: "His mom smiles. Then she says, 'After you chew your food and swallow it, the food pieces go down into your stomach.'", ipa: "/hɪz mɒm smaɪld. ðɛn ʃiː sɛz ˈɑːftər juː tʃuː jɔːr fuːd ænd ˈswɒloʊ ɪt ðə fuːd ˈpiːsɪz ɡoʊ daʊn ˈɪntuː jɔːr ˈstʌmək/", vi: "Mẹ mỉm cười rồi giải thích: 'Sau khi con nhai kỹ và nuốt thức ăn xuống, các mảnh thức ăn sẽ trôi thẳng xuống dạ dày của con.'" },
+      { start: 11.5, en: "His mom smiles. Then she says, 'After you chew your food and swallow it, the food pieces go down into your stomach.'", ipa: "/hɪz mɒm smaɪld. ðɛn ʃiː sɛz ˈɑːftər juː tʃuː jɔːr fuːd ænd ˈswɒloʊ ɪt ðə fuːd ˈpiːsɪz ɡoʊ daʊn ˈɪntuː jɔːr ˈstʌmək/", vi: "Mẹ mỉm cười rồi giải thích: 'Sau khi con nhõi kỹ và nuốt thức ăn xuống, các mảnh thức ăn sẽ trôi thẳng xuống dạ dày của con.'" },
       { start: 22.0, en: "'What happens next?' Eddy likes to know more.", ipa: "/wɒt ˈhæpənz nɛkst? ˈɛdi laɪks tuː noʊ mɔːr/", vi: "'Rồi điều gì sẽ xảy ra tiếp theo ạ?' Eddy hào hứng muốn biết thêm." },
       { start: 27.5, en: "'Amazing things happen. Your stomach juices break down the food so that it can get the nutrients for your body to grow big and strong.'", ipa: "/əˈmeɪzɪŋ θɪŋz ˈhæpən. jɔːr ˈstʌmək ˈdʒuːsɪz breɪk daʊn ðə fuːd soʊ ðæt ɪt kæn ɡɛt ðə ˈnuːtriənts fɔːr jɔːr ˈbɒdi tuː ɡroʊ bɪɡ ænd strɒŋ/", vi: "'Những điều kỳ diệu sẽ diễn ra. Dịch vị trong dạ dày sẽ phân giải thức ăn để hấp thụ chất dinh dưỡng nuôi cơ thể con lớn nhanh và khỏe mạnh.'" },
       { start: 40.0, en: "'Wow! It's like a factory,' says Eddy.", ipa: "/waʊ! ɪts laɪk ə ˈfæktəri sɛz ˈɛdi/", vi: "'Oa! Giống như một nhà máy thu nhỏ vậy,' thốt lên đầy kinh ngạc." }
@@ -322,7 +322,7 @@ STORIES_DATA["08 August"] = [
     audio: "08 August/audio/A0826 Think Twice.mp3",
     sentences: [
       { start: 4.8, en: "Joy was working on the computer. She had some work to finish.", ipa: "/dʒɔɪ wɒz ˈwɜːrkɪŋ ɒn ðə kəmˈpjuːtər. ʃiː hæd sʌm wɜːrk tuː ˈfɪnɪʃ/", vi: "Joy đang ngồi làm việc trên máy tính vì còn một ít bài tập chưa hoàn thành." },
-      { start: 10.5, en: "'All done!' She clicked 'print'. The printer started printing and the pages kept coming.", ipa: "/ɔːl dʌn! ʃiː klɪkt prɪnt. ˈðə ˈprɪntər ˈstɑːrtɪd ˈprɪntɪŋ ænd ðə peɪdʒɪz kɛpt ˈkʌmɪŋ/", vi: "Xong hết rồi! Cô bé nhấn nút 'in'. Chiếc máy in lập tức hoạt động và những tờ giấy cứ thế liên tục tuôn ra." },
+      { start: 10.5, en: "'All done!' She clicked 'print'. The printer started printing and the pages kept coming.", ipa: "/ɔːl dʌn! ʃiː klɪkt prɪnt. ðə ˈprɪntər ˈstɑːrtɪd ˈprɪntɪŋ ænd ðə peɪdʒɪz kɛpt ˈkʌmɪŋ/", vi: "Xong hết rồi! Cô bé nhấn nút 'print'. Chiếc máy in lập tức hoạt động và những tờ giấy cứ thế liên tục tuôn ra." },
       { start: 19.5, en: "'Oh no! I clicked the button twice,' said Joy.", ipa: "/oʊ noʊ! aɪ klɪkt ðə ˈbʌtn twaɪs sɛd dʒɔɪ/", vi: "'Ôi không! Tớ lỡ bấm nhầm nút hai lần mất rồi,' Joy hốt hoảng kêu lên." },
       { start: 25.0, en: "Her dad said to her, 'Think twice before you print.'", ipa: "/hɜːr dæd sɛd tuː hɜːr θɪŋk twaɪs bɪˈfɔːr juː prɪnt/", vi: "Bố cô bé liền nhắc nhở: 'Hãy suy nghĩ kỹ hai lần trước khi quyết định in ấn con nhé.'" },
       { start: 31.0, en: "Joy asked, 'What do you mean, Dad?'", ipa: "/dʒɔɪ ɑːskt wɒt duː juː miːn dæd/", vi: "Joy thắc mắc hỏi: 'Ý bố là sao ạ?'" },
@@ -361,7 +361,7 @@ STORIES_DATA["08 August"] = [
     sentences: [
       { start: 4.8, en: "One day at school, our teacher, Mrs. Jones, shows Kate's homework to the class.", ipa: "/wʌn deɪ æt skuːl ˈaʊər ˈtiːtʃər ˈmɪsɪz dʒoʊnz ʃoʊz keɪts ˈhoʊmˌwɜːrk tuː ðə klɑːs/", vi: "Một hôm ở lớp, cô giáo Jones mang bài tập về nhà của Kate ra khoe trước cả lớp." },
       { start: 12.0, en: "She says, 'See! Her handwriting is beautiful!'", ipa: "/ʃiː sɛd siː! hɜːr ˈhændˌraɪtɪŋ ɪz ˈbjuːtɪfl/", vi: "Cô khen ngợi: 'Các em xem này! Chữ viết tay của em ấy thật là đẹp.'" },
-      { start: 17.5, en: "'Nice!' some girls and boys say. One boy named Terry says, 'My handwriting is terrible. I want to write well, but I don't have that kind of hand.'", ipa: "/naɪs! sʌm ɡɜːrlz ænd bɔɪz seɪ. wʌn bɔɪ neɪmd ˈtɛri sɛd maɪ ˈhændˌraɪtɪŋ ɪz ˈtɛrəbl. aɪ wɒnt tuː raɪt wɛl bʌt aɪ doʊnt hæv ðæt kaɪnd əv hænd/", vi: "'Đẹp thật đấy!' mấy bạn học sinh tấm tắc trầm trồ. Có cậu bé tên là Terry liền thở dài: 'Chữ của tớ thì tệ hại lắm. Tớ rất muốn viết đẹp, ngặt nỗi tay tớ không có năng khiếu viết chữ đẹp.'" },
+      { start: 17.5, en: "'Nice!' some girls and boys say. One boy named Terry says, 'My handwriting is terrible. I want to write well, but I don't have that kind of hand.'", ipa: "/naɪs! sʌm ɡɜːrlz ænd bɔɪz seɪ. wʌn bɔɪ neɪmd ˈtɛri sɛd maɪ ˈhændˌraɪtɪŋ ɪz ˈtɛrəbl. aɪ wɒnt tuː raɪt wɛl bʌt aɪ doʊnt hæv ðæt kaɪnd əv hænd/", vi: "'Đẹp thật đấy!' mấy bạn học sinh tấm tắc trầm trồ. Cậu bé tên là Terry liền thở dài: 'Chữ của tớ thì tệ hại lắm. Tớ rất muốn viết đẹp, ngặt nỗi tay tớ không có năng khiếu viết chữ đẹp.'" },
       { start: 32.5, en: "Mrs. Jones says, 'It's not the hand. It's the heart. Use your hand and heart. You all can have beautiful handwriting too!'", ipa: "/ˈmɪsɪz dʒoʊnz sɛd ɪts nɒt ðə hænd. ɪts ðə hɑːrt. juːz jɔːr hænd ænd hɑːrt. juː ɔːl kæn hæv ˈbjuːtɪfl ˈhændˌraɪtɪŋ tuː/", vi: "Cô giáo Jones ân cần giảng giải: 'Không phải do đôi bàn tay đâu các em ạ, mà là do cái tâm của mình. Hãy đặt cả bàn tay và tấm lòng vào từng nét chữ, tất cả các em cũng sẽ viết được những nét chữ thật đẹp.'" }
     ]
   },

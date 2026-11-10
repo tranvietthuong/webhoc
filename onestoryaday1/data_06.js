@@ -56,7 +56,7 @@ STORIES_DATA["06 June"] = [
       { start: 4.8, en: "Rice is the most popular food in Asia.", ipa: "/raɪs ɪz ðə moʊst ˈpɒpjʊlər fuːd ɪn ˈeɪʒə/", vi: "Cơm gạo là loại thực phẩm phổ biến nhất ở Châu Á." },
       { start: 10.0, en: "Rice is a very good food. It gives people lots of energy. It tastes good. It is easy to cook. And it is easy to grow.", ipa: "/raɪs ɪz ə ˈvɛri ɡʊd fuːd. ɪt ɡɪvz ˈpiːpl lɒts əv ˈɛnərdʒi. ɪt teɪsts ɡʊd. ɪt ɪz ˈiːzi tuː kʊk. ænd ɪt ɪz ˈiːzi tuː ɡroʊ/", vi: "Gạo là một loại thực phẩm rất tốt. Nó cung cấp cho con người nhiều năng lượng, ăn rất ngon, dễ nấu và cũng dễ trồng." },
       { start: 22.0, en: "Not all rice looks and tastes the same. There are more than 40,000 different kinds of rice.", ipa: "/nɒt ɔːl raɪs lʊks ænd teɪsts ðə seɪm. ðɛər ɑːr mɔːr ðæn fɔːrˈtiːˌθaʊznd ˈdɪfrənt kaɪndz əv raɪs/", vi: "Không phải loại gạo nào cũng có hình thức và hương vị giống nhau. Có hơn 40.000 giống lúa gạo khác nhau trên thế giới." },
-      { start: 32.5, en: "About 90 percent of all the rice in the world is grown and eaten in Asia.", ipa: "/əˈbaʊt ˈnaɪnti pərˈsɛnt əv ɔːl ðə raɪs ɪn ðə wɜːrld ɪz ɡroʊn ænd ˈiːtn ɪn ˈeɪʒə/", vi: "Khoảng 90 phần trăm tổngLượng gạo trên toàn thế giới được trồng và tiêu thụ ở Châu Á." },
+      { start: 32.5, en: "About 90 percent of all the rice in the world is grown and eaten in Asia.", ipa: "/əˈbaʊt ˈnaɪnti pərˈsɛnt əv ɔːl ðə raɪs ɪn ðə wɜːrld ɪz ɡroʊn ænd ˈiːtn ɪn ˈeɪʒə/", vi: "Khoảng 90 phần trăm tổng lượng gạo trên toàn thế giới được trồng và tiêu thụ ở Châu Á." },
       { start: 41.0, en: "In Asia today, one person eats about 200 kilograms of rice a year.", ipa: "/ɪn ˈeɪʒə təˈdeɪ wʌn ˈpɜːrsn iːts əˈbaʊt ˈtuː ˈhʌndrəd ˈkɪləˌɡræmz əv raɪs ə jɪər/", vi: "Ngày nay ở Châu Á, trung bình mỗi người tiêu thụ khoảng 200 kg gạo một năm." },
       { start: 49.5, en: "I eat rice every day!", ipa: "/aɪ iːt raɪs ˈɛvri deɪ!/", vi: "Tớ ăn cơm mỗi ngày luôn đấy!" }
     ]
@@ -65,7 +65,7 @@ STORIES_DATA["06 June"] = [
     day: 5,
     title: "Don't Cry, Grandpa",
     image: "06 June/images/day_05.webp",
-    audio: "06 June/audio/A0605 Don_t Cry Grandpa.mp3",
+    audio: "06 June/audio/A0605 Don_t Cry, Grandpa.mp3",
     sentences: [
       { start: 4.8, en: "Grandpa lives in the countryside. I visit him every summer.", ipa: "/ˈɡrændpɑː lɪvz ɪn ðə ˈkʌntriˌsaɪd. aɪ ˈvɪzɪt hɪm ˈɛvri ˈsʌmər/", vi: "Ông nội sống ở vùng quê. Tôi đến thăm ông vào mỗi dịp hè." },
       { start: 11.5, en: "When it is time to go back to the city for school, Grandpa always cries.", ipa: "/wɛn ɪt ɪz taɪm tuː ɡoʊ bæk tuː ðə ˈsɪti fɔːr skuːl ˈɡrændpɑː ˈɔːlweɪz kraɪz/", vi: "Khi đến lúc phải quay lại thành phố để đi học, ông luôn rơi nước mắt." },
@@ -169,7 +169,7 @@ STORIES_DATA["06 June"] = [
       { start: 4.8, en: "Leo has a lovely garden. In the garden, he has tomatoes, strawberries, beans, and corn.", ipa: "/ˈliːoʊ hæz ə ˈlʌvli ˈɡɑːrdn. ɪn ðə ˈɡɑːrdn hiː hæz təˈmɑːtoʊz ˈstrɔːˌbɛriz biːnz ænd kɔːrn/", vi: "Leo có một khu vườn xinh xắn. Trong vườn, cậu trồng cà chua, dâu tây, đậu và ngô." },
       { start: 16.0, en: "Leo lives in the countryside. He knows that wild animals like to visit his garden.", ipa: "/ˈliːoʊ lɪvz ɪn ðə ˈkʌntriˌsaɪd. hiː noʊz ðæt waɪld ˈænɪmlz laɪk tuː ˈvɪzɪt hɪz ˈɡɑːrdn/", vi: "Leo sống ở vùng nông thôn. Cậu biết rằng các loài động vật hoang dã rất thích lui tới khu vườn của mình." },
       { start: 24.5, en: "So he builds a fence around the garden.", ipa: "/soʊ hiː bɪldz ə fɛns əˈraʊnd ðə ˈɡɑːrdn/", vi: "Thế là cậu bèn dựng một hàng rào xung quanh khu vườn." },
-      { start: 30.0, en: "The fence is about five feet tall. He is sure no animals will get in his garden to eat his vegetables and fruit.", ipa: "/ðə fɛns ɪz əˈbaʊt faɪv fiːt tɔːl. hiː ɪz ʃʊr noʊ ˈænɪmlz wɪl ɡɛt ɪn hɪz ˈɡɑːrdn tuː iːt hɪz ˈvɛdʒtəblz ænd fruːt/", vi: "Hàng rào cao khoảng năm mét (năm foot). Cậu chắc mẩm sẽ không có con thú nào đột nhập vào được để ăn trộm rau củ và trái cây." },
+      { start: 30.0, en: "The fence is about five feet tall. He is sure no animals will get in his garden to eat his vegetables and fruit.", ipa: "/ðə fɛns ɪz əˈbaʊt faɪv fiːt tɔːl. hiː ɪz ʃʊr noʊ ˈænɪmlz wɪl ɡɛt ɪn hɪz ˈɡɑːrdn tuː iːt hɪz ˈvɛdʒtəblz ænd fruːt/", vi: "H hàng rào cao khoảng năm mét (năm foot). Cậu chắc mẩm sẽ không có con thú nào đột nhập vào được để ăn trộm rau củ và trái cây." },
       { start: 42.5, en: "Look at my lovely garden!", ipa: "/lʊk æt maɪ ˈlʌvli ˈɡɑːrdn!/", vi: "Hãy ngắm khu vườn đáng yêu của tớ này!" }
     ]
   },
@@ -235,7 +235,7 @@ STORIES_DATA["06 June"] = [
     image: "06 June/images/day_17.webp",
     audio: "06 June/audio/A0617 Stars in the Sky.mp3",
     sentences: [
-      { start: 4.8, en: "Look at all the stars in the sky at night. They are very small. They are far away from us.", ipa: "/lʊk æt ɔːl ðə stɑːrz ɪn ðə skaɪ æt naɪt. ðeɪ ɑːr ˈvɛri smɔːl. ðeɪ ɑːr fɑːr əˈweɪ frɒm ʌs/", vi: "Ngắm nhìn những ngôi sao trên bầu trời đêm kìa. Trông chúng thật nhỏ bé và ở cách xa chúng ta vô cùng." },
+      { start: 4.8, en: "Look at all the stars in the sky at night. They are very small. They are far away from us.", ipa: "/lʊk æt ɔːl ðə stɑːrz ɪn ðə skaɪ ænd naɪt. ðeɪ ɑːr ˈvɛri smɔːl. ðeɪ ɑːr fɑːr əˈweɪ frɒm ʌs/", vi: "Ngắm nhìn những ngôi sao trên bầu trời đêm kìa. Trông chúng thật nhỏ bé và ở cách xa chúng ta vô cùng." },
       { start: 15.0, en: "What is the closest star to Earth? It's our sun. Yes, the sun is a star.", ipa: "/wɒt ɪz ðə ˈkloʊsɪst stɑːr tuː ɜːrθ? ɪts ˈaʊər sʌn. jɛs ðə sʌn ɪz ə stɑːr/", vi: "Ngôi sao nào ở gần Trái Đất nhất? Chính là mặt trời của chúng ta. Vâng, mặt trời thực chất cũng là một ngôi sao." },
       { start: 25.5, en: "Would you like to go to the sun? Well, it is too hot for us. But even if we could visit the sun, it would take us a long time to get there.", ipa: "/wʊd juː laɪk tuː ɡoʊ tuː ðə sʌn? wɛl ɪt ɪz tuː hɒt fɔːr ʌs. bʌt ˈiːvn ɪf wiː kʊd ˈvɪzɪt ðə sʌn ɪt wʊd teɪk ʌs ə lɒŋ taɪm tuː ɡɛt ðɛər/", vi: "Bạn có muốn du hành đến mặt trời không? Chà, nơi đó quá nóng đối với chúng ta. Hơn nữa, dù có thể đến đó đi chăng nữa, chúng ta cũng mất rất nhiều thời gian mới tới nơi." },
       { start: 39.0, en: "How long? It would take about 18 years to get there if you took a jet airplane.", ipa: "/haʊ lɒŋ? ɪt wʊd teɪk əˈbaʊt ˈeɪˈtiːn jɪərz tuː ɡɛt ðɛər ɪf juː tʊk ə dʒɛt ˈɛrˌpleɪn/", vi: "Mất bao lâu ư? Sẽ mất khoảng 18 năm di chuyển bằng máy bay phản lực đấy." },
@@ -292,7 +292,7 @@ STORIES_DATA["06 June"] = [
     audio: "06 June/audio/A0621 Listening for Food.mp3",
     sentences: [
       { start: 4.8, en: "Diana sees a pretty bird in her backyard.", ipa: "/daɪˈænə siːz ə ˈprɪti bɜːrd ɪn hɜːr ˌbækˈjɑːrd/", vi: "Diana nhìn thấy một chú chim xinh xắn ở khu vườn sau nhà." },
-      { start: 9.5, en: "The bird hops around and then stops. It puts its head to the ground. What is it doing? Listening for food.", ipa: "/ðə bɜːrd hɒps əˈraʊnd ænd ðɛn stɒps. ɪt pʊts hɪz hɛd tuː ðə ɡraʊnd. wɒt ɪz ɪt ˈduːɪŋ? ˈlɪsnɪŋ fɔːr fuːd/", vi: "Chú chim nhảy loanh quanh rồi khựng lại, áp sát đầu xuống mặt đất. Nó đang làm gì thế nhỉ? Nó đang lắng nghe tiếng thức ăn dưới đất." },
+      { start: 9.5, en: "The bird hops around and then stops. It puts its head to the ground. What is it doing? Listening for food.", ipa: "/ðə bɜːrd hɒps əˈraʊnd ænd ðɛn stɒps. ɪt pʊts hɪz hɛd tuː ðə ɡraʊnd. wɒt ɪz ɪt ˈduːɪŋ? ˈlɪsnɪŋ fɔːr fuːd/", vi: "Chú chim nhảy loanه quanh rồi khựng lại, áp sát đầu xuống mặt đất. Nó đang làm gì thế nhỉ? Nó đang lắng nghe tiếng thức ăn dưới đất." },
       { start: 20.0, en: "What does this bird eat? It eats worms. But first, it must catch a worm. Worms live under the ground.", ipa: "/wɒt dʌz ðɪs bɜːrd iːt? ɪt iːts wɜːrmz. bʌt fɜːrst ɪt mʌst kætʃ ə wɜːrm. wɜːrmz lɪv ˈʌndər ðə ɡraʊnd/", vi: "Loài chim này ăn gì? Chúng ăn giun đất. Nhưng trước tiên phải bắt được đã. Giun thì sống ở sâu dưới lòng đất." },
       { start: 31.0, en: "Look now! The bird pulls on something with its mouth. What's that? It's a worm!", ipa: "/lʊk naʊ! ðə bɜːrd pʊlz ɒn ˈsʌmθɪŋ wɪð ɪts maʊθ. wɒts ðæt? ɪts ə wɜːrm/", vi: "Nhìn kìa! Chú chim đang dùng mỏ kéo một thứ gì đó lên. Cái gì thế nhỉ? Là một con giun đấy!" },
       { start: 40.5, en: "Delicious!", ipa: "/dɪˈlɪʃəs!/", vi: "Ngon tuyệt cú mèo!" }
@@ -365,7 +365,7 @@ STORIES_DATA["06 June"] = [
       { start: 4.8, en: "When you get home, do you swim underwater to get to your door? No. Well, beavers do.", ipa: "/wɛn juː ɡɛt hoʊm duː juː swɪm ˌʌndərˈwɔːtər tuː ɡɛt tuː jɔːr dɔːr? noʊ. wɛl ˈbiːvərz duː/", vi: "Mỗi khi về nhà, có bao giờ bạn phải bơi lặn dưới nước để vào được cửa nhà mình không? Không hề. Thế nhưng loài hải ly lại làm thế đấy." },
       { start: 16.0, en: "Beavers build their houses on lakes and ponds. They hide the door so no one can see them when they go in and out of their home.", ipa: "/ˈbiːvərz bɪld ðɛər ˈhaʊsɪz ɒn leɪks ænd pɒndz. ðeɪ haɪd ðə dɔːr soʊ noʊ wʌn kæn siː ðɛm wɛn ðeɪ ɡoʊ ɪn ænd aʊt əv ðɛər hoʊm/", vi: "Hải ly xây tổ ấm của chúng ở các hồ nước và ao. Chúng giấu tiệt cửa ra vào để không ai có thể nhìn thấy khi chúng chui ra chui vào ngôi nhà của mình." },
       { start: 29.0, en: "Beavers are excellent swimmers. When they see danger, they slap their tail on the water.", ipa: "/ˈbiːvərz ɑːr ˈɛksələnt ˈswɪmərz. wɛn ðeɪ siː ˈdeɪndʒər ðeɪ slæp ðɛər teɪl ɒn ðə ˈwɔːtər/", vi: "Hải ly là những tay bơi lội cừ khôi. Khi đánh hơi thấy nguy hiểm, chúng sẽ dùng đuôi đập mạnh xuống mặt nước." },
-      { start: 37.5, en: "Everyone dives into the water and goes back to their home where they are safe.", ipa: "/ˈɛvriˌwʌn daɪvz ˈɪntuː ðə ˈwɔːtər ænd ɡoʊz bæk tuː ðɛər hoʊm wɛər ðeɪ ɑːr seɪf/", vi: "Ngay lập tức, tất cả cùng lặnỏm xuống nước và trốn về chiếc ổ an toàn của mình." },
+      { start: 37.5, en: "Everyone dives into the water and goes back to their home where they are safe.", ipa: "/ˈɛvriˌwʌn daɪvz ˈɪntuː ðə ˈwɔːtər ænd ɡoʊz bæk tuː ðɛər hoʊm wɛər ðeɪ ɑːr seɪf/", vi: "Ngay lập tức, tất cả cùng lặnõm xuống nước và trốn về chiếc ổ an toàn của mình." },
       { start: 46.5, en: "My home is safe!", ipa: "/maɪ hoʊm ɪz seɪf!/", vi: "Ngôi nhà của tớ an toàn tuyệt đối!" }
     ]
   },
@@ -422,6 +422,21 @@ STORIES_DATA["06 June"] = [
       { start: 33.5, en: "How about the hat?", ipa: "/haʊ əˈbaʊt ðə hæt?/", vi: "Thế còn chiếc mũ sinh nhật thì sao nhỉ?" },
       { start: 37.0, en: "'The cat hated the hat!' said Lynne. 'She scratched the hat and took it off right away!'", ipa: "/ðə kæt ˈheɪtɪd ðə hæt sɛd lɪn. ʃiː skrætʃt ðə hæt ænd tʊk ɪt ɒf raɪt əˈweɪ/", vi: "'Con mèo ghét chiếc mũ đó lắm!' Lynne kể lại. 'Nó cào rách mũ ra và hất văng ra ngay tức khắc!'" },
       { start: 47.5, en: "We don't wear hats!", ipa: "/wiː doʊnt wɛər hæts!/", vi: "Bọn tớ đời nào chịu đội mũ!" }
+    ]
+  },
+  {
+    day: 31,
+    title: "Rice, Corn, Wheat",
+    image: "06 June/images/day_31.webp",
+    audio: "06 June/audio/A0631 Rice, Corn, Wheat.mp3",
+    sentences: [
+      { start: 4.8, en: "Rice, corn, and wheat are the three most important foods in the world.", ipa: "/raɪs kɔːrn ænd wiːt ɑːr ðə θriː moʊst ɪmˈpɔːrtnt fuːdz ɪn ðə wɜːrld/", vi: "Lúa gạo, ngô và lúa mì là ba loại lương thực quan trọng nhất trên thế giới." },
+      { start: 13.0, en: "Long ago, people used to go around looking for food every day.", ipa: "/lɒŋ əˈɡoʊ ˈpiːpl juːzd tuː ɡoʊ əˈraʊnd ˈlʊkɪŋ fɔːr fuːd ˈɛvri deɪ/", vi: "Từ thuở xa xưa, con người thường phải đi lang thang khắp nơi để tìm kiếm thức ăn mỗi ngày." },
+      { start: 20.0, en: "Then one day, people discovered that rice, corn and wheat could be planted.", ipa: "/ðɛn wʌn deɪ ˈpiːpl dɪˈskʌvərd ðæt raɪs kɔːrn ænd wiːt kʊd biː ˈplɑːntɪd/", vi: "Rồi cho đến một ngày nọ, họ phát hiện ra rằng lúa gạo, ngô và lúa mì hoàn toàn có thể tự gieo trồng được." },
+      { start: 29.5, en: "People then began to work and live together to grow these crops.", ipa: "/ˈpiːpl ðɛn bɪˈɡæn tuː wɜːrk ænd lɪv təˈɡɛðər tuː ɡroʊ ðiːz krɒps/", vi: "Từ đó, con người bắt đầu quây quần sinh sống và lao động cùng nhau để canh tác những loại hoa màu này." },
+      { start: 37.0, en: "They could grow enough food for everyone.", ipa: "/ðeɪ kʊd ɡroʊ ɪˈnʌf fuːd fɔːr ˈɛvriˌwʌn/", vi: "Họ đã có thể tự sản xuất đủ lương thực nuôi sống tất cả mọi người." },
+      { start: 42.0, en: "They did not have to spend all their time travelling and looking for food.", ipa: "/ðeɪ dɪd nɒt hæv tuː spɛnd ɔːl ðɛər taɪm ˈtrævəlɪŋ ænd ˈlʊkɪŋ fɔːr fuːd/", vi: "Họ không còn phải dành toàn bộ thời gian tất bật di chuyển khắp nơi chỉ để tìm đồ ăn nữa." },
+      { start: 50.0, en: "Rice, corn and wheat are very important!", ipa: "/raɪs kɔːrn ænd wiːt ɑːr ˈvɛri ɪmˈpɔːrtnt!/", vi: "Lúa gạo, ngô và lúa mì thực sự vô cùng quan trọng đối với nhân loại!" }
     ]
   }
 ];
