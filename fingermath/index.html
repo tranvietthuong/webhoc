@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Học Toán Ngón Tay - FingerMath</title>
+    <!-- Google Fonts: Be Vietnam Pro & Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;900&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .lesson-item {
+            transition: all 0.25s ease-in-out;
+        }
+        .lesson-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between text-slate-800">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-white/90 backdrop-blur-md shadow-xs py-3 px-4 sticky top-0 z-50 border-b border-slate-100">
+        <div class="max-w-3xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-2.5">
+                <span class="text-2xl bg-blue-50 p-2 rounded-2xl shadow-inner">🖐️</span>
+                <h1 class="text-lg md:text-xl font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                    FingerMath Cho Bé
+                </h1>
+            </div>
+            <div class="text-xs font-bold bg-amber-100 text-amber-800 px-3 py-1.5 rounded-full shadow-2xs flex items-center space-x-1.5">
+                <span>⭐</span>
+                <span class="hidden sm:inline">Học toán thông minh mỗi ngày</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT - DANH SÁCH BÀI HỌC -->
+    <main class="flex-grow max-w-3xl mx-auto px-4 py-8 w-full">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-2">Chương Trình Học FingerMath</h2>
+            <p class="text-slate-600 text-sm md:text-base font-medium">Lựa chọn bài học để bắt đầu hành trình toán ngón tay cùng bé</p>
+        </div>
+
+        <!-- Danh sách bài học dạng List -->
+        <div class="flex flex-col space-y-3.5">
+            
+            <!-- Bài 1: Học đếm (Liên kết trỏ trực tiếp đến thư mục bai1) -->
+            <a href="bai1/index.html" class="lesson-item bg-white rounded-2xl p-4 md:p-5 border-2 border-blue-100 flex items-center justify-between shadow-sm group">
+                <div class="flex items-center space-x-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-xl font-black shadow-md group-hover:scale-105 transition-transform">
+                        01
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2 mb-1">
+                            <span class="text-[10px] md:text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md">Cơ bản</span>
+                            <span class="text-xs text-slate-400">• Đếm 00 - 99</span>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors">Bài 1: Học Đếm Ngón Tay (00 - 99)</h3>
+                        <p class="text-slate-500 text-xs md:text-sm mt-0.5">Thực hành biểu diễn số trên 2 bàn tay kết hợp âm thanh và đếm tự động.</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2 pl-3">
+                    <span class="hidden sm:inline-block text-xs font-bold text-blue-600 group-hover:translate-x-1 transition-transform">Vào học</span>
+                    <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-inner">
+                        ➔
+                    </div>
+                </div>
+            </a>
+
+            <!-- Bài 2: Cộng trừ phạm vi 5 không nhớ (Khóa) -->
+            <div class="bg-slate-50/90 rounded-2xl p-4 md:p-5 border-2 border-dashed border-slate-200 flex items-center justify-between opacity-80">
+                <div class="flex items-center space-x-4">
+                    <div class="w-14 h-14 bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 text-xl font-bold">
+                        🔒
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2 mb-1">
+                            <span class="text-[10px] md:text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md">Đã khóa</span>
+                            <span class="text-xs text-slate-400">• Sắp ra mắt</span>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold text-slate-600">Bài 2: Cộng Trừ Phạm Vi 5 Không Nhớ</h3>
+                        <p class="text-slate-400 text-xs md:text-sm mt-0.5">Luyện tập các phép tính cộng trừ cơ bản trực tiếp trên bàn tay.</p>
+                    </div>
+                </div>
+                <div class="pl-3">
+                    <span class="text-xs font-bold bg-slate-200 text-slate-600 px-3 py-1.5 rounded-xl shadow-2xs">Khóa</span>
+                </div>
+            </div>
+
+            <!-- Bài 3: Sắp ra mắt (Khóa) -->
+            <div class="bg-slate-50/90 rounded-2xl p-4 md:p-5 border-2 border-dashed border-slate-200 flex items-center justify-between opacity-80">
+                <div class="flex items-center space-x-4">
+                    <div class="w-14 h-14 bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 text-xl font-bold">
+                        🔒
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2 mb-1">
+                            <span class="text-[10px] md:text-xs font-bold uppercase tracking-wider text-slate-500 bg-slate-200 px-2 py-0.5 rounded-md">Sắp ra mắt</span>
+                        </div>
+                        <h3 class="text-base md:text-lg font-bold text-slate-600">Bài 3: Phép Tính Nâng Cao</h3>
+                        <p class="text-slate-400 text-xs md:text-sm mt-0.5">Chinh phục các bài tập tính nhẩm nhanh nâng cao cùng bé.</p>
+                    </div>
+                </div>
+                <div class="pl-3">
+                    <span class="text-xs font-bold bg-slate-200 text-slate-600 px-3 py-1.5 rounded-xl shadow-2xs">Khóa</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-100 py-4 text-center text-slate-400 text-xs">
+        <p>Phần mềm học FingerMath cho bé yêu © 2026</p>
+    </footer>
+
+</body>
+</html>

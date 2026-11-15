@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bài 1: Luyện Tập Đếm FingerMath (00 - 99)</title>
+    <!-- Google Fonts: Be Vietnam Pro & Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .hand-img {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col text-slate-800">
+
+    <!-- TOP HEADER -->
+    <header class="h-[8%] bg-white/95 backdrop-blur-md px-4 flex items-center justify-between border-b border-slate-200 shadow-2xs z-10">
+        <div class="flex items-center space-x-2.5">
+            <a href="../index.html" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm transition-colors shadow-2xs" title="Về trang chủ">
+                🏠
+            </a>
+            <div>
+                <h1 class="text-xs md:text-sm font-bold text-slate-900 leading-tight">Bài 1: FingerMath (00-99)</h1>
+                <p class="text-[9px] text-slate-500 font-medium">Trái (Chục) & Phải (Đơn vị)</p>
+            </div>
+        </div>
+
+        <div class="flex items-center space-x-2">
+            <!-- Nút chuyển đổi âm thanh rõ ràng: Song ngữ -> Tiếng Việt -> Tiếng Anh -> Tắt -->
+            <button id="voiceBtn" onclick="cycleVoiceMode()" class="flex items-center space-x-1 px-3 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-2xs transition-transform active:scale-95 cursor-pointer">
+                <span id="voiceIcon" class="text-xs">🔊</span>
+                <span id="voiceText" class="text-xs">Song ngữ</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN DISPLAY AREA -->
+    <main class="h-[62%] flex flex-col items-center justify-center relative px-3 bg-gradient-to-b from-white/20 to-blue-50/30">
+        
+        <div class="w-full max-w-lg h-56 md:h-68 flex items-center justify-center space-x-4 md:space-x-8">
+            <!-- Tay Trái -->
+            <div class="flex flex-col items-center w-40 md:w-48 h-full justify-between bg-white/80 p-3 rounded-2xl border border-slate-100 shadow-xs">
+                <span class="text-[11px] font-bold text-emerald-800 bg-emerald-100/90 px-2.5 py-0.5 rounded-full">Tay Trái (Chục)</span>
+                <div class="h-36 md:h-44 w-full flex items-center justify-center my-1">
+                    <img id="leftHandImg" src="../boso/taytrai_0.webp" alt="Tay trái" class="h-full w-full object-contain drop-shadow-sm hand-img">
+                </div>
+                <!-- Chữ số hiển thị bên dưới tay trái -->
+                <div id="leftDigitDisplay" class="text-sm md:text-base font-black text-emerald-700 bg-emerald-50 px-3 py-0.5 rounded-md border border-emerald-200">0</div>
+            </div>
+            
+            <!-- Tay Phải -->
+            <div class="flex flex-col items-center w-40 md:w-48 h-full justify-between bg-white/80 p-3 rounded-2xl border border-slate-100 shadow-xs">
+                <span class="text-[11px] font-bold text-blue-800 bg-blue-100/90 px-2.5 py-0.5 rounded-full">Tay Phải (Đơn vị)</span>
+                <div class="h-36 md:h-44 w-full flex items-center justify-center my-1">
+                    <img id="rightHandImg" src="../boso/tayphai_0.webp" alt="Tay phải" class="h-full w-full object-contain drop-shadow-sm hand-img">
+                </div>
+                <!-- Chữ số hiển thị bên dưới tay phải -->
+                <div id="rightDigitDisplay" class="text-sm md:text-base font-black text-blue-700 bg-blue-50 px-3 py-0.5 rounded-md border border-blue-200">0</div>
+            </div>
+        </div>
+        
+        <!-- Mô tả trạng thái tổng -->
+        <div id="handDescription" class="text-center font-bold text-slate-700 text-xs md:text-sm bg-white px-4 py-1.5 rounded-xl shadow-xs border border-slate-200 mt-2">
+            Số 00: Cả hai tay đều nắm lại
+        </div>
+    </main>
+
+    <!-- CONTROL PANEL -->
+    <nav class="h-[30%] bg-white border-t border-slate-200 shadow-md px-4 py-2 flex flex-col justify-around z-20">
+        
+        <!-- Dòng 1: Cấu hình khoảng học (Từ - Đến) -->
+        <div class="flex items-center justify-center bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200/80 gap-3 text-xs">
+            <span class="font-bold text-slate-700 flex items-center space-x-1">
+                <span>🎯</span> <span>Khoảng học:</span>
+            </span>
+            <div class="flex items-center space-x-1">
+                <span class="text-slate-500 font-medium">Từ</span>
+                <input type="number" id="minNumInput" min="0" max="99" value="0" class="w-11 text-center font-bold py-0.5 bg-white border border-slate-300 rounded-lg text-blue-600 focus:outline-blue-500 text-xs">
+            </div>
+            <div class="flex items-center space-x-1">
+                <span class="text-slate-500 font-medium">Đến</span>
+                <input type="number" id="maxNumInput" min="0" max="99" value="9" class="w-11 text-center font-bold py-0.5 bg-white border border-slate-300 rounded-lg text-blue-600 focus:outline-blue-500 text-xs">
+            </div>
+        </div>
+
+        <!-- Dòng 2: Dãy nút bấm đầy đủ 5 chức năng -->
+        <div class="grid grid-cols-5 gap-2">
+            <!-- 1. Đếm xuôi -->
+            <button onclick="startCounting('forward')" id="btnForward" class="flex flex-col items-center justify-center py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl shadow-2xs transition-all active:scale-95 cursor-pointer" title="Đếm Xuôi">
+                <span class="text-base leading-none mb-0.5">▶️</span>
+                <span class="text-[10px]">Xuôi</span>
+            </button>
+            <!-- 2. Đếm ngược -->
+            <button onclick="startCounting('backward')" id="btnBackward" class="flex flex-col items-center justify-center py-1.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold rounded-xl shadow-2xs transition-all active:scale-95 cursor-pointer" title="Đếm Ngược">
+                <span class="text-base leading-none mb-0.5">◀️</span>
+                <span class="text-[10px]">Ngược</span>
+            </button>
+            <!-- 3. Đếm ngẫu nhiên -->
+            <button onclick="playRandom()" class="flex flex-col items-center justify-center py-1.5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold rounded-xl shadow-2xs transition-all active:scale-95 cursor-pointer" title="Số Ngẫu Nhiên">
+                <span class="text-base leading-none mb-0.5">🎲</span>
+                <span class="text-[10px]">Ngẫu nhiên</span>
+            </button>
+            <!-- 4. Chạy tiếp / Tạm dừng -->
+            <button onclick="togglePlayPause()" id="btnPlayPause" class="flex flex-col items-center justify-center py-1.5 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-bold rounded-xl shadow-2xs transition-all active:scale-95 cursor-pointer" title="Chạy tiếp / Tạm dừng">
+                <span id="playPauseIcon" class="text-base leading-none mb-0.5">⏸️</span>
+                <span id="playPauseText" class="text-[10px]">Tạm dừng</span>
+            </button>
+            <!-- 5. Hiện / Tắt số bên dưới 2 tay -->
+            <button onclick="toggleDigitsVisibility()" id="btnToggleDigits" class="flex flex-col items-center justify-center py-1.5 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white font-bold rounded-xl shadow-2xs transition-all active:scale-95 cursor-pointer" title="Hiện/Tắt số bên dưới tay">
+                <span id="toggleDigitsIcon" class="text-base leading-none mb-0.5">👁️</span>
+                <span id="toggleDigitsText" class="text-[10px]">Ẩn số</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        let currentNumber = 0;
+        let voiceMode = 'BILINGUAL'; // 'BILINGUAL', 'VN', 'EN', 'OFF'
+        let timer = null;
+        let activeDirection = 'forward';
+        let isPaused = false;
+        let showDigits = true;
+
+        // Xử lý đọc âm thanh tối ưu, chống kẹt lệnh speech synthesis
+        function speakNumber(num) {
+            if (voiceMode === 'OFF') return;
+            if (!('speechSynthesis' in window)) return;
+
+            window.speechSynthesis.cancel(); // Hủy các lệnh đọc cũ đang kẹt
+
+            setTimeout(() => {
+                if (voiceMode === 'BILINGUAL' || voiceMode === 'VN') {
+                    let utterVN = new SpeechSynthesisUtterance(`Số ${num}`);
+                    utterVN.lang = 'vi-VN';
+                    utterVN.rate = 0.85;
+                    window.speechSynthesis.speak(utterVN);
+                }
+
+                if (voiceMode === 'BILINGUAL' || voiceMode === 'EN') {
+                    let utterEN = new SpeechSynthesisUtterance(`Number ${num}`);
+                    utterEN.lang = 'en-US';
+                    utterEN.rate = 0.85;
+                    window.speechSynthesis.speak(utterEN);
+                }
+            }, 50);
+        }
+
+        // Chuyển chế độ âm thanh
+        function cycleVoiceMode() {
+            const btn = document.getElementById('voiceBtn');
+            const icon = document.getElementById('voiceIcon');
+            const text = document.getElementById('voiceText');
+
+            if (voiceMode === 'BILINGUAL') {
+                voiceMode = 'VN';
+                btn.className = "flex items-center space-x-1 px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-2xs transition-transform active:scale-95 cursor-pointer";
+                icon.textContent = "🔊";
+                text.textContent = "Chỉ VN";
+            } else if (voiceMode === 'VN') {
+                voiceMode = 'EN';
+                btn.className = "flex items-center space-x-1 px-3 py-1 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs shadow-2xs transition-transform active:scale-95 cursor-pointer";
+                icon.textContent = "🔊";
+                text.textContent = "Chỉ EN";
+            } else if (voiceMode === 'EN') {
+                voiceMode = 'OFF';
+                btn.className = "flex items-center space-x-1 px-3 py-1 rounded-lg bg-slate-400 hover:bg-slate-500 text-white font-bold text-xs shadow-2xs transition-transform active:scale-95 cursor-pointer";
+                icon.textContent = "🔇";
+                text.textContent = "Tắt";
+            } else {
+                voiceMode = 'BILINGUAL';
+                btn.className = "flex items-center space-x-1 px-3 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-2xs transition-transform active:scale-95 cursor-pointer";
+                icon.textContent = "🔊";
+                text.textContent = "Song ngữ";
+            }
+        }
+
+        function getRange() {
+            let minInput = document.getElementById('minNumInput');
+            let maxInput = document.getElementById('maxNumInput');
+            let min = parseInt(minInput ? minInput.value : 0);
+            let max = parseInt(maxInput ? maxInput.value : 9);
+            if (isNaN(min) || min < 0) min = 0;
+            if (isNaN(max) > 99) max = 99;
+            if (min > max) { let temp = min; min = max; max = temp; }
+            return { min, max };
+        }
+
+        function updateDisplay(num) {
+            currentNumber = num;
+            let formattedNum = num < 10 ? "0" + num : "" + num;
+
+            const tens = Math.floor(num / 10) * 10;
+            const units = num % 10;
+
+            let leftImg = document.getElementById('leftHandImg');
+            let rightImg = document.getElementById('rightHandImg');
+            if (leftImg) leftImg.src = `../boso/taytrai_${tens}.webp`;
+            if (rightImg) rightImg.src = `../boso/tayphai_${units}.webp`;
+
+            let leftDisp = document.getElementById('leftDigitDisplay');
+            let rightDisp = document.getElementById('rightDigitDisplay');
+            if (leftDisp) leftDisp.textContent = tens / 10; 
+            if (rightDisp) rightDisp.textContent = units;
+
+            let desc = document.getElementById('handDescription');
+            if (desc) {
+                let tensName = tens === 0 ? "0 (Nắm)" : `${tens} (Trái)`;
+                let unitsName = units === 0 ? "0 (Nắm)" : `${units} (Phải)`;
+                desc.textContent = `Số ${formattedNum} — Chục: ${tensName} + Đơn vị: ${unitsName}`;
+            }
+
+            speakNumber(num);
+        }
+
+        function startCounting(direction) {
+            stopTimer();
+            activeDirection = direction;
+            isPaused = false;
+            updatePlayPauseButton();
+
+            let { min, max } = getRange();
+            if (currentNumber < min || currentNumber > max) {
+                currentNumber = direction === 'forward' ? min : max;
+            }
+            updateDisplay(currentNumber);
+
+            timer = setInterval(() => {
+                if (direction === 'forward') {
+                    currentNumber++;
+                    if (currentNumber > max) currentNumber = min;
+                } else {
+                    currentNumber--;
+                    if (currentNumber < min) currentNumber = max;
+                }
+                updateDisplay(currentNumber);
+            }, 1800); // Tăng thời gian chờ để đọc đủ song ngữ không bị chồng chéo
+        }
+
+        function playRandom() {
+            stopTimer();
+            isPaused = false;
+            updatePlayPauseButton();
+
+            let { min, max } = getRange();
+            let randNum = Math.floor(Math.random() * (max - min + 1)) + min;
+            if (max > min && randNum === currentNumber) {
+                randNum = randNum === max ? min : randNum + 1;
+            }
+            updateDisplay(randNum);
+        }
+
+        function togglePlayPause() {
+            if (timer) {
+                clearInterval(timer);
+                timer = null;
+                isPaused = true;
+            } else {
+                isPaused = false;
+                startCounting(activeDirection);
+            }
+            updatePlayPauseButton();
+        }
+
+        function updatePlayPauseButton() {
+            const icon = document.getElementById('playPauseIcon');
+            const text = document.getElementById('playPauseText');
+            if (timer) {
+                if (icon) icon.textContent = "⏸️";
+                if (text) text.textContent = "Tạm dừng";
+            } else {
+                if (icon) icon.textContent = "▶️";
+                if (text) text.textContent = isPaused ? "Tiếp tục" : "Chạy";
+            }
+        }
+
+        function toggleDigitsVisibility() {
+            showDigits = !showDigits;
+            const leftEl = document.getElementById('leftDigitDisplay');
+            const rightEl = document.getElementById('rightDigitDisplay');
+            const icon = document.getElementById('toggleDigitsIcon');
+            const text = document.getElementById('toggleDigitsText');
+
+            if (showDigits) {
+                if (leftEl) leftEl.classList.remove('hidden');
+                if (rightEl) rightEl.classList.remove('hidden');
+                if (icon) icon.textContent = "👁️";
+                if (text) text.textContent = "Ẩn số";
+            } else {
+                if (leftEl) leftEl.classList.add('hidden');
+                if (rightEl) rightEl.classList.add('hidden');
+                if (icon) icon.textContent = "🙈";
+                if (text) text.textContent = "Hiện số";
+            }
+        }
+
+        function stopTimer() {
+            if (timer) {
+                clearInterval(timer);
+                timer = null;
+            }
+        }
+
+        window.onload = function() {
+            let minInput = document.getElementById('minNumInput');
+            let min = parseInt(minInput ? minInput.value : 0);
+            updateDisplay(min);
+            updatePlayPauseButton();
+        };
+    </script>
+</body>
+</html>
